@@ -1,23 +1,257 @@
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * Homepage styles — Simpsons theme
  */
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+/* ===== Hero Section ===== */
+
+.hero {
+    background: linear-gradient(
+        180deg,
+        var(--simpsons-sky) 0%,
+        var(--simpsons-blue) 100%
+    );
+    padding: 1.5rem 0 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroLogo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+.heroTitle {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--simpsons-yellow);
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+    margin-bottom: 0.5rem;
+}
+
+.heroSubtitle {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.heroButton {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    background: var(--simpsons-yellow);
+    border-radius: 50px;
+    text-decoration: none;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.heroButton:hover {
+    background: var(--simpsons-yellow-dark);
+    color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
 }
 
 @media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+    .hero {
+        padding: 1.5rem 1.5rem 1rem;
+    }
+
+    .heroLogo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.1rem;
+    }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ===== Course Info Cards ===== */
+
+.cardsSection {
+    padding: 4rem 0;
+    background: #fafafa;
+}
+
+.cardCol {
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-top: 4px solid var(--simpsons-yellow);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cardIcon {
+    font-size: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    margin: 0 auto 1rem;
+    background: var(--simpsons-sky);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(86, 160, 211, 0.3);
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.cardDescription {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+.cardLinkWrapper {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.cardLinkWrapper:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cardLink {
+    cursor: pointer;
+    border-top-color: var(--simpsons-blue);
+}
+
+.cardLink:hover {
+    border-top-color: var(--simpsons-sky);
+}
+
+.cardAction {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--simpsons-blue);
+    transition: transform 0.2s;
+}
+
+.cardLink:hover .cardAction {
+    transform: translateX(4px);
+}
+
+/* ===== Slack Banner ===== */
+
+.slackBanner {
+    background: var(--simpsons-yellow);
+}
+
+.slackBannerLink {
+    display: block;
+    padding: 1.5rem 0;
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: background 0.2s;
+}
+
+.slackBannerLink:hover {
+    text-decoration: none;
+    color: #1a1a1a;
+    background: var(--simpsons-yellow-dark);
+}
+
+.slackBannerContent {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.slackBannerEmoji {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.slackBannerTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 0.25rem;
+}
+
+.slackBannerDescription {
+    font-size: 0.95rem;
+    color: #444;
+    margin: 0;
+}
+
+.slackBannerArrow {
+    font-size: 1.5rem;
+    margin-left: auto;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.slackBannerLink:hover .slackBannerArrow {
+    transform: translateX(4px);
+}
+
+@media screen and (max-width: 996px) {
+    .slackBannerLink {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .slackBannerContent {
+        gap: 1rem;
+    }
+
+    .slackBannerEmoji {
+        font-size: 2rem;
+    }
+
+    .slackBannerTitle {
+        font-size: 1.05rem;
+    }
+
+    .slackBannerDescription {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 996px) {
+    .cardsSection {
+        padding: 2rem 0;
+    }
 }
