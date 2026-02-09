@@ -1,6 +1,9 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
+import type { LoadContext, Plugin } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import { readdirSync, existsSync, statSync } from "fs";
+import { join, extname } from "path";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -30,6 +33,57 @@ const config: Config = {
     defaultLocale: "es",
     locales: ["es"],
   },
+
+  plugins: [
+    async function pluginMaterialFiles(context: LoadContext): Promise<Plugin> {
+      return {
+        name: "plugin-material-files",
+        async loadContent() {
+          const materialDir = join(context.siteDir, "static", "material");
+          if (!existsSync(materialDir)) return [];
+
+          function sortByPrefix(a: string, b: string) {
+            const numA = parseInt(a.split("_")[0] ?? "0", 10);
+            const numB = parseInt(b.split("_")[0] ?? "0", 10);
+            return numA - numB;
+          }
+
+          function stripPrefix(name: string) {
+            return name.replace(/^\d+_/, "");
+          }
+
+          // Discover categories from subdirectories
+          const categories = readdirSync(materialDir)
+            .filter(
+              (entry) =>
+                !entry.startsWith(".") &&
+                statSync(join(materialDir, entry)).isDirectory(),
+            )
+            .sort(sortByPrefix);
+
+          function scanDir(dirPath: string) {
+            if (!existsSync(dirPath)) return [];
+            return readdirSync(dirPath)
+              .filter((f) => !f.startsWith("."))
+              .sort(sortByPrefix)
+              .map((name) => ({
+                name,
+                extension: extname(name).slice(1).toUpperCase(),
+              }));
+          }
+
+          return categories.map((cat) => ({
+            name: stripPrefix(cat),
+            dir: cat,
+            files: scanDir(join(materialDir, cat)),
+          }));
+        },
+        async contentLoaded({ content, actions }) {
+          actions.setGlobalData(content);
+        },
+      };
+    },
+  ],
 
   presets: [
     [
@@ -69,6 +123,11 @@ const config: Config = {
           sidebarId: "tutorialSidebar",
           position: "left",
           label: "Apuntes",
+        },
+        {
+          to: "/material",
+          label: "Material",
+          position: "left",
         },
         {
           href: "https://github.com/facebook/docusaurus",
