@@ -20,6 +20,12 @@ const courseCards = [
     description: "Reglas y condiciones de aprobación",
     link: "/regimen-de-cursada",
   },
+  {
+    emoji: "\u{1F4CA}",
+    title: "Encuestas",
+    description: "Encuestas de fin de curso",
+    link: "/encuestas",
+  },
 ];
 
 function HomepageHero() {
