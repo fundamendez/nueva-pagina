@@ -1,0 +1,100 @@
+.container {
+  padding: 3rem 1rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: calc(100vh - 60px);
+}
+
+.overlay {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.topRow {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.backLink {
+  text-decoration: none;
+  font-weight: 700;
+  color: #111;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.45rem 0.75rem;
+  border-radius: 12px;
+}
+
+.backLink:hover {
+  text-decoration: none;
+  filter: brightness(0.98);
+}
+
+.title {
+  font-size: 2.2rem;
+  color: var(--simpsons-yellow);
+  margin: 0 0 1rem;
+  text-align: center;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.videoWrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.videoWrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.secondaryButton {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.55);
+  color: #111;
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.secondaryButton:hover {
+  text-decoration: none;
+  filter: brightness(0.98);
+}
+
+.errorText {
+  text-align: center;
+  margin: 2rem 0;
+  color: #111;
+}

@@ -24,28 +24,19 @@
 }
 
 /* ===== Text Styles ===== */
-
 .title {
   font-size: 2.5rem;
   color: var(--simpsons-yellow);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
   text-align: center;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
-}
-
-.subtitle {
-  margin-bottom: 2rem;
-  color: #222;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 /* ===== Grid & Cards Styles ===== */
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* mobile: 1 */
   gap: 1.5rem;
-  justify-items: start;
 }
 
 .card {
@@ -58,44 +49,68 @@
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
   box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .cardTitle {
   margin: 0 0 0.75rem;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   text-align: center;
   color: #111;
   width: 100%;
 }
 
-/* ===== Video Styles ===== */
-.videoWrapper {
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 16 / 9;
-  position: relative;
-  overflow: hidden;
+/* ===== Buttons ===== */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
   border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+
+  background: rgba(255, 214, 0, 0.9); /* simpsons-ish */
+  color: #111;
+
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
-  background: rgba(0, 0, 0, 0.05);
-  box-sizing: border-box;
 }
 
-.videoWrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
+.primaryButton:hover {
+  text-decoration: none;
+  filter: brightness(0.98);
 }
 
-/* ===== Responsive Styles ===== */
+.secondaryButton {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.55);
+  color: #111;
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.secondaryButton:hover {
+  text-decoration: none;
+  filter: brightness(0.98);
+}
+
+/* ===== Responsive: desktop 4 columnas ===== */
 @media (min-width: 900px) {
   .grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: start;
   }
 }
@@ -105,6 +120,7 @@
   height: 120px;
 }
 
+/* Tutoriales: sección separada sin overlay/blur */
 .tutorialSection {
   max-width: 1200px;
   margin: 0 auto;
@@ -113,7 +129,7 @@
 
 .tutorialTitle {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin: 0 0 1.25rem;
   text-align: center;
   color: #111;
 }
