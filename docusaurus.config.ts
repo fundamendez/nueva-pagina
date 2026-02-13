@@ -130,6 +130,11 @@ const config: Config = {
           position: "left",
         },
         {
+          to: "/clases-grabadas",
+          label: "Clases Grabadas",
+          position: "left",
+        },
+        {
           href: "https://github.com/facebook/docusaurus",
           label: "GitHub",
           position: "right",
