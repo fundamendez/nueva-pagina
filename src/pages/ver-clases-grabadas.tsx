@@ -1,25 +1,41 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Layout from "@theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
 import styles from "./ver-clases-grabadas.module.css";
 
-type LocationState = {
-  title?: string;
-  embedUrl?: string;
-  openUrl?: string;
-  downloadUrl?: string | null;
-};
+import {
+  CLASES,
+  TUTORIALES,
+  buildEmbedUrl,
+  buildOpenUrl,
+  buildDownloadUrl,
+} from "../data/videos";
 
-export default function ClaseGrabadaVer() {
+export default function VerClasesGrabadas() {
   const location = useLocation();
-  const state = (location.state || {}) as LocationState;
+  const { title, embedUrl, openUrl, downloadUrl } = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    const sec = params.get("sec"); // "clases" | "tutoriales".
+    const t = params.get("t");     // Title.
+    const list = sec === "tutoriales" ? TUTORIALES : CLASES;
+    const item = t ? list.find((v) => v.title === t) : undefined;
+    if (!item) {
+      return {
+        title: "Video",
+        embedUrl: "",
+        openUrl: null as string | null,
+        downloadUrl: null as string | null,
+      };
+    }
 
-  const title = state.title ?? "Video";
-  const embedUrl = state.embedUrl ?? "";
-  const openUrl = state.openUrl ?? null;
-  const downloadUrl = state.downloadUrl ?? null;
+    return {
+      title: item.title,
+      embedUrl: buildEmbedUrl(item),
+      openUrl: buildOpenUrl(item),
+      downloadUrl: buildDownloadUrl(item),
+    };
+  }, [location.search]);
 
   return (
     <Layout title={title}>
@@ -30,17 +46,15 @@ export default function ClaseGrabadaVer() {
         }}
       >
         <div className={styles.overlay}>
-          <div className={styles.topRow}>
-            <Link className={styles.backLink} to={useBaseUrl("/clases-grabadas")}>
-              ← Volver
-            </Link>
-          </div>
-
           <h1 className={styles.title}>{title}</h1>
-
           <div className={styles.videoWrapper}>
             {embedUrl ? (
-              <iframe src={embedUrl} title={title} allow="autoplay" allowFullScreen />
+              <iframe
+                src={embedUrl}
+                title={title}
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                allowFullScreen
+              />
             ) : (
               <p className={styles.errorText}>
                 No se encontró el video (probá volver y entrar de nuevo).
@@ -50,13 +64,23 @@ export default function ClaseGrabadaVer() {
 
           <div className={styles.actions}>
             {openUrl ? (
-              <a className={styles.secondaryButton} href={openUrl} target="_blank" rel="noreferrer">
-                Abrir
+              <a
+                className={styles.primaryButton}
+                href={openUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver en plataforma original
               </a>
             ) : null}
 
             {downloadUrl ? (
-              <a className={styles.secondaryButton} href={downloadUrl} target="_blank" rel="noreferrer">
+              <a
+                className={styles.downloadButton}
+                href={downloadUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Descargar
               </a>
             ) : null}

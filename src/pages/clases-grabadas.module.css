@@ -1,8 +1,8 @@
 /**
- * 'Clases Grabadas' styles — Simpsons theme
+ * Recorded Classes page styles — Simpsons theme
  */
 
-/* ===== Main & Background Styles ===== */
+/* ===== Page Background ===== */
 .container {
   padding: 3rem 1rem;
   background-size: cover;
@@ -12,18 +12,18 @@
   min-height: calc(100vh - 60px);
 }
 
+/* ===== Glass Overlay Section ===== */
 .overlay {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.5rem;
-
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* ===== Text Styles ===== */
+/* ===== Headings ===== */
 .title {
   font-size: 2.5rem;
   color: var(--simpsons-yellow);
@@ -32,13 +32,46 @@
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* ===== Grid & Cards Styles ===== */
+.tutorialTitle {
+  font-size: 2rem;
+  margin: 0 0 1.25rem;
+  text-align: center;
+  color: #111;
+}
+
+/* ===== Layout: Sections Spacing ===== */
+.sectionSpacer {
+  height: 120px;
+}
+
+/* ===== Tutorials Section Wrapper ===== */
+.tutorialSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== Grid Layout ===== */
 .grid {
   display: grid;
   grid-template-columns: 1fr; /* mobile: 1 */
   gap: 1.5rem;
 }
 
+/* Desktop: up to 4 columns, but center when there are 1–3 items */
+@media (min-width: 900px) {
+  .grid {
+    /* IMPORTANT:
+       auto-fit makes the grid create only as many columns as needed,
+       so 3 items become 3 columns (not 4 with empty space).
+    */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    justify-content: center;
+    align-items: start;
+  }
+}
+
+/* ===== Card Component ===== */
 .card {
   width: 100%;
   padding: 1rem 1rem 1.25rem;
@@ -49,7 +82,6 @@
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -63,7 +95,7 @@
   width: 100%;
 }
 
-/* ===== Buttons ===== */
+/* ===== Button Row ===== */
 .actions {
   display: flex;
   gap: 0.5rem;
@@ -71,16 +103,15 @@
   flex-wrap: wrap;
 }
 
+/* ===== Buttons ===== */
 .primaryButton {
   display: inline-block;
   padding: 0.55rem 0.9rem;
   border-radius: 12px;
   font-weight: 700;
   text-decoration: none;
-
-  background: rgba(255, 214, 0, 0.9); /* simpsons-ish */
+  background: rgba(255, 214, 0, 0.9);
   color: #111;
-
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
@@ -95,10 +126,8 @@
   border-radius: 12px;
   font-weight: 600;
   text-decoration: none;
-
   background: rgba(255, 255, 255, 0.55);
   color: #111;
-
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
@@ -107,29 +136,18 @@
   filter: brightness(0.98);
 }
 
-/* ===== Responsive: desktop 4 columnas ===== */
-@media (min-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    align-items: start;
-  }
+.downloadButton {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  background: rgba(120, 200, 255, 0.9);
+  color: #0b2230;
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-/* ===== Sections Styles ===== */
-.sectionSpacer {
-  height: 120px;
-}
-
-/* Tutoriales: sección separada sin overlay/blur */
-.tutorialSection {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.tutorialTitle {
-  font-size: 2rem;
-  margin: 0 0 1.25rem;
-  text-align: center;
-  color: #111;
+.downloadButton:hover {
+  text-decoration: none;
+  filter: brightness(0.98);
 }
