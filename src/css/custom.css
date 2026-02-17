@@ -20,8 +20,39 @@
     --simpsons-yellow-dark: #F9C400;
     --simpsons-blue: #56A0D3;
     --simpsons-sky: #7BC8F6;
+    --simpsons-blue-dark: #2b70a3;
+    --simpsons-sky-light: #e0f4fc;
+    --simpsons-pink: #e8a0b0;
+    --simpsons-pink-light: #fce8ec;
+    --simpsons-pink-dark: #b84d6a;
+    --simpsons-yellow-light: #fef9c3;
+    --simpsons-yellow-text: #8b6914;
+    --simpsons-coral: #e85d6a;
+    --simpsons-coral-light: #fce8ea;
+    --simpsons-mint-light: #e0f7f4;
+    --simpsons-mint-dark: #0d5c4d;
+    --simpsons-muted: #64748b;
+
+    --cronograma-presencial-bg: var(--simpsons-sky-light);
+    --cronograma-presencial-text: var(--simpsons-blue-dark);
+    --cronograma-virtual-bg: var(--simpsons-pink-light);
+    --cronograma-virtual-text: var(--simpsons-pink-dark);
+    --cronograma-modality-bg: var(--simpsons-sky-light);
+    --cronograma-modality-text: var(--simpsons-blue-dark);
+    --cronograma-primary: var(--simpsons-blue-dark);
+    --cronograma-primary-bg: var(--ifm-color-primary-lightest);
+    --cronograma-info-bg: var(--simpsons-mint-light);
+    --cronograma-info-text: var(--simpsons-mint-dark);
+    --cronograma-warning-bg: var(--simpsons-yellow-light);
+    --cronograma-warning-text: var(--simpsons-yellow-text);
+    --cronograma-danger-bg: var(--simpsons-coral-light);
+    --cronograma-danger-text: var(--simpsons-coral);
+    --cronograma-empty: var(--simpsons-muted);
+    --cronograma-note: var(--simpsons-muted);
 }
 
 .yellow-text {
     color: var(--simpsons-yellow);
 }
+
+@import "./cronograma.css";
