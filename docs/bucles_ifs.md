@@ -54,7 +54,7 @@ if (x > 0) {
 
 Viendolo graficamente:
 <p align="center">
-  <img src="/imagenes/if-else.png" width="250">
+  <img src="/imagenes/if-else.png" width="300">
 </p>
 
 Ahora tenemos las siguientes salidas posibles:
