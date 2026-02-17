@@ -1,0 +1,151 @@
+.cronograma-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.cronograma-badge--presencial {
+    background: var(--cronograma-presencial-bg);
+    color: var(--cronograma-presencial-text);
+}
+
+.cronograma-badge--virtual {
+    background: var(--cronograma-virtual-bg);
+    color: var(--cronograma-virtual-text);
+}
+
+.cronograma-badge--modality {
+    background: var(--cronograma-modality-bg);
+    color: var(--cronograma-modality-text);
+}
+
+.cronograma-badge--primary {
+    background: var(--cronograma-primary-bg);
+    color: var(--cronograma-primary);
+}
+
+.cronograma-badge--primary-outline {
+    background: transparent;
+    color: var(--cronograma-primary);
+    border-color: var(--cronograma-primary);
+}
+
+.cronograma-badge--info {
+    background: var(--cronograma-info-bg);
+    color: var(--cronograma-info-text);
+}
+
+.cronograma-badge--warning {
+    background: var(--cronograma-warning-bg);
+    color: var(--cronograma-warning-text);
+}
+
+.cronograma-badge--danger {
+    background: var(--cronograma-danger-bg);
+    color: var(--cronograma-danger-text);
+}
+
+.cronograma-empty {
+    color: var(--cronograma-empty);
+    font-size: 0.9rem;
+}
+
+.cronograma-note {
+    margin-top: 1rem;
+    color: var(--cronograma-note);
+    font-size: 0.9rem;
+}
+
+.cronograma-wrapper {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+.cronograma-wrapper table {
+    width: 100%;
+    max-width: min(1280px, 82vw);
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+}
+
+@media (max-width: 768px) {
+    .cronograma-wrapper {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .cronograma-wrapper table {
+        max-width: 100%;
+    }
+}
+
+.cronograma-wrapper table th:first-child,
+.cronograma-wrapper table td:first-child {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cronograma-wrapper table th:nth-child(2),
+.cronograma-wrapper table td:nth-child(2),
+.cronograma-wrapper table th:nth-child(3),
+.cronograma-wrapper table td:nth-child(3) {
+    width: 49.5%;
+}
+
+.cronograma-wrapper table th,
+.cronograma-wrapper table td {
+    padding: 1rem 1.25rem;
+    vertical-align: top;
+}
+
+@media (max-width: 768px) {
+    .cronograma-wrapper table th,
+    .cronograma-wrapper table td {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+.cronograma-cell {
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+}
+
+.cronograma-cell-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.cronograma-cell-middle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cronograma-cell-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .cronograma-badge {
+        padding: 0.1rem 0.35rem;
+        font-size: 0.65rem;
+    }
+}
