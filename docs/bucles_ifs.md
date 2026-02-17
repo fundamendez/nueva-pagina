@@ -16,6 +16,11 @@ printf("Fin de ejecución\n");
 ```
 En este fragmento de código se evalúa la condición x > 0 mediante la estructura if. El resultado de dicha evaluación determina si el bloque encerrado entre llaves se ejecuta o se omite. Independientemente de esta decisión, la instrucción printf("Fin de ejecución"); se ejecuta siempre, ya que se encuentra fuera de la estructura condicional.
 
+Viendolo graficamente:
+<p align="center">
+  <img src="/imagenes/if.png" width="250">
+</p>
+
 De esta manera en este ejemplo tenemos dos ejecuciones posibles:
 
 * **Caso 1:** x = 1
@@ -47,6 +52,11 @@ if (x > 0) {
 }
 ```
 
+Viendolo graficamente:
+<p align="center">
+  <img src="/imagenes/if-else.png" width="250">
+</p>
+
 Ahora tenemos las siguientes salidas posibles:
 
 * **Caso 1:** x = 1
@@ -77,6 +87,11 @@ if (x > 0) {
     printf("x es negativo\n");
 }
 ```
+
+Viendolo graficamente:
+<p align="center">
+  <img src="/imagenes/if-else-if.png" width="250">
+</p>
 
 Ahora tenemos las siguientes salidas posibles:
 
