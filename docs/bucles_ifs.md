@@ -149,6 +149,11 @@ else:
 > 
 > En C, los bloques de código se delimitan mediante llaves **{ }** y las condiciones se escriben entre paréntesis **( )**. En Python, por el contrario, los bloques se definen exclusivamente por la indentación, lo que elimina el uso de llaves haciendo que el correcto espaciado del código sea fundamental para su funcionamiento.
 
+##### ⚠️ **Errores comunes**
+1. **Usar = en lugar de ==:** el `=` sirve para asignar valor a una variable, pero cuando queremos comparar debemos usar `==`. 
+2. **Olvidarse las llaves {}:** es importante que las incluyamos porque sino solo tomará como parte del if la primera linea, a diferencia de python la indentación no delimita lo que esta dentro o fuera de la condición. 
+
+
 ### Ciclos
 
 #### **🔁 for**
@@ -289,3 +294,35 @@ while i < 5:
 * No se usan paréntesis en la condición.
 * No se utilizan llaves, sino indentación.
 * La lógica de evaluación es equivalente.
+
+#### ⚠️ **Errores comunes**
+
+1. **Loop infinito:** es importante asegurarnos de que el loop en algun momento va a terminar, sino generaremos un loop infinito que no queremos. 
+2. **Recorrer elementos de más:** puede pasar que pongamos la condición de corte incorrectamente y eso genere iteraciones de mas. Por ejemplo: en un vector con `n` elementos si iteramos hasta `n` para recorrerlo nos vamos a salir de los limites del mismo, por eso hay que recorrerlo hasta `n-1`. 
+3. **Variable de control sin inicializar:** si no inicializamos la variable esta puede tener basura, lo cual afectará luego a la ejecución o corte del ciclo. Por ejemplo:
+``` c
+int i; // esta variable no sabemos que valor tomará cuando iteremos, puede ser cualquier cosa
+
+while (i < 5) {
+    printf("%d\n", i);
+    i++;
+}
+```
+4. **Usar break o return:** en la cátedra consideramos una *mala practica* el uso de `break` o `return` para cortar ciclos. Es importante que aprendamos a delimitarlos con condiciones (en el caso de while) o con cantidad de iteraciones (en el caso del for). 
+
+#### 📌 **Operadores para condiciones**
+| Operador | Uso |
+|-----------|-----------|
+| `==`    | Comparador de igualdad    | 
+| `!=`    | Comparador de distinto    |
+| `&&`    | Comparador AND logico, ambas condiciones se deben cumplir para que el if resulte verdadreo    |
+|  `\|\|`   | Comparador OR logico, con que una de las dos condiciones se cumple, el if resulta verdadero   |
+|  `<`   | Comparador menor  |
+|  `>`   | Comparador mayor  |
+|  `<=`   | Comparador menor igual  |
+|  `>=`   | Comparador mayor igual  |
+
+> <font color="red"> OBS: </font> es importante el uso de parentesis cuando queremos separar o agrupar condiciones. 
+> Por ejemplo:
+> Si necesitamos dos condiciones con AND entre si y el resultado de esa se compara con OR con otra condicion sería algo como:
+> `if((condicion1 && condicion2) || condicion3)`
