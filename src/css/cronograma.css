@@ -18,20 +18,20 @@
     color: var(--cronograma-virtual-text);
 }
 
-.cronograma-badge--modality {
-    background: var(--cronograma-modality-bg);
-    color: var(--cronograma-modality-text);
+.cronograma-badge--sin_definir {
+    background: var(--cronograma-sin_definir-bg);
+    color: var(--cronograma-sin_definir-text);
 }
 
 .cronograma-badge--primary {
     background: var(--cronograma-primary-bg);
-    color: var(--cronograma-primary);
+    color: var(--cronograma-primary-text);
 }
 
 .cronograma-badge--primary-outline {
-    background: transparent;
-    color: var(--cronograma-primary);
-    border-color: var(--cronograma-primary);
+
+    color: var(--cronograma-primary-text);
+    border-color: var(--cronograma-primary-text);
 }
 
 .cronograma-badge--info {
@@ -47,17 +47,6 @@
 .cronograma-badge--danger {
     background: var(--cronograma-danger-bg);
     color: var(--cronograma-danger-text);
-}
-
-.cronograma-empty {
-    color: var(--cronograma-empty);
-    font-size: 0.9rem;
-}
-
-.cronograma-note {
-    margin-top: 1rem;
-    color: var(--cronograma-note);
-    font-size: 0.9rem;
 }
 
 .cronograma-wrapper {
