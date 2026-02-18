@@ -172,8 +172,6 @@ export interface CronogramaRowData {
 /** Data returned to the cronograma plugin (JSON-serializable). */
 export interface CronogramaPluginData {
   rows: CronogramaRowData[];
-  startDate: string | null;
-  endDate: string | null;
 }
 
 function formatShortDate(date: Date): string {
@@ -200,8 +198,6 @@ export function getCronogramaDataForPlugin(
     if (row.practice.date) allDates.push(row.practice.date);
   }
   allDates.sort((a, b) => a.getTime() - b.getTime());
-  const startDate = allDates[0] ?? null;
-  const endDate = allDates[allDates.length - 1] ?? null;
   const serializableRows = rows.map((r) => ({
     weekLabel: r.weekLabel,
     theory: {
@@ -218,9 +214,7 @@ export function getCronogramaDataForPlugin(
     },
   }));
   return {
-    rows: serializableRows,
-    startDate: startDate ? formatShortDate(startDate) : null,
-    endDate: endDate ? formatShortDate(endDate) : null,
+    rows: serializableRows
   };
 }
 
