@@ -1,74 +1,68 @@
-Semana,Fecha,Teórica,Práctica,Modalidad,TPs (tentativo),,
-1,10/03 y 12/03,"Lenguaje C:
+Semana,Teórica Fecha,Teórica Temas,Teórica Modalidad,Teórica Badge,Práctica Fecha,Práctica Temas,Práctica Modalidad,Práctica Badge,,,
+1,10/03,"Lenguaje C:
 - Variables,Constantes, Literales
 - Tipos de Datos
 - Estructuras de control 
 - Compilación
-- printf() - scanf()","Modularización:
+- printf() - scanf()",Presencial,,12/03,"Modularización:
 - Funciones
 - Pasaje x valor y referencia
-- Buenas prácticas",Presencial,,,"Lenguaje C:
-- Variables,Constantes, Literales
-- Tipos de Datos
-- Estructuras de control 
-- Compilación
-- printf() - scanf()"
-2,17/03 y 19/03,"- Vectores
+- Buenas prácticas",Presencial,,,Fecha Inicio,10/3
+2,17/03,"- Vectores
 - Busqueda lineal
-- Punteros","
+- Punteros",Presencial,,19/03,"
 - Matrices
-- Structs",Presencial,tp0,,
-3,24/03 y 26/03,Feriado,Laboratorio,Presencial,entrega tp0,,
-4,31/03 y 02/04,"- Inserción
+- Structs",Presencial,TP0,,Semanas,17
+3,24/03,,Presencial,Feriado,26/03,,Presencial,"Entrega TP0, Laboratorio",,,
+4,31/03,"- Inserción
 - Eliminación
 - Bibliotecas
-- Strings",Feriado,Presencial,tp1,,
-5,07/07 y 09/04,"- Recursividad
-- Búsqueda Binaria","- Recursividad
-- Búsqueda binaria",Virtual,,,
-6,14/04 y 16/04,Debugging,recursividad 2.0 y debugging,Virtual ,,,
-7,21/04 y 23/04,"Memoria dinámica:
+- Strings",Presencial,,2/04,,Presencial,"TP1, Feriado",,,
+5,7/04,"- Recursividad
+- Búsqueda Binaria",Virtual,,9/04,"- Recursividad
+- Búsqueda binaria",Virtual,,,,
+6,14/04,Debugging,Virtual,,16/04,"- Recursividad 2.0 
+- Debugging",Virtual,,,,
+7,21/04,"Memoria dinámica:
 - Aritmética de punteros
 - Malloc
-- Free","Memoria dinámica:
+- Free",Presencial,,23/04,"Memoria dinámica:
 - Aritmética de punteros
 - Malloc
-- Free",Presencial,,,
-8,28/04 y 30/04,"Ordenamientos:
+- Free",Presencial,,,,
+8,28/04,"Ordenamientos:
 - Burbujeo
 - Selección
-- Inserción",Repaso parcial en labos,Presencial,entrega tp1,,
-9,05/05 y 07/05,Repaso de parcial,Parcial,Presencial,,,
-10,12/05 y 14/05,"Memoria dinámica 2.0
+- Inserción",Presencial,,30/04,,Presencial,"Entrega TP1, Repaso parcial, Laboratorio",,,
+9,5/05,,Presencial,Repaso parcial,7/05,,Presencial,Parcial,,,
+10,12/05,"Memoria dinámica 2.0
 - Realloc
 - void*
 - Valgrind
 - TDAs
-- Vector dinámico","- Memoria dinámica
+- Vector dinámico",Presencial,,14/05,"- Memoria dinámica
 - TDAs
-- Vector dinámico",Presencial,reentrega tp1,,
-11,19/05 y 21/05,"Manejo de archivos de texto en C
-CSV",Archivos CSV,Virtual,tp2,,
-12,26/05 y 28/05,"Lineas de comando
+- Vector dinámico",Presencial,Reentrega TP1,,,
+11,19/05,"- Manejo de archivos de texto en C
+- CSV",Virtual,,21/05,Archivos CSV,Virtual,TP2,,,
+12,26/05,"Lineas de comando
 Operaciones con archivos:
 - Mezcla
 - Union
 - Diferencias
-- Intersección",Ejercicios con archivos y TDAs,Presencial,,,
-13,02/06 y 04/06,Primer Recuperatorio,"Operaciones con archivos:
+- Intersección",Presencial,,28/05,Ejercicios con archivos y TDAs,Presencial,,,,
+13,2/06,,Sin definir,Primer recuperatorio,4/06,"Operaciones con archivos:
 - Mezcla
 - Union
 - Diferencias
-- Intersección",Presencial/Virtual,,,
-14,09/06 y 11/06,"TDAs:
+- Intersección",Sin definir,,,,
+14,9/06,"TDAs:
 - Pilas
 - Colas
-- Lista enlazada","TDAs:
+- Lista enlazada",Virtual,,11/06,"TDAs:
 - Pilas
 - Colas
-- Lista enlazada",Virtual,entrega tp2,,
-15,16/06 y 18/06,Ejercicios de final,Laboratorio,Virtual/Presencial,,,
-16,22/06 y 25/06,Tema nuevo,Retrospectiva,Presencial,reentrega tp2,,
-,30/06,Segundo Recuperatorio,,,,,
-,30/06,Final 1,,,,,
-,,Final 2,,,,,
+- Lista enlazada",Virtual,Entrega TP2,,,
+15,16/06,,Sin definir,Ejercicios de final,18/06,,Sin definir,Laboratorio,,,
+16,23/06,Tema nuevo,Presencial,,25/06,,Presencial,"Reentrega TP2, Retrospectiva",,,
+,30/06,,Presencial,"Segundo recuperatorio, Final",2/07,,,,,,
