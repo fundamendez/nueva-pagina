@@ -1,0 +1,68 @@
+Semana,Teórica Fecha,Teórica Temas,Teórica Modalidad,Teórica Badge,Práctica Fecha,Práctica Temas,Práctica Modalidad,Práctica Badge,,,
+1,10/03,"Lenguaje C:
+- Variables,Constantes, Literales
+- Tipos de Datos
+- Estructuras de control 
+- Compilación
+- printf() - scanf()",Presencial,,12/03,"Modularización:
+- Funciones
+- Pasaje x valor y referencia
+- Buenas prácticas",Presencial,,,Fecha Inicio,10/3
+2,17/03,"- Vectores
+- Busqueda lineal
+- Punteros",Presencial,,19/03,"
+- Matrices
+- Structs",Presencial,TP0,,Semanas,17
+3,24/03,,Presencial,Feriado,26/03,,Presencial,"Entrega TP0, Laboratorio",,,
+4,31/03,"- Inserción
+- Eliminación
+- Bibliotecas
+- Strings",Presencial,,2/04,,Presencial,"TP1, Feriado",,,
+5,7/04,"- Recursividad
+- Búsqueda Binaria",Virtual,,9/04,"- Recursividad
+- Búsqueda binaria",Virtual,,,,
+6,14/04,Debugging,Virtual,,16/04,"- Recursividad 2.0 
+- Debugging",Virtual,,,,
+7,21/04,"Memoria dinámica:
+- Aritmética de punteros
+- Malloc
+- Free",Presencial,,23/04,"Memoria dinámica:
+- Aritmética de punteros
+- Malloc
+- Free",Presencial,,,,
+8,28/04,"Ordenamientos:
+- Burbujeo
+- Selección
+- Inserción",Presencial,,30/04,,Presencial,"Entrega TP1, Repaso parcial, Laboratorio",,,
+9,5/05,,Presencial,Repaso parcial,7/05,,Presencial,Parcial,,,
+10,12/05,"Memoria dinámica 2.0
+- Realloc
+- void*
+- Valgrind
+- TDAs
+- Vector dinámico",Presencial,,14/05,"- Memoria dinámica
+- TDAs
+- Vector dinámico",Presencial,Reentrega TP1,,,
+11,19/05,"- Manejo de archivos de texto en C
+- CSV",Virtual,,21/05,Archivos CSV,Virtual,TP2,,,
+12,26/05,"Lineas de comando
+Operaciones con archivos:
+- Mezcla
+- Union
+- Diferencias
+- Intersección",Presencial,,28/05,Ejercicios con archivos y TDAs,Presencial,,,,
+13,2/06,,Sin definir,Primer recuperatorio,4/06,"Operaciones con archivos:
+- Mezcla
+- Union
+- Diferencias
+- Intersección",Sin definir,,,,
+14,9/06,"TDAs:
+- Pilas
+- Colas
+- Lista enlazada",Virtual,,11/06,"TDAs:
+- Pilas
+- Colas
+- Lista enlazada",Virtual,Entrega TP2,,,
+15,16/06,,Sin definir,Ejercicios de final,18/06,,Sin definir,Laboratorio,,,
+16,23/06,Tema nuevo,Presencial,,25/06,,Presencial,"Reentrega TP2, Retrospectiva",,,
+,30/06,,Presencial,"Segundo recuperatorio, Final",2/07,,,,,,
