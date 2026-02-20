@@ -6,7 +6,7 @@ Las estructuras de control permiten modificar el flujo de ejecución de un progr
 
 #### **🔀 If**
 
-Evalua una condicion y determina si es verdadera o no para definir el flujo del programa.
+Evalúa una condición y determina si es verdadera o no para definir el flujo del programa.
 
 ``` c
 if (x > 0) {
@@ -14,9 +14,9 @@ if (x > 0) {
 }
 printf("Fin de ejecución\n");
 ```
-En este fragmento de código se evalúa la condición x > 0 mediante la estructura if. El resultado de dicha evaluación determina si el bloque encerrado entre llaves se ejecuta o se omite. Independientemente de esta decisión, la instrucción printf("Fin de ejecución"); se ejecuta siempre, ya que se encuentra fuera de la estructura condicional.
+En este fragmento de código se evalúa la condición `x > 0` mediante la estructura `if`. El resultado de dicha evaluación determina si el bloque encerrado entre llaves se ejecuta o se omite. Independientemente de esta decisión, la instrucción `printf("Fin de ejecución");` se ejecuta siempre, ya que se encuentra fuera de la estructura condicional.
 
-Viendolo graficamente:
+Viéndolo gráficamente:
 <p align="center">
   <img src="/imagenes/if.png" width="250">
 </p>
@@ -28,19 +28,19 @@ De esta manera en este ejemplo tenemos dos ejecuciones posibles:
 x es positiva
 Fin de ejecución 
 ``` 
-En este caso, el valor de x es mayor que cero, por lo que la condición x > 0 resulta verdadera. Como consecuencia, el programa ingresa al bloque del if y ejecuta la instrucción que imprime el mensaje "x es positivo". Finalizada esta ejecución, el flujo del programa continúa de manera secuencial, imprimiendo finalmente el mensaje "Fin de ejecución".
+En este caso, el valor de x es mayor que cero, por lo que la condición `x > 0` resulta verdadera. Como consecuencia, el programa ingresa al bloque del if y ejecuta la instrucción que imprime el mensaje `"x es positivo"`. Finalizada esta ejecución, el flujo del programa continúa de manera secuencial, imprimiendo finalmente el mensaje `"Fin de ejecución"`.
 
 * **Caso 2:** x = 0
 ``` 
 Fin de ejecución 
 ``` 
 
-En este escenario, el valor de x no cumple la condición x > 0, ya que no es estrictamente mayor que cero. Por lo tanto, el bloque asociado al if no se ejecuta y el programa omite esa instrucción. El flujo continúa directamente con la siguiente línea de código, imprimiendo únicamente el mensaje "Fin de ejecución".
+En este escenario, el valor de x no cumple la condición `x > 0`, ya que no es *estrictamente* mayor que cero. Por lo tanto, el bloque asociado al if no se ejecuta y el programa omite esa instrucción. El flujo continúa directamente con la siguiente línea de código, imprimiendo únicamente el mensaje `"Fin de ejecución"`.
 
 #### **🔀 if-else**
 
-Supongamos que ahora queremos que, si la condición del if se cumple, se imprima un mensaje, y en caso contrario se imprima otro distinto. 
-Para estos casos se utiliza la estructura **if - else**, que permite definir un bloque de código alternativo que se ejecuta únicamente cuando la condición del if resulta falsa.
+Supongamos que ahora queremos que, sí la condición del if se cumple, se imprima un mensaje, y en caso contrario se imprima otro distinto. 
+Para estos casos se utiliza la estructura **if - else**, que permite definir un bloque de código alternativo que se ejecuta *únicamente* cuando la condición del if resulta falsa.
 
 Por ejemplo:
 
@@ -52,7 +52,7 @@ if (x > 0) {
 }
 ```
 
-Viendolo graficamente:
+Viéndolo gráficamente:
 <p align="center">
   <img src="/imagenes/if-else.png" width="300">
 </p>
@@ -63,14 +63,14 @@ Ahora tenemos las siguientes salidas posibles:
 ``` 
 x es positivo
 ``` 
-En este caso, el valor de x es mayor que cero, por lo que la condición x > 0 resulta verdadera. Como consecuencia, el programa ingresa al bloque del if y ejecuta la instrucción que imprime el mensaje "x es positivo". A diferencia del ejemplo anterior, el bloque else no se ejecuta, ya que este solo se evalúa cuando la condición del if es falsa.
+En este caso, el valor de x es mayor que cero, por lo que la condición `x > 0` resulta verdadera. Como consecuencia, el programa ingresa al bloque del if y ejecuta la instrucción que imprime el mensaje `"x es positivo"`. A diferencia del ejemplo anterior, el bloque else no se ejecuta, ya que este sólo se evalúa cuando la condición del if es falsa.
 
 * **Caso 2:** x = 0
 ``` 
 x es negativo o 0
 ``` 
 
-En este escenario, el valor de x no cumple la condición x > 0, ya que no es estrictamente mayor que cero. Por lo tanto, el bloque asociado al if se omite y el flujo del programa continúa con la ejecución del bloque else, imprimiendo el mensaje "x es negativo o 0".
+En este escenario, el valor de x no cumple la condición `x > 0`, ya que no es *estrictamente* mayor que cero. Por lo tanto, el bloque asociado al if se omite y el flujo del programa continúa con la ejecución del bloque else, imprimiendo el mensaje `"x es negativo o 0"`.
 
 #### **🔀 if-else if-else**
 
@@ -88,7 +88,7 @@ if (x > 0) {
 }
 ```
 
-Viendolo graficamente:
+Viéndolo gráficamente:
 <p align="center">
   <img src="/imagenes/if-else-if.png" width="250">
 </p>
@@ -99,21 +99,21 @@ Ahora tenemos las siguientes salidas posibles:
 ``` 
 x es positivo
 ``` 
-Si el valor de x es mayor que cero, la primera condición resulta verdadera. En consecuencia, se ejecuta el bloque correspondiente al if, imprimiendo el mensaje "x es positivo". Las condiciones siguientes no se evalúan.
+Si el valor de x es mayor que cero, la primera condición resulta verdadera. En consecuencia, se ejecuta el bloque correspondiente al if, imprimiendo el mensaje `"x es positivo"`. Las condiciones siguientes no se evalúan.
 
 * **Caso 2:** x = 0
 ``` 
 x es 0
 ``` 
 
-En este caso, la condición x > 0 resulta falsa, por lo que el programa evalúa la siguiente condición. Dado que x == 0 es verdadera, se ejecuta el bloque asociado al else if, imprimiendo el mensaje "x es 0".
+En este caso, la condición `x > 0` resulta falsa, por lo que el programa evalúa la siguiente condición. Dado que `x == 0` es verdadera, se ejecuta el bloque asociado al else if, imprimiendo el mensaje `"x es 0"`.
 
 *  **Caso 3:** x = -1
 ``` 
 x es negativo
 ``` 
 
-Si el valor de x es menor que cero, ninguna de las condiciones anteriores se cumple. Como resultado, el programa ejecuta el bloque else, imprimiendo el mensaje "x es negativo".
+Si el valor de x es menor que cero, ninguna de las condiciones anteriores se cumple. Como resultado, el programa ejecuta el bloque else, imprimiendo el mensaje `"x es negativo"`.
 
 > <font color="red"> OBS: </font> esta estructura permite cubrir todos los casos posibles para una variable, evitando múltiples estructuras if independientes y asegurando que solo un bloque de código se ejecute en cada ejecución del programa.
 
@@ -151,7 +151,7 @@ else:
 
 ##### ⚠️ **Errores comunes**
 1. **Usar = en lugar de ==:** el `=` sirve para asignar valor a una variable, pero cuando queremos comparar debemos usar `==`. 
-2. **Olvidarse las llaves {}:** es importante que las incluyamos porque sino solo tomará como parte del if la primera linea, a diferencia de python la indentación no delimita lo que esta dentro o fuera de la condición. 
+2. **Olvidarse las llaves { }:** es importante incluirlas porque sino sólo tomará como parte del if la primera linea. A diferencia de python la indentación no delimita lo que esta dentro o fuera de la condición. 
 
 
 ### Ciclos
@@ -159,6 +159,7 @@ else:
 #### **🔁 for**
 
 La estructura for se utiliza **cuando se conoce de antemano la cantidad de iteraciones que se desea realizar**. Permite concentrar en una sola línea la inicialización, la condición y la actualización de la variable de control.
+
 Su sintaxis general es:
 
 ``` c
@@ -182,9 +183,9 @@ for (int i = 0; i < 5; i++) {
 ```
 🔎 El procedimiento es el siguiente:
 
-* Se declara e inicializa la variable i en 0.
-* El ciclo se ejecuta mientras i < 5.
-* En cada iteración, i aumenta en 1.
+* Se declara e inicializa la variable `i en 0`.
+* El ciclo se ejecuta mientras `i < 5`.
+* En cada iteración, `i aumenta en 1`.
 
 La salida será:
 ``` 
@@ -195,7 +196,7 @@ La salida será:
 4
 ``` 
 
-Viendolo graficamente:
+Viéndolo gráficamente:
 
 <p align="center">
   <img src="/imagenes/ejemplo_for.png" width="300">
@@ -214,8 +215,8 @@ for i in range(5):
 
 📌 ¿Qué hace este código?
 
-* range(5) genera una secuencia de valores desde 0 hasta 4.
-* En cada iteración, la variable i toma uno de esos valores.
+* `range(5)` genera una *secuencia de valores* desde 0 hasta 4.
+* En cada iteración, la variable `i` toma uno de esos valores.
 * Se ejecuta el bloque indentado, imprimiendo el valor actual de i.
 
 La salida será:
@@ -229,7 +230,7 @@ La salida será:
 
 #### **🔁 while**
 
-La estructura while permite repetir un bloque de código mientras una condición sea verdadera. A diferencia del for, **se utiliza principalmente cuando no se conoce de antemano la cantidad exacta de iteraciones**, sino que el ciclo depende de una condición lógica.
+La estructura while permite repetir un bloque de código mientras una condición sea verdadera. A diferencia del for, **se utiliza principalmente cuando NO se conoce de antemano la cantidad exacta de iteraciones**, sino que el ciclo depende de una condición lógica.
 
 Su sintaxis general es:
 ``` c
@@ -238,9 +239,9 @@ while (condición) {
 }
 ```
 
-La condición se evalúa antes de cada iteración. Si resulta verdadera, el bloque se ejecuta; si es falsa, el ciclo finaliza.
+La condición se evalúa antes de cada iteración, si resulta verdadera, el bloque se ejecuta; si es falsa, el ciclo finaliza.
 
-📌 Ejemplo básico
+📌 Vamos con un ejemplo:
 
 ``` c
 int i = 0;
@@ -253,10 +254,10 @@ while (i < 5) {
 
 🔎 Funcionamiento paso a paso
 
-* Se inicializa la variable i en 0.
-* Se evalúa la condición i < 5.
+* Se inicializa la variable `i en 0`.
+* Se evalúa la condición `i < 5`.
 * Si es verdadera, se ejecuta el bloque.
-* Se incrementa i.
+* Se incrementa `i`.
 * Se vuelve a evaluar la condición.
 
 Este proceso se repite hasta que i deja de ser menor que 5.
@@ -276,7 +277,7 @@ La salida será:
 
 * El ciclo puede no ejecutarse nunca si la condición es falsa desde el inicio.
 * La actualización de la variable de control debe hacerse manualmente.
-* Si la condición nunca deja de cumplirse, se produce un loop infinito.
+* Si la condición nunca deja de cumplirse, se produce un *loop infinito*.
 
 🐍 **Comparación con Python**
 En Python, la estructura while funciona de manera muy similar:
@@ -292,14 +293,13 @@ while i < 5:
 🔎 Diferencias principales
 
 * No se usan paréntesis en la condición.
-* No se utilizan llaves, sino indentación.
-* La lógica de evaluación es equivalente.
+* No se utilizan llaves, sino indentación y `:`.
 
 #### ⚠️ **Errores comunes**
 
-1. **Loop infinito:** es importante asegurarnos de que el loop en algun momento va a terminar, sino generaremos un loop infinito que no queremos. 
-2. **Recorrer elementos de más:** puede pasar que pongamos la condición de corte incorrectamente y eso genere iteraciones de mas. Por ejemplo: en un vector con `n` elementos si iteramos hasta `n` para recorrerlo nos vamos a salir de los limites del mismo, por eso hay que recorrerlo hasta `n-1`. 
-3. **Variable de control sin inicializar:** si no inicializamos la variable esta puede tener basura, lo cual afectará luego a la ejecución o corte del ciclo. Por ejemplo:
+1. **Loop infinito:** es importante asegurarnos de que el loop en algun momento va a terminar, sino generaremos un loop infinito. 
+2. **Recorrer elementos de más:** puede pasar que pongamos la condición de corte incorrectamente y eso genere iteraciones de mas. Por ejemplo: en un vector con `n` elementos si iteramos hasta `n` para recorrerlo nos vamos a salir de los limites del mismo *(segmentation fault)*, por eso hay que recorrerlo hasta `n-1`. 
+3. **Variable de control sin inicializar:** si no inicializamos la variable esta puede tener *basura*, lo cual afectará luego a la ejecución o corte del ciclo. Por ejemplo:
 ``` c
 int i; // esta variable no sabemos que valor tomará cuando iteremos, puede ser cualquier cosa
 
@@ -308,21 +308,21 @@ while (i < 5) {
     i++;
 }
 ```
-4. **Usar break o return:** en la cátedra consideramos una *mala practica* el uso de `break` o `return` para cortar ciclos. Es importante que aprendamos a delimitarlos con condiciones (en el caso de while) o con cantidad de iteraciones (en el caso del for). 
+4. **Usar break o return:** en la cátedra consideramos una *mala práctica* el uso de `break` o `return` para cortar ciclos. Es importante que aprendamos a delimitarlos con condiciones (en el caso de while) o con cantidad de iteraciones (en el caso del for). 
 
 #### 📌 **Operadores para condiciones**
 | Operador | Uso |
 |-----------|-----------|
 | `==`    | Comparador de igualdad    | 
 | `!=`    | Comparador de distinto    |
-| `&&`    | Comparador AND logico, ambas condiciones se deben cumplir para que el if resulte verdadreo    |
-|  `\|\|`   | Comparador OR logico, con que una de las dos condiciones se cumple, el if resulta verdadero   |
+| `&&`    | Comparador AND logico, ambas condiciones se deben cumplir para que el if resulte verdadero    |
+|  `\|\|`   | Comparador OR logico, con que una de las dos condiciones se cumpla, el if resulta verdadero   |
 |  `<`   | Comparador menor  |
 |  `>`   | Comparador mayor  |
 |  `<=`   | Comparador menor igual  |
 |  `>=`   | Comparador mayor igual  |
 
-> <font color="red"> OBS: </font> es importante el uso de parentesis cuando queremos separar o agrupar condiciones. 
+> <font color="red"> OBS: </font> es importante el uso de paréntesis cuando queremos separar o agrupar condiciones. 
 > Por ejemplo:
-> Si necesitamos dos condiciones con AND entre si y el resultado de esa se compara con OR con otra condicion sería algo como:
+> Si necesitamos dos condiciones con AND entre sí y el resultado de esa se compara con OR con otra condición sería algo como:
 > `if((condicion1 && condicion2) || condicion3)`
