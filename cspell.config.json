@@ -7,10 +7,12 @@
   "ignorePaths": ["node_modules/**"],
   "ignoreRegExpList": [
     "^\\s*```[\\s\\S]*?```",
-    "`[^`]+`",
+    "`[^`\\r\\n]+`",
     "\\[.*?\\]\\(.*?\\)",
     "https?://[^\\s)>\"]+",
-    "^---[\\s\\S]*?---"
+    "^---[\\s\\S]*?---",
+    "<[^>]*>",
+    "<!--[\\s\\S]*?-->"
   ],
   "words": [
     "Docusaurus",
@@ -21,7 +23,10 @@
     "Jamstack",
     "versioning",
     "tailwindcss",
-    "swizzle"
+    "swizzle",
+    "indentación",
+    "inicialización",
+    "indentado"
   ],
-  "flagWords": []
+  "flagWords": ["indentacion", "inicializacion"]
 }
