@@ -117,7 +117,7 @@ Si el valor de x es menor que cero, ninguna de las condiciones anteriores se cum
 
 > <font color="red"> OBS: </font> esta estructura permite cubrir todos los casos posibles para una variable, evitando múltiples estructuras if independientes y asegurando que solo un bloque de código se ejecute en cada ejecución del programa.
 
-**🐍 Comparación del if en pyhton**
+**🐍 Comparación del if en python**
 
 * **if**
 ``` py
@@ -170,7 +170,7 @@ for (inicialización; condición; actualización) {
 
 Cada una de estas partes cumple un rol específico:
 
-* **Inicializacion:** se ejecuta una única vez al comenzar el ciclo.
+* **Inicialización:** se ejecuta una única vez al comenzar el ciclo.
 * **Condición:** se evalúa antes de cada iteración. Si es verdadera, el ciclo continúa; si es falsa, finaliza.
 * **Actualización:** se ejecuta al finalizar cada iteración.
 
@@ -202,7 +202,7 @@ Viéndolo gráficamente:
   <img src="/imagenes/ejemplo_for.png" width="300">
 </p>
 
-> <font color="red"> OBS: </font> si la condición del paso 1 no se cumple, la ejecucion del bucle se corta
+> <font color="red"> OBS: </font> si la condición del paso 1 no se cumple, la ejecución del bucle se corta
 
 🐍 **Comparación del for en Python**
 En *Python*, la estructura for tiene un enfoque diferente al de C. Mientras que en C el for se basa en una variable de control con inicialización, condición y actualización explícitas, en Python el for se utiliza principalmente para recorrer secuencias (como listas, rangos o strings).
@@ -271,7 +271,7 @@ La salida será:
 4
 ``` 
 
-> <font color="red"> OBS: </font> si bien sabemos en este caso que luego de 5 interaciones la condición va a dejar de cumplirse, existen casos un poco mas complejos en los que no vamos a saber de ante mano cuantas veces voy a iterar y ahí es cuando este bucle resulta interesante y sumamente útil. 
+> <font color="red"> OBS: </font> si bien sabemos en este caso que luego de 5 iteraciones la condición va a dejar de cumplirse, existen casos un poco mas complejos en los que no vamos a saber de ante mano cuantas veces voy a iterar y ahí es cuando este bucle resulta interesante y sumamente útil. 
 
 📌 Características importantes
 
