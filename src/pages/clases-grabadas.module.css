@@ -88,8 +88,9 @@
 }
 
 .cardTitle {
-  margin: 0 0 0.75rem;
-  font-size: 1.05rem;
+  margin: 0 0 0.9rem;
+  font-size: 1.25rem;
+  font-weight: 800;
   text-align: center;
   color: #111;
   width: 100%;

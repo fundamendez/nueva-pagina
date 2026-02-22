@@ -3,7 +3,7 @@ import Layout from "@theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import styles from "./clases-grabadas.module.css";
-import { CLASES, TUTORIALES, buildOpenUrl, buildDownloadUrl } from "../data/videos";
+import { CLASES, TUTORIALES, buildOpenUrl, buildDownloadUrl, VideoItem } from "../data/videos";
 
 export default function ClasesGrabadas() {
   const clases = CLASES;
@@ -14,7 +14,8 @@ export default function ClasesGrabadas() {
   const renderGrid = (
     items: VideoItem[],
     section: "clases" | "tutoriales",
-    showOpen: boolean
+    showOpen: boolean,
+    showDownload: boolean
   ) => (
     <div className={styles.grid}>
       {items.map((v) => {
@@ -32,17 +33,19 @@ export default function ClasesGrabadas() {
                 Ver
               </Link>
 
-              {downloadUrl ? (
-                <a
-                  className={styles.downloadButton}
-                  href={downloadUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Descargar
-                </a>
-              ) : null}
-
+              {showDownload ? (
+                downloadUrl ? (
+                  <a
+                    className={styles.downloadButton}
+                    href={downloadUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Descargar
+                  </a>
+                ) : null
+              ): null}
+              
               {showOpen ? (
                 <a
                   className={styles.secondaryButton}
@@ -65,14 +68,14 @@ export default function ClasesGrabadas() {
       <main className={styles.container} style={{ backgroundImage: bg }}>
         <div className={styles.overlay}>
           <h1 className={styles.title}>Clases Grabadas</h1>
-          {renderGrid(clases, "clases", true)}
+          {renderGrid(clases, "clases", true, false)}
         </div>
 
         <div className={styles.sectionSpacer} />
 
         <div className={styles.overlay}>
           <h1 className={styles.title}>Tutoriales</h1>
-          {renderGrid(tutoriales, "tutoriales", true)}
+          {renderGrid(tutoriales, "tutoriales", true, true)}
         </div>
       </main>
     </Layout>

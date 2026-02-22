@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import Layout from "@theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
 import styles from "./ver-clases-grabadas.module.css";
 
@@ -14,18 +15,24 @@ import {
 
 export default function VerClasesGrabadas() {
   const location = useLocation();
-  const { title, embedUrl, openUrl, downloadUrl } = useMemo(() => {
+
+  const { title, embedUrl, openUrl, downloadUrl, section } = useMemo(() => {
     const params = new URLSearchParams(location.search);
-    const sec = params.get("sec"); // "clases" | "tutoriales".
-    const t = params.get("t");     // Title.
-    const list = sec === "tutoriales" ? TUTORIALES : CLASES;
+    const sec = params.get("sec"); // "clases" | "tutoriales"
+    const t = params.get("t");     // Title
+
+    const normalizedSection = sec === "tutoriales" ? "tutoriales" : "clases";
+    const list = normalizedSection === "tutoriales" ? TUTORIALES : CLASES;
+
     const item = t ? list.find((v) => v.title === t) : undefined;
+
     if (!item) {
       return {
         title: "Video",
         embedUrl: "",
         openUrl: null as string | null,
         downloadUrl: null as string | null,
+        section: normalizedSection as "clases" | "tutoriales",
       };
     }
 
@@ -34,8 +41,11 @@ export default function VerClasesGrabadas() {
       embedUrl: buildEmbedUrl(item),
       openUrl: buildOpenUrl(item),
       downloadUrl: buildDownloadUrl(item),
+      section: normalizedSection as "clases" | "tutoriales",
     };
   }, [location.search]);
+
+  const canShowDownload = section === "tutoriales" && !!downloadUrl;
 
   return (
     <Layout title={title}>
@@ -46,7 +56,16 @@ export default function VerClasesGrabadas() {
         }}
       >
         <div className={styles.overlay}>
-          <h1 className={styles.title}>{title}</h1>
+          <div className={styles.headerRow}>
+            <Link className={styles.backLink} to={useBaseUrl("/clases-grabadas")}>
+              ← Volver
+            </Link>
+
+            <h1 className={styles.title}>{title}</h1>
+
+            <div className={styles.headerSpacer} />
+          </div>
+
           <div className={styles.videoWrapper}>
             {embedUrl ? (
               <iframe
@@ -74,10 +93,10 @@ export default function VerClasesGrabadas() {
               </a>
             ) : null}
 
-            {downloadUrl ? (
+            {canShowDownload ? (
               <a
                 className={styles.downloadButton}
-                href={downloadUrl}
+                href={downloadUrl!}
                 target="_blank"
                 rel="noreferrer"
               >
