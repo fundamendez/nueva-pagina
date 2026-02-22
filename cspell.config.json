@@ -26,7 +26,8 @@
     "swizzle",
     "indentación",
     "inicialización",
-    "indentado"
+    "indentado",
+    "ejecución"
   ],
   "flagWords": ["indentacion", "inicializacion"]
 }
