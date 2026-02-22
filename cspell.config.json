@@ -1,0 +1,32 @@
+{
+  "version": "0.2",
+  "language": "en,es",
+  "dictionaries": ["en_US", "es_ES"],
+  "import": ["@cspell/dict-es-es/cspell-ext.json"],
+  "files": ["docs/**/*.md", "docs/**/*.mdx", "src/**/*.md", "src/**/*.mdx"],
+  "ignorePaths": ["node_modules/**"],
+  "ignoreRegExpList": [
+    "^\\s*```[\\s\\S]*?```",
+    "`[^`\\r\\n]+`",
+    "\\[.*?\\]\\(.*?\\)",
+    "https?://[^\\s)>\"]+",
+    "^---[\\s\\S]*?---",
+    "<[^>]*>",
+    "<!--[\\s\\S]*?-->"
+  ],
+  "words": [
+    "Docusaurus",
+    "sidebar",
+    "FIUBA",
+    "mdx",
+    "frontmatter",
+    "Jamstack",
+    "versioning",
+    "tailwindcss",
+    "swizzle",
+    "indentación",
+    "inicialización",
+    "indentado"
+  ],
+  "flagWords": ["indentacion", "inicializacion"]
+}
