@@ -26,7 +26,11 @@
     "swizzle",
     "indentación",
     "inicialización",
-    "indentado"
+    "indentado",
+    "modularización",
+    "subproblemas",
+    "mantenible",
+    "modularizar"
   ],
   "flagWords": ["indentacion", "inicializacion"]
 }
