@@ -50,7 +50,7 @@ Por lo que conceptualmente podemos distinguir entre:
 * Funciones que devuelven un valor
 * Funciones que no devuelven un valor (equivalentes a procedimientos en otros lenguajes)
 
-## 4. La funcion ```main```
+## 4. La función ```main```
 
 Todo programa en C comienza su ejecución en la función main.
 
@@ -193,7 +193,7 @@ Diferencia Conceptual:
 
 * Reglas Recomendadas
 
-    * Brevedad y Enfoque: Las funciones deben ser cortas. Una función larga casi siempre indica que se puede abstraer todavía un poco más. Las funciones breves y enfocadas son mucho más faciles de entender y menos propensas a errores ocultos.
+    * Brevedad y Enfoque: Las funciones deben ser cortas. Una función larga casi siempre indica que se puede abstraer todavía un poco más. Las funciones breves y enfocadas son mucho más fáciles de entender y menos propensas a errores ocultos.
 
 
     * Manejo de Parámetros: Se recomienda entre 7 ± 2. Esta es una regla empírica de diseño, no una restricción del lenguaje.
