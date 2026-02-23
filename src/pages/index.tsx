@@ -27,7 +27,7 @@ const studentActions = [
   {
     emoji: "\u{1F4E4}",
     title: "RPL",
-    description: "Subí tus trabajos prácticos",
+    description: "Ejercicios y práctica interactiva",
     link: "https://www.myrpl.ar/",
   },
   {
