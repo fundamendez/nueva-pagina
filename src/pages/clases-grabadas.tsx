@@ -3,7 +3,13 @@ import Layout from "@theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import styles from "./clases-grabadas.module.css";
-import { CLASES, TUTORIALES, buildOpenUrl, buildDownloadUrl, VideoItem } from "../data/videos";
+import {
+  CLASES,
+  TUTORIALES,
+  buildOpenUrl,
+  buildDownloadUrl,
+  type VideoItem,
+} from "../data/videos";
 
 export default function ClasesGrabadas() {
   const clases = CLASES;
@@ -11,13 +17,13 @@ export default function ClasesGrabadas() {
 
   const bg = `url(${useBaseUrl("/img/fondo-clases-grabadas.jpg")})`;
 
-  const renderGrid = (
+  const renderList = (
     items: VideoItem[],
     section: "clases" | "tutoriales",
-    showOpen: boolean,
-    showDownload: boolean
+    showDownload: boolean,
+    showOpen: boolean
   ) => (
-    <div className={styles.grid}>
+    <div className={styles.list}>
       {items.map((v) => {
         const openUrl = buildOpenUrl(v);
         const downloadUrl = buildDownloadUrl(v);
@@ -26,26 +32,25 @@ export default function ClasesGrabadas() {
         );
 
         return (
-          <section key={`${section}-${v.title}`} className={styles.card}>
-            <h2 className={styles.cardTitle}>{v.title}</h2>
-            <div className={styles.actions}>
+          <section key={`${section}-${v.title}`} className={styles.row}>
+            <div className={styles.rowTitle}>{v.title}</div>
+
+            <div className={styles.rowActions}>
               <Link className={styles.primaryButton} to={detailHref}>
                 Ver
               </Link>
 
-              {showDownload ? (
-                downloadUrl ? (
-                  <a
-                    className={styles.downloadButton}
-                    href={downloadUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Descargar
-                  </a>
-                ) : null
-              ): null}
-              
+              {showDownload && downloadUrl ? (
+                <a
+                  className={styles.downloadButton}
+                  href={downloadUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Descargar
+                </a>
+              ) : null}
+
               {showOpen ? (
                 <a
                   className={styles.secondaryButton}
@@ -68,14 +73,14 @@ export default function ClasesGrabadas() {
       <main className={styles.container} style={{ backgroundImage: bg }}>
         <div className={styles.overlay}>
           <h1 className={styles.title}>Clases Grabadas</h1>
-          {renderGrid(clases, "clases", true, false)}
+          {renderList(clases, "clases", false, true)}
         </div>
 
         <div className={styles.sectionSpacer} />
 
         <div className={styles.overlay}>
           <h1 className={styles.title}>Tutoriales</h1>
-          {renderGrid(tutoriales, "tutoriales", true, true)}
+          {renderList(tutoriales, "tutoriales", true, true)}
         </div>
       </main>
     </Layout>
