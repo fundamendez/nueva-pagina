@@ -29,5 +29,5 @@
     "indentado",
     "ejecución"
   ],
-  "flagWords": ["indentacion", "inicializacion"]
+  "flagWords": ["indentacion", "inicializacion", "ejecucion"]
 }

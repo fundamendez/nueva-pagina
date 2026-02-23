@@ -18,7 +18,7 @@ En este fragmento de código se evalúa la condición `x > 0` mediante la estruc
 
 Viéndolo gráficamente:
 <p align="center">
-  <img src="/imagenes/if.png" width="250">
+  <img src="/nueva-pagina/img/docs/if.png" width="250"></img>
 </p>
 
 De esta manera en este ejemplo tenemos dos ejecuciones posibles:
@@ -54,7 +54,7 @@ if (x > 0) {
 
 Viéndolo gráficamente:
 <p align="center">
-  <img src="/imagenes/if-else.png" width="300">
+  <img src="/nueva-pagina/img/docs/if-else.png" width="300"></img>
 </p>
 
 Ahora tenemos las siguientes salidas posibles:
@@ -90,7 +90,7 @@ if (x > 0) {
 
 Viéndolo gráficamente:
 <p align="center">
-  <img src="/imagenes/if-else-if.png" width="250">
+  <img src="/nueva-pagina/img/docs/if-else-if.png" width="250"></img>
 </p>
 
 Ahora tenemos las siguientes salidas posibles:
@@ -115,7 +115,9 @@ x es negativo
 
 Si el valor de x es menor que cero, ninguna de las condiciones anteriores se cumple. Como resultado, el programa ejecuta el bloque else, imprimiendo el mensaje `"x es negativo"`.
 
-> <font color="red"> OBS: </font> esta estructura permite cubrir todos los casos posibles para una variable, evitando múltiples estructuras if independientes y asegurando que solo un bloque de código se ejecute en cada ejecución del programa.
+:::info
+Esta estructura permite cubrir todos los casos posibles para una variable, evitando múltiples estructuras if independientes y asegurando que solo un bloque de código se ejecute en cada ejecución del programa.
+:::
 
 **🐍 Comparación del if en python**
 
@@ -145,13 +147,15 @@ else:
     print("x es negativo")
 ```
 
-> <font color="red"> OBS: </font> si bien C y Python cuentan con estructuras de control conceptualmente similares, existen diferencias importantes en su sintaxis y en la forma en que se escribe y organiza el código.
-> 
-> En C, los bloques de código se delimitan mediante llaves **{ }** y las condiciones se escriben entre paréntesis **( )**. En Python, por el contrario, los bloques se definen exclusivamente por la indentación, lo que elimina el uso de llaves haciendo que el correcto espaciado del código sea fundamental para su funcionamiento.
+:::warning
+Si bien C y Python cuentan con estructuras de control conceptualmente similares, existen diferencias importantes en su sintaxis y en la forma en que se escribe y organiza el código.
+
+En C, los bloques de código se delimitan mediante llaves **\{ \}** y las condiciones se escriben entre paréntesis **( )**. En Python, por el contrario, los bloques se definen exclusivamente por la indentación, lo que elimina el uso de llaves haciendo que el correcto espaciado del código sea fundamental para su funcionamiento.
+:::
 
 ##### ⚠️ **Errores comunes**
 1. **Usar = en lugar de ==:** el `=` sirve para asignar valor a una variable, pero cuando queremos comparar debemos usar `==`. 
-2. **Olvidarse las llaves { }:** es importante incluirlas porque sino sólo tomará como parte del if la primera linea. A diferencia de python la indentación no delimita lo que esta dentro o fuera de la condición. 
+2. **Olvidarse las llaves \{ \}:** es importante incluirlas porque sino sólo tomará como parte del if la primera linea. A diferencia de python la indentación no delimita lo que esta dentro o fuera de la condición. 
 
 
 ### Ciclos
@@ -199,10 +203,12 @@ La salida será:
 Viéndolo gráficamente:
 
 <p align="center">
-  <img src="/imagenes/ejemplo_for.png" width="300">
+  <img src="/nueva-pagina/static/img/ejemplo_for.png" width="300"></img>
 </p>
 
-> <font color="red"> OBS: </font> si la condición del paso 1 no se cumple, la ejecución del bucle se corta
+:::note
+Si la condición del paso 1 no se cumple, la ejecución del bucle se corta
+:::
 
 🐍 **Comparación del for en Python**
 En *Python*, la estructura for tiene un enfoque diferente al de C. Mientras que en C el for se basa en una variable de control con inicialización, condición y actualización explícitas, en Python el for se utiliza principalmente para recorrer secuencias (como listas, rangos o strings).
@@ -271,7 +277,9 @@ La salida será:
 4
 ``` 
 
-> <font color="red"> OBS: </font> si bien sabemos en este caso que luego de 5 iteraciones la condición va a dejar de cumplirse, existen casos un poco mas complejos en los que no vamos a saber de ante mano cuantas veces voy a iterar y ahí es cuando este bucle resulta interesante y sumamente útil. 
+:::note
+Si bien sabemos en este caso que luego de 5 iteraciones la condición va a dejar de cumplirse, existen casos un poco mas complejos en los que no vamos a saber de ante mano cuantas veces voy a iterar y ahí es cuando este bucle resulta interesante y sumamente útil. 
+:::
 
 📌 Características importantes
 
@@ -322,7 +330,10 @@ while (i < 5) {
 |  `<=`   | Comparador menor igual  |
 |  `>=`   | Comparador mayor igual  |
 
-> <font color="red"> OBS: </font> es importante el uso de paréntesis cuando queremos separar o agrupar condiciones. 
-> Por ejemplo:
-> Si necesitamos dos condiciones con AND entre sí y el resultado de esa se compara con OR con otra condición sería algo como:
-> `if((condicion1 && condicion2) || condicion3)`
+
+:::warning
+Es importante el uso de paréntesis cuando queremos separar o agrupar condiciones. 
+Por ejemplo:
+Si necesitamos dos condiciones con AND entre sí y el resultado de esa se compara con OR con otra condición sería algo como:
+`if((condicion1 && condicion2) || condicion3)`
+:::
