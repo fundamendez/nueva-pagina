@@ -1,4 +1,4 @@
-# Funciones: Introducción a la Modularización
+# Funciones
 
 ## 1. Divide et Impera!
 > Los problemas grandes son difíciles de resolver de una sola vez. Dividirlos en partes pequeñas los hace más simples de entender, programar y mantener.
