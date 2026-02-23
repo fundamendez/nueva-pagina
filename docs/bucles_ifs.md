@@ -18,7 +18,7 @@ En este fragmento de código se evalúa la condición `x > 0` mediante la estruc
 
 Viéndolo gráficamente:
 <p align="center">
-  <img src="/nueva-pagina/img/docs/if.png" width="250"></img>
+  <img src="/static/img/if.png" width="250"></img>
 </p>
 
 De esta manera en este ejemplo tenemos dos ejecuciones posibles:
@@ -54,7 +54,7 @@ if (x > 0) {
 
 Viéndolo gráficamente:
 <p align="center">
-  <img src="/nueva-pagina/img/docs/if-else.png" width="300"></img>
+  <img src="/static/img/if-else.png" width="300"></img>
 </p>
 
 Ahora tenemos las siguientes salidas posibles:
@@ -90,7 +90,7 @@ if (x > 0) {
 
 Viéndolo gráficamente:
 <p align="center">
-  <img src="/nueva-pagina/img/docs/if-else-if.png" width="250"></img>
+  <img src="/static/img/if-else-if.png" width="250"></img>
 </p>
 
 Ahora tenemos las siguientes salidas posibles:
@@ -203,7 +203,7 @@ La salida será:
 Viéndolo gráficamente:
 
 <p align="center">
-  <img src="/nueva-pagina/static/img/ejemplo_for.png" width="300"></img>
+  <img src="/static/img/ejemplo_for.png" width="300"></img>
 </p>
 
 :::note
