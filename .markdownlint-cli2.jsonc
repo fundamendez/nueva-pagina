@@ -1,0 +1,16 @@
+{
+  "globs": ["**/*.md", "!node_modules/**"],
+  "config": {
+    // MD013 - Line length: disabled because long lines are common in documentation
+    "MD013": false,
+    // MD025 - Single title: front_matter_title set to empty so Docusaurus front matter
+    //         titles don't conflict with the page h1 heading
+    "MD025": { "front_matter_title": "" },
+    // MD033 - Inline HTML: disabled because Docusaurus uses HTML in markdown
+    "MD033": false,
+    // MD041 - First line should be a top-level heading: disabled because some files use front matter
+    "MD041": false,
+    // MD060 - Table column style: disabled because varying-length content makes alignment impractical
+    "MD060": false
+  }
+}

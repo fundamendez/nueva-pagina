@@ -40,6 +40,14 @@ GIT_USER=<Your GitHub username> yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
+## Markdown Lint
+
+```bash
+npm run lint:md
+```
+
+This command checks all Markdown files for style issues and automatically fixes any fixable ones.
+
 ## Spell Check
 
 ```bash
