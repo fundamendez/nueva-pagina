@@ -139,11 +139,6 @@ const config: Config = {
           label: "Buzón de quejas",
           position: "right",
         },
-        {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
-          position: "right",
-        },
       ],
     },
     footer: {
