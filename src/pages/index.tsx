@@ -33,7 +33,7 @@ const studentActions = [
   {
     emoji: "\u{1F9EA}",
     title: "AlgoTron",
-    description: "Ejercicios y práctica interactiva",
+    description: "Entregas de trabajos prácticos",
     link: "https://algotron.com.ar/",
   },
 ];
