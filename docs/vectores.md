@@ -8,7 +8,7 @@ int nota_2 = 8;
 int nota_3 = 5;
 int nota_4 = 7;
 ```
-**⚠️ ¿Qué problemas podemos encontrar en este ejmplo?**
+**⚠️ ¿Qué problemas podemos encontrar en este ejemplo?**
 
 * Si tuviéramos que seguir agregando más notas deberíamos
 hacerlo a mano y costaría más trabajo, además de que dejaría
@@ -20,7 +20,7 @@ hacerlo a mano y costaría más trabajo, además de que dejaría
 
 * **Código repetitivo:** se repiten estructuras muy similares.
 
-Aca es cuando los vectores juegan un rol fundamental en nuestro codigo.
+Aca es cuando los vectores juegan un rol fundamental en nuestro código.
 
 ## ¿Qué es un vector en C?
 Un vector (también llamado *arreglo* ol *array*) es una estructura de datos que permite almacenar varios valores del **mismo tipo** bajo un único nombre.
@@ -81,11 +81,11 @@ int nota_4 = notas[3];
 ``` 
 
 :::danger[IMPORTANTE]
-Si bien el 7 es el ultimo elemento del arreglo y este tiene longitud 4, como se mencionó anteriormente, los indices van de `0 a longitud-1`. Esto es muy importante ya que si accedieramos de la siguinete manera:
+Si bien el 7 es el ultimo elemento del arreglo y este tiene longitud 4, como se mencionó anteriormente, los indices van de `0 a longitud-1`. Esto es muy importante ya que si accediéramos de la siguiente manera:
 ```c 
 int nota_4 = notas[4];
 ``` 
-Estaríamos accedendiendo a una posicion **inválida** de nuestro vector y obtendremos por consola el tan temido `segmentation fault`. Esto se debe a que estamos intentando acceder a memoria que no nos pertence (en este caso, al elemento 5 de un vector de 4 elementos).
+Estaríamos accediendo a una posición **inválida** de nuestro vector y obtendremos por consola el tan temido `segmentation fault`. Esto se debe a que estamos intentando acceder a memoria que no nos pertenece (en este caso, al elemento 5 de un vector de 4 elementos).
 :::
 
 Como el primer elemento siempre se encuentra en la posición o índice 0:
