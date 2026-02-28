@@ -7,6 +7,7 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import styles from "./index.module.css";
+import React from "react";
 
 const courseCards = [
   {
@@ -19,6 +20,21 @@ const courseCards = [
     title: "Régimen de Cursada",
     description: "Reglas y condiciones de aprobación",
     link: "/regimen-de-cursada",
+  },
+];
+
+const studentActions = [
+  {
+    emoji: "\u{1F4E4}",
+    title: "RPL",
+    description: "Ejercicios y práctica interactiva",
+    link: "https://www.myrpl.ar/",
+  },
+  {
+    emoji: "\u{1F9EA}",
+    title: "AlgoTron",
+    description: "Entregas de trabajos prácticos",
+    link: "https://algotron.com.ar/",
   },
 ];
 
@@ -107,6 +123,17 @@ function CourseInfoSection() {
       <div className="container">
         <div className="row">
           {courseCards.map((card) => (
+            <CourseCard key={card.title} {...card} />
+          ))}
+        </div>
+      </div>
+      <div className="container">
+        <Heading as="h2" className={styles.sectionTitle}>
+          Accesos rápidos
+        </Heading>
+
+        <div className="row">
+          {studentActions.map((card) => (
             <CourseCard key={card.title} {...card} />
           ))}
         </div>
