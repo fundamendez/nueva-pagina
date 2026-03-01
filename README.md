@@ -43,7 +43,7 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 ## Markdown Lint
 
 ```bash
-npm run lint:md
+yarn lint:md
 ```
 
 This command checks all Markdown files for style issues and automatically fixes any fixable ones.
@@ -51,7 +51,7 @@ This command checks all Markdown files for style issues and automatically fixes 
 ## Spell Check
 
 ```bash
-npm run lint:spell
+yarn lint:spell
 ```
 
 This command checks for typos in all Markdown files under `docs/` and `src/`, using English and Spanish dictionaries. It also runs automatically on every pull request via GitHub Actions.
