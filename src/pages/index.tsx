@@ -71,7 +71,7 @@ function CourseCard({
   );
 
   return (
-    <div className={clsx("col col--6", styles.cardCol)}>
+    <div className={clsx("col col--4", styles.cardCol)}>
       {link ? (
         <Link to={link} className={styles.cardLinkWrapper}>
           {content}
