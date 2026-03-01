@@ -4,4 +4,3 @@ description: Régimen de cursada de Fundamentos de Programación - FIUBA - Curso
 ---
 
 # Régimen de Cursada
-
