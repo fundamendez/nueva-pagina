@@ -1,0 +1,64 @@
+---
+title: Encuestas
+description: Encuestas de fin de curso - Fundamentos de Programación - FIUBA - Curso Mendez
+---
+
+import React, { useState } from 'react';
+import '../css/pages.css';
+
+<div className="page-wrapper">
+
+<h1 className="page-title">Encuestas</h1>
+
+## Encuesta de fin de curso
+
+export const EncuestasAccordion = () => {
+  const [openYear, setOpenYear] = useState(null);
+
+  const encuestas = {
+    2025: {
+      "1er Cuatrimestre": "/nueva-pagina/encuestas/encuesta_2025_1C.html",
+      "2do Cuatrimestre": "/nueva-pagina/encuestas/encuesta_2025_2C.html"
+    },
+    2024: {
+      "1er Cuatrimestre": "/nueva-pagina/encuestas/encuesta_2024_1C.html",
+      "2do Cuatrimestre": "/nueva-pagina/encuestas/encuesta_2024_2C.html"
+    }
+  };
+
+  return (
+    <div>
+      {Object.entries(encuestas).sort(([a], [b]) => b - a).map(([year, quarters]) => (
+        <div key={year} className="accordion-item">
+          <button
+            onClick={() => setOpenYear(openYear === year ? null : year)}
+            className="accordion-button"
+          >
+            {year}
+          </button>
+          {openYear === year && (
+            <div className="accordion-content">
+              {Object.entries(quarters).map(([quarter, url]) => (
+                <div key={quarter} className="accordion-section">
+                  <h3 className="accordion-section-title">{quarter}</h3>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="accordion-link"
+                  >
+                    Ver encuesta {quarter} {year}
+                  </a>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+<EncuestasAccordion />
+
+</div>

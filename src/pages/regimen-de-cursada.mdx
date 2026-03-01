@@ -1,0 +1,118 @@
+---
+title: Régimen de Cursada
+description: Régimen de cursada de Fundamentos de Programación - FIUBA - Curso Mendez
+---
+
+import '../css/pages.css';
+
+<div className="page-wrapper">
+
+<h1 className="page-title">Régimen de Cursada</h1>
+
+<div className="page-subtitle">
+  <div className="page-subtitle-line">Fundamentos de Programación - TB021</div>
+  <div>Mendez - Rodriguez Dala - Massone - Bocaccio - Fraccaro - Díaz Real - Rey</div>
+</div>
+
+## 1. Trabajos Prácticos
+
+Durante la cursada se presentarán 3 (tres) trabajos prácticos (en adelante TP), cuya realización es **individual y obligatoria**. Se encuentran disponibles en el cronograma de la materia las fechas de presentación de los trabajos, de
+vencimiento y de reentrega de los mismos.
+
+Toda entrega del trabajo práctico se hará a través de [AlgoTrón](https://algotron.com.ar/) (patente pendiente).
+
+### 1.1. Correctores
+
+A cada alumno se le asignará un corrector, el cual tendrá una semana desde la fecha de vencimiento del trabajo práctico para hacer la devolución de la entrega.
+
+La asignación de los correctores estará disponible una vez presentado el trabajo práctico.
+
+### 1.2. Reentregas
+
+El TP1 y TP2 tendrán una reentrega en el caso de que la primera entrega no sea
+satisfactoria. No estará disponible la posibilidad de re-entregar para subir nota. Las
+reentregas de los trabajos serán una semana después de la corrección por parte del
+colaborador.
+
+El TP0 **no** tiene reentrega.
+
+### 1.3. Pruebas Mínimas y Compilación
+
+Los TPs se entregarán por AlgoTrón donde se compilará y se ejecutarán pruebas automáticas sobre el mismo. Algunas de las pruebas podrían ser consideradas pruebas mínimas (las mismas estarán debidamente marcadas en AlgoTrón).
+
+Cualquier entrega de TP que no compile o no pase las pruebas mínimas no se tendrá en cuenta y no recibirá corrección.
+
+En el TP0, todas las pruebas son mínimas. Esto significa que el TP entregado debe pasar **todas** las pruebas para aprobar.
+
+### 1.4. Casos Borde
+
+En cualquier TP el alumno puede recibir un `4- (cuatro menos)` como nota. Esto significa que el alumno es un "caso borde". Es una nota aprobada, pero significa que el TP estuvo cerca de no cumplir con las condiciones mínimas de aprobación. Esta nota se reserva para casos excepcionales.
+
+El alumno no puede acumular más de un `4-` por cursada, esto significa que si en el TP1 tuvo `4-`, tendrá que mejorar su condición, ya que no será considerado para otro `4-` en el TP2.
+
+### 1.5. Plagios y/o Inteligencia Artificial
+
+Cualquier indicio de plagio o del uso de herramientas de inteligencia artificial para la realización de los trabajos prácticos, signficará la descalificación del alumno de la materia.
+
+## 2. Examen Parcial
+
+Se tomará 1 (un) examen parcial con 2 (dos) instancias de recuperación, todas las fechas están publicadas en el cronograma de la materia, la aprobación de este examen es de carácter obligatorio en alguna de sus 3 (tres) instancias. No estará
+disponible la posibilidad de recuperar para subir nota.
+
+Dicho examen durará 3 (tres) horas y constará de entre 3 y 6 ejercicios teórico-prácticos.
+
+## 3. Plataforma RPL
+
+Disponemos de una plataforma de ejercicios denominada [RPL](https://myrpl.ar/), muy útil para el
+aprendizaje del alumno.
+
+Esta plataforma será de uso **optativo** en la mayoría de sus ejercicios.
+
+Sin embargo, se podrá solicitar la realización **obligatoria** de ciertos ejercicios para la aprobación de la cursada.
+
+## 4. Aprobación de la cursada
+
+El alumno debe aprobar los 3 (tres) trabajos prácticos, ya sea en la entrega o en la reentrega, con nota 4 (cuatro) o más y aprobar el examen parcial en alguna de las 3 (tres) instancias con nota 4 (cuatro) o más y realizar los ejercicios obligatorios de la plataforma RPL (si es que los hubiere).
+
+En este caso el alumno estará en condiciones de rendir el final integrador.
+
+**No** se cuenta con régimen de promoción.
+
+## 5. Cálculo de la Nota Final
+
+Para el cálculo de la nota final se realiza un promedio entre la nota de la cursada y la nota del final integrador.
+
+La nota de cursada se calcula como el promedio entre la nota del parcial y las notas de los 3 (tres) trabajos prácticos.
+
+export const Fraction = ({ numerator, denominator }) => (
+  <span className="fraction-wrapper">
+    <span className="fraction-numerator">
+      {numerator}
+    </span>
+    <span className="fraction-denominator">
+      {denominator}
+    </span>
+  </span>
+);
+
+<div className="formulas-container">
+  <div className="formula-row">
+    <span className="formula-variable">Nota Cursada</span> 
+    <span className="formula-equals">=</span>
+    <Fraction 
+      numerator={<span>TP₀ + TP₁ + TP₂ + <span className="formula-variable">Nota Parcial</span></span>}
+      denominator="4"
+    />
+  </div>
+  
+  <div className="formula-row">
+    <span className="formula-variable">Nota Final</span> 
+    <span className="formula-equals">=</span>
+    <Fraction 
+      numerator={<span><span className="formula-variable">Nota Cursada</span> + <span className="formula-variable">Nota Examen Final</span></span>}
+      denominator="2"
+    />
+  </div>
+</div>
+
+</div>
