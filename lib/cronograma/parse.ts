@@ -1,4 +1,7 @@
-// --- Config & types (used by parse) ---
+import Papa from "papaparse";
+import { parse, format } from "date-fns";
+
+// --- Config & types ---
 
 export const DEFAULT_YEAR = new Date().getFullYear();
 
@@ -33,62 +36,6 @@ export interface ParsedScheduleRow {
 
 // --- CSV parsing ---
 
-function parseCsvLine(line: string): string[] {
-  const result: string[] = [];
-  let current = "";
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i += 1) {
-    const char = line[i];
-    if (char === '"') {
-      const next = line[i + 1];
-      if (inQuotes && next === '"') {
-        current += '"';
-        i += 1;
-      } else {
-        inQuotes = !inQuotes;
-      }
-      continue;
-    }
-    if (char === "," && !inQuotes) {
-      result.push(current);
-      current = "";
-      continue;
-    }
-    current += char;
-  }
-  result.push(current);
-  return result.map((v) => v.trim());
-}
-
-function splitCsvRecords(content: string): string[] {
-  const lines = content.split(/\r?\n/);
-  const records: string[] = [];
-  let current = "";
-  let inQuotes = false;
-  for (const line of lines) {
-    if (current.length > 0) current += "\n";
-    current += line;
-    for (let i = 0; i < line.length; i += 1) {
-      const char = line[i];
-      if (char === '"') {
-        const next = line[i + 1];
-        if (inQuotes && next === '"') {
-          i += 1;
-          continue;
-        }
-        inQuotes = !inQuotes;
-      }
-    }
-    if (!inQuotes && current.trim().length > 0) {
-      records.push(current);
-      current = "";
-      inQuotes = false;
-    }
-  }
-  if (current.trim().length > 0) records.push(current);
-  return records;
-}
-
 function normalizeHeader(value: string): string {
   return value
     .toLowerCase()
@@ -99,20 +46,12 @@ function normalizeHeader(value: string): string {
 }
 
 export function parseCsv(content: string): CsvRow[] {
-  const records = splitCsvRecords(content);
-  if (records.length === 0) return [];
-  const rawHeaders = parseCsvLine(records[0]);
-  const headers = rawHeaders
-    .map((raw) => ({ raw: raw.trim(), key: normalizeHeader(raw.trim()) }))
-    .filter((h) => h.key.length > 0);
-  return records.slice(1).map((record) => {
-    const values = parseCsvLine(record);
-    const row: CsvRow = {};
-    headers.forEach((h, i) => {
-      row[h.key] = values[i] ?? "";
-    });
-    return row;
+  const result = Papa.parse<CsvRow>(content, {
+    header: true,
+    skipEmptyLines: true,
+    transformHeader: normalizeHeader,
   });
+  return result.data;
 }
 
 function getCell(row: CsvRow, key: string): string {
@@ -124,18 +63,8 @@ function getCell(row: CsvRow, key: string): string {
 function parseDateFromText(value: string, defaultYear: number): Date | null {
   const trimmed = value.trim();
   if (!trimmed) return null;
-  const match = trimmed.match(/(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?/);
-  if (!match) return null;
-  const day = Number(match[1]);
-  const month = Number(match[2]);
-  const yearRaw = match[3];
-  const year =
-    yearRaw && yearRaw.length === 2
-      ? 2000 + Number(yearRaw)
-      : Number(yearRaw) || defaultYear;
-  const date = new Date(year, month - 1, day);
-  date.setHours(0, 0, 0, 0);
-  return date;
+  const date = parse(trimmed, "d/M", new Date(defaultYear, 0, 1));
+  return isNaN(date.getTime()) ? null : date;
 }
 
 // --- Topics & badges (parsing only) ---
@@ -175,29 +104,15 @@ export interface CronogramaPluginData {
 }
 
 function formatShortDate(date: Date): string {
-  const day = String(date.getDate()).padStart(2, "0");
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  return `${day}/${month}`;
+  return format(date, "dd/MM");
 }
 
 /** Reads CSV content and returns data ready for the Docusaurus plugin (serializable). */
 export function getCronogramaDataForPlugin(
   content: string,
   defaultYear: number
-): Omit<CronogramaPluginData, "rows"> & {
-  rows: Array<{
-    weekLabel: string;
-    theory: CronogramaCellData;
-    practice: CronogramaCellData;
-  }>;
-} {
+): CronogramaPluginData {
   const rows = parseCsvToSchedule(content, defaultYear);
-  const allDates: Date[] = [];
-  for (const row of rows) {
-    if (row.theory.date) allDates.push(row.theory.date);
-    if (row.practice.date) allDates.push(row.practice.date);
-  }
-  allDates.sort((a, b) => a.getTime() - b.getTime());
   const serializableRows = rows.map((r) => ({
     weekLabel: r.weekLabel,
     theory: {
