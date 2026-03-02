@@ -1,3 +1,21 @@
+:root {
+    --cronograma-presencial-bg: #e0f4fc;
+    --cronograma-presencial-text: #2b70a3;
+    --cronograma-virtual-bg: #fce8ec;
+    --cronograma-virtual-text: #b84d6a;
+    --cronograma-sin_definir-bg: #f1f5f9;
+    --cronograma-sin_definir-text: #64748b;
+
+    --cronograma-primary-bg: var(--ifm-color-primary-lightest);
+    --cronograma-primary-text: #2b70a3;
+    --cronograma-info-bg: #e0f7f4;
+    --cronograma-info-text: #0d5c4d;
+    --cronograma-warning-bg: #fef9c3;
+    --cronograma-warning-text: #8b6914;
+    --cronograma-danger-bg: #fce8ea;
+    --cronograma-danger-text: #e85d6a;
+}
+
 .cronograma-badge {
     display: inline-flex;
     align-items: center;
