@@ -106,18 +106,3 @@
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
-
-.accordion-link {
-  display: block;
-  padding: 0.75rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.375rem;
-  text-decoration: none;
-  color: inherit;
-  transition: background-color 0.2s;
-  margin-bottom: 0.5rem;
-}
-
-.accordion-link:hover {
-  background-color: #f9fafb;
-}

@@ -1,21 +1,17 @@
----
-title: Encuestas
-description: Encuestas de fin de curso - Fundamentos de Programación - FIUBA - Curso Mendez
----
-
-import React, { useState } from 'react';
+import React, { useState, type ReactNode } from 'react';
+import Layout from '@theme/Layout';
 import '../css/pages.css';
 
-<div className="page-wrapper">
+type Encuestas = {
+  [year: number]: {
+    [quarter: string]: string;
+  };
+};
 
-<h1 className="page-title">Encuestas</h1>
+const EncuestasAccordion = () => {
+  const [openYear, setOpenYear] = useState<string | null>(null);
 
-## Encuesta de fin de curso
-
-export const EncuestasAccordion = () => {
-  const [openYear, setOpenYear] = useState(null);
-
-  const encuestas = {
+  const encuestas: Encuestas = {
     2025: {
       "1er Cuatrimestre": "/nueva-pagina/encuestas/encuesta_2025_1C.html",
       "2do Cuatrimestre": "/nueva-pagina/encuestas/encuesta_2025_2C.html"
@@ -28,7 +24,7 @@ export const EncuestasAccordion = () => {
 
   return (
     <div>
-      {Object.entries(encuestas).sort(([a], [b]) => b - a).map(([year, quarters]) => (
+      {Object.entries(encuestas).sort(([a], [b]) => Number(b) - Number(a)).map(([year, quarters]) => (
         <div key={year} className="accordion-item">
           <button
             onClick={() => setOpenYear(openYear === year ? null : year)}
@@ -40,14 +36,13 @@ export const EncuestasAccordion = () => {
             <div className="accordion-content">
               {Object.entries(quarters).map(([quarter, url]) => (
                 <div key={quarter} className="accordion-section">
-                  <h3 className="accordion-section-title">{quarter}</h3>
                   <a
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="accordion-link"
+                    className="accordion-section-title"
                   >
-                    Ver encuesta {quarter} {year}
+                    {quarter}
                   </a>
                 </div>
               ))}
@@ -59,6 +54,20 @@ export const EncuestasAccordion = () => {
   );
 };
 
-<EncuestasAccordion />
-
-</div>
+export default function Encuestas(): ReactNode {
+  return (
+    <Layout
+      title="Encuesta de fin de curso"
+      description="Encuestas de fin de curso - Fundamentos de Programación - FIUBA - Curso Mendez"
+    >
+      <main>
+        <div className="container margin-vert--lg">
+          <div className="page-wrapper">
+            <h1 className="page-title">Encuesta de fin de curso</h1>
+            <EncuestasAccordion />
+          </div>
+        </div>
+      </main>
+    </Layout>
+  );
+}
