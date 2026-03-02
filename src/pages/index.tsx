@@ -21,6 +21,12 @@ const courseCards = [
     description: "Reglas y condiciones de aprobación",
     link: "/regimen-de-cursada",
   },
+  {
+    emoji: "\u{1F4CA}",
+    title: "Encuestas",
+    description: "Encuestas de fin de curso",
+    link: "/encuestas",
+  },
 ];
 
 const studentActions = [
@@ -81,7 +87,7 @@ function CourseCard({
   );
 
   return (
-    <div className={clsx("col col--6", styles.cardCol)}>
+    <div className={clsx("col col--4", styles.cardCol)}>
       {link ? (
         <Link to={link} className={styles.cardLinkWrapper}>
           {content}
