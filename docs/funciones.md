@@ -30,7 +30,6 @@ int main() {
 
 Acá es donde las **funciones** juegan un rol fundamental en nuestro código.
 
----
 ## 🧠 Divide y vencerás
 
 Desde hace siglos se utiliza una idea muy simple:
@@ -44,7 +43,6 @@ En programación aplicamos exactamente el mismo principio:
 
 A esto lo llamamos **modularización**.
 
----
 ## ¿Qué es la Modularización?
 Modularizar significa construir un programa dividiéndolo en partes pequeñas, independientes y bien definidas.
 
@@ -54,12 +52,11 @@ Cada módulo:
 * Resuelve un subproblema.
 * Puede entenderse sin analizar todo el programa.
 
-:::important[IMPORTANTE]
+:::important[INFO]
 Una función debería tener una única responsabilidad.
 Si realiza demasiadas tareas, probablemente debería dividirse.
 :::
 
----
 ## Funciones en C
 En C, la herramienta principal para modularizar es la **función**.
 
@@ -76,7 +73,6 @@ Por lo que conceptualmente podemos distinguir entre:
 * Funciones que devuelven un valor
 * Funciones que no devuelven un valor (equivalentes a procedimientos en otros lenguajes)
 
----
 ## La función main
 Todo programa en C comienza su ejecución en main: 
 
@@ -92,7 +88,6 @@ En C existen:
 * Funciones de la biblioteca estándar (por ejemplo `printf`)
 * Funciones definidas por el programador
 
----
 ## Funciones con valor de retorno
 Supongamos que queremos sumar dos números.
 
@@ -119,13 +114,12 @@ En este caso:
 * Se devuelve un valor.
 * Ese valor se guarda en `resultado`.
 
-:::note
+:::important[INFO]
 La instrucción return cumple dos funciones:
 * Devuelve un valor.
 * Finaliza inmediatamente la ejecución de la función.
 :::
 
----
 ## Parámetros
 Los parámetros permiten que la función reciba datos para trabajar.
 ```c
@@ -133,7 +127,6 @@ int sumar(int a, int b)
 ```
 La lista de parámetros consiste en una serie de declaraciones de variables, separadas por comas, que especifican el tipo y el nombre de cada dato que conforma su interfaz de entrada.
 
----
 ## Declaraciones y Acciones
 El cuerpo, delimitado por llaves `{}`, contiene toda la lógica encapsulada de la función. Se compone de dos partes principales:
 
@@ -147,7 +140,6 @@ El cuerpo, delimitado por llaves `{}`, contiene toda la lógica encapsulada de l
 
 * Acciones: Corresponde al conjunto de instrucciones y estructuras de control (bucles, condicionales, etc.) que implementan el comportamiento de la función.
 
----
 ## Funciones sin valor de retorno (Procedimientos)
 Cuando una función no debe devolver ningún valor, se utiliza el tipo `void`.
 
@@ -172,7 +164,7 @@ En este caso:
 :::note
 Una función `void` puede usar `return;` sin valor, pero no es obligatorio.
 :::
----
+
 ## 📌 Diferencia entre función y procedimiento
 
 **Comparación conceptual**
@@ -182,7 +174,7 @@ Una función `void` puede usar `return;` sin valor, pero no es obligatorio.
 | Se usa dentro de expresiones | Se usa como instrucción |
 | `int resultado = sumar(2,3);` |	`imprimir_saludo();` |
 
----
+
 ### 🔎 Diferencia práctica
 ```c
 int sumar(int a, int b) {
@@ -203,12 +195,11 @@ No se puede hacer esto:
 ```c
 int x = imprimir_saludo();   // ❌ Error
 ```
-:::danger[IMPORTANTE]
+:::warning
 Una función void no devuelve ningún valor.
 Intentar usarla dentro de una expresión produce un error de compilación.
 :::
 
----
 ## Estructura general de una función
 ```c
 tipo_retorno nombre_funcion(tipo_1 parametro_1, tipo_2 parametro_2) {
@@ -220,7 +211,6 @@ tipo_retorno nombre_funcion(tipo_1 parametro_1, tipo_2 parametro_2) {
 }
 ```
 
----
 ## 📌 Reglas de Diseño
 :::tip[RECORDA]
 Estas reglas no son obligatorias para que el programa funcione, pero sí para que el código sea claro y mantenible.
@@ -247,7 +237,6 @@ Funciones pequeñas:
 * Son más fáciles de probar.
 * Son más fáciles de reutilizar.
 
----
 ## ⚠️ Errores comunes
 
 * Hacer todo dentro de `main`.
