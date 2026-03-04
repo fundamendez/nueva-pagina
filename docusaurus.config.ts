@@ -135,6 +135,11 @@ const config: Config = {
           position: "left",
         },
         {
+          to: "/docentes",
+          label: "Docentes",
+          position: "left",
+        },
+        {
           href: "https://docs.google.com/forms/d/e/1FAIpQLScNk-4PjhDOEC5KKiIpYg-FVf78DLZFY3hBWwn6l9Y3mi6kSQ/viewform",
           label: "Buzón de quejas",
           position: "right",
