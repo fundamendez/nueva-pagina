@@ -3,6 +3,7 @@ import Layout from "@theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import styles from "./clases-grabadas.module.css";
+import PageHero from "../components/PageHero";
 import {
   CLASES,
   TUTORIALES,
@@ -15,20 +16,20 @@ export default function ClasesGrabadas() {
   const clases = CLASES;
   const tutoriales = TUTORIALES;
 
-  const bg = `url(${useBaseUrl("/img/fondo-clases-grabadas.jpg")})`;
+  const imgSrc = useBaseUrl("/img/abuelo-anecdota.jpg");
 
   const renderList = (
     items: VideoItem[],
     section: "clases" | "tutoriales",
     showDownload: boolean,
-    showOpen: boolean
+    showOpen: boolean,
   ) => (
     <div className={styles.list}>
       {items.map((v) => {
         const openUrl = buildOpenUrl(v);
         const downloadUrl = buildDownloadUrl(v);
         const detailHref = useBaseUrl(
-          `/ver-clases-grabadas?sec=${section}&t=${encodeURIComponent(v.title)}`
+          `/ver-clases-grabadas?sec=${section}&t=${encodeURIComponent(v.title)}`,
         );
 
         return (
@@ -70,17 +71,26 @@ export default function ClasesGrabadas() {
 
   return (
     <Layout title="Clases Grabadas">
-      <main className={styles.container} style={{ backgroundImage: bg }}>
-        <div className={styles.overlay}>
-          <h1 className={styles.title}>Clases Grabadas</h1>
-          {renderList(clases, "clases", false, true)}
-        </div>
+      <main className={styles.container}>
+        <PageHero
+          title="Clases Grabadas"
+          subtitle="Accedé a todas las clases y tutoriales grabados del curso. Repasá lo que necesites, cuando quieras."
+          imageSrc={imgSrc}
+          imageAlt="Simpsons meme"
+        />
 
-        <div className={styles.sectionSpacer} />
+        <div className={styles.content}>
+          <div className={styles.section}>
+            <h1 className={styles.title}>Clases Grabadas</h1>
+            {renderList(clases, "clases", false, true)}
+          </div>
 
-        <div className={styles.overlay}>
-          <h1 className={styles.title}>Tutoriales</h1>
-          {renderList(tutoriales, "tutoriales", true, true)}
+          <div className={styles.sectionSpacer} />
+
+          <div className={styles.section}>
+            <h1 className={styles.title}>Tutoriales</h1>
+            {renderList(tutoriales, "tutoriales", true, true)}
+          </div>
         </div>
       </main>
     </Layout>

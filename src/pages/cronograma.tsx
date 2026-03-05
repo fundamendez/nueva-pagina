@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { usePluginData } from "@docusaurus/useGlobalData";
+import PageHero from "../components/PageHero";
 
 interface BadgeItem {
   label: string;
@@ -37,7 +39,9 @@ function CellContent({ cell }: { cell: CronogramaCell }): ReactNode {
       <div className="cronograma-cell-top">
         <strong>{cell.date}</strong>
         {cell.modality.trim() ? (
-          <span className={`cronograma-badge cronograma-badge--${cell.modalityVariant}`}>
+          <span
+            className={`cronograma-badge cronograma-badge--${cell.modalityVariant}`}
+          >
             {cell.modality}
           </span>
         ) : null}
@@ -81,41 +85,48 @@ export default function CronogramaPage(): ReactNode {
   }
 
   const { rows } = data;
+  const imgSrc = useBaseUrl("/img/homer-panic.jpg");
 
   return (
     <Layout
       title="Cronograma"
       description="Cronograma de cursada de Fundamentos de Programación - FIUBA - Curso Mendez"
     >
-      <main className="container margin-vert--lg">
-        <Heading as="h1">Cronograma</Heading>
+      <main>
+        <PageHero
+          title="Cronograma"
+          subtitle="Fechas, temas y modalidades de cada clase del cuatrimestre."
+          imageSrc={imgSrc}
+          imageAlt="Simpsons meme"
+        />
 
-        <div className="cronograma-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Semana</th>
-                <th>Teórica</th>
-                <th>Práctica</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row, i) => (
-                <tr key={i}>
-                  <td>{row.weekLabel}</td>
-                  <td>
-                    <CellContent cell={row.theory} />
-                  </td>
-                  <td>
-                    <CellContent cell={row.practice} />
-                  </td>
+        <div className="container margin-vert--lg">
+          <div className="cronograma-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Semana</th>
+                  <th>Teórica</th>
+                  <th>Práctica</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {rows.map((row, i) => (
+                  <tr key={i}>
+                    <td>{row.weekLabel}</td>
+                    <td>
+                      <CellContent cell={row.theory} />
+                    </td>
+                    <td>
+                      <CellContent cell={row.practice} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </main>
     </Layout>
   );
 }
-

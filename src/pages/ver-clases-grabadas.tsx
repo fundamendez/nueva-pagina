@@ -49,13 +49,8 @@ export default function VerClasesGrabadas() {
 
   return (
     <Layout title={title}>
-      <main
-        className={styles.container}
-        style={{
-          backgroundImage: `url(${useBaseUrl("/img/fondo-clases-grabadas.jpg")})`,
-        }}
-      >
-        <div className={styles.overlay}>
+      <main className={styles.container}>
+        <div className={styles.section}>
           <div className={styles.headerRow}>
             <Link className={styles.backLink} to={useBaseUrl("/clases-grabadas")}>
               ← Volver
