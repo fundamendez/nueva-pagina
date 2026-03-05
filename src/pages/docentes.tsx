@@ -1,98 +1,44 @@
 import React, { type ReactNode } from 'react';
 import Layout from '@theme/Layout';
-import styles from './docentes.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import styles from './docentes.module.css';
+
+const BASE_IMG_PATH = '/img/docentes';
 
 interface DocenteProps {
   name: string;
-  photo: string;
-  photoHover: string;
+  id: string;
+  ext1?: string; // Usar solo si la foto tiene extension distinta a 'jpg'
+  ext2?: string; // Usar solo si la foto tiene extension distinta a 'jpg'
 }
 
 const docentesList: DocenteProps[] = [
-  {
-    name: 'Agus B.',
-    photo: '/img/docentes/agusB1.jpg', 
-    photoHover: '/img/docentes/agusB2.jpg',
-  },
-  {
-    name: 'Agus F.',
-    photo: '/img/docentes/agusF1.jpg',
-    photoHover: '/img/docentes/agusF2.jpg',
-  },
-  {
-    name: 'Agus S.',
-    photo: '/img/docentes/agusS1.jpg',
-    photoHover: '/img/docentes/agusS2.jpg',
-  },
-  {
-    name: 'Ani',
-    photo: '/img/docentes/ani1.jpeg',
-    photoHover: '/img/docentes/ani2.jpg',
-  },
-  {
-    name: 'Bauti',
-    photo: '/img/docentes/bauti1.jpg',
-    photoHover: '/img/docentes/bauti2.jpg',
-  },
-  {
-    name: 'Berni',
-    photo: '/img/docentes/berni1.jpg',
-    photoHover: '/img/docentes/berni2.jpg',
-  },
-  {
-    name: 'Danny',
-    photo: '/img/docentes/danny1.jpg',
-    photoHover: '/img/docentes/danny2.jpg',
-  },
-  {
-    name: 'Juampi',
-    photo: '/img/docentes/juampi1.jpg',
-    photoHover: '/img/docentes/juampi2.jpg',
-  },
-  {
-    name: 'Mariano',
-    photo: '/img/docentes/mariano1.jpeg',
-    photoHover: '/img/docentes/mariano2.jpeg',
-  },
-  {
-    name: 'Mar',
-    photo: '/img/docentes/mar1.jpeg',
-    photoHover: '/img/docentes/mar2.jpeg',
-  },
-  {
-    name: 'Martu',
-    photo: '/img/docentes/martu1.jpg',
-    photoHover: '/img/docentes/martu2.jpg',
-  },
-  {
-    name: 'May',
-    photo: '/img/docentes/may1.jpeg',
-    photoHover: '/img/docentes/may2.jpg',
-  },
-  {
-    name: 'Solci',
-    photo: '/img/docentes/sol1.jpg',
-    photoHover: '/img/docentes/sol2.jpg',
-  },
-  {
-    name: 'Tomi',
-    photo: '/img/docentes/tomi1.jpg',
-    photoHover: '/img/docentes/tomi2.jpg',
-  },
-  {
-    name: 'Tute',
-    photo: '/img/docentes/tute1.jpeg',
-    photoHover: '/img/docentes/tute2.jpeg',
-  },
-  {
-    name: 'Yoel',
-    photo: '/img/docentes/yoel1.jpeg',
-    photoHover: '/img/docentes/yoel2.jpeg',
-  },
+  { name: 'Agus B.', id: 'agusB' },
+  { name: 'Agus F.', id: 'agusF' },
+  {name: 'Agus J.', id: 'agusJ' },
+  { name: 'Agus S.', id: 'agusS' },
+  { name: 'Ani', id: 'ani', ext1: 'jpeg' },
+  { name: 'Bauti', id: 'bauti' },
+  { name: 'Berni', id: 'berni' },
+  { name: 'Caro', id: 'caro'},
+  { name: 'Danny', id: 'danny' },
+  {name: 'Feli', id: 'feli'},
+  { name: 'Juampi', id: 'juampi' },
+  { name: 'Mariano', id: 'mariano', ext1: 'jpeg', ext2: 'jpeg' },
+  { name: 'Mar', id: 'mar', ext1: 'jpeg', ext2: 'jpeg' },
+  { name: 'Martu', id: 'martu' },
+  { name: 'May', id: 'may', ext1: 'jpeg' },
+  { name: 'Solci', id: 'sol' },
+  { name: 'Tomi', id: 'tomi'},
+  { name: 'Tute', id: 'tute', ext1: 'jpeg', ext2: 'jpeg' },
+  { name: 'Yoel', id: 'yoel', ext1: 'jpeg', ext2: 'jpeg' },
 ];
 
-function DocenteCard({ name, photo, photoHover }: DocenteProps) {
+
+function DocenteCard({ name, id, ext1 = 'jpg', ext2 = 'jpg' }: DocenteProps) {
+  const photo = `${BASE_IMG_PATH}/${id}1.${ext1}`;
+  const photoHover = `${BASE_IMG_PATH}/${id}2.${ext2}`;
+
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
@@ -113,8 +59,8 @@ export default function Docentes(): ReactNode {
         <h1 className="text--center margin-bottom--xl">Nuestro Equipo Docente</h1>
         
         <section className={styles.gridContainer}>
-          {docentesList.map((props, idx) => (
-            <DocenteCard key={idx} {...props} />
+          {docentesList.map((props) => (
+            <DocenteCard key={props.id} {...props} />
           ))}
         </section>
 
