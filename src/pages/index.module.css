@@ -160,6 +160,37 @@
     border-top-color: var(--simpsons-sky);
 }
 
+.cardHighlighted {
+    border-top-width: 6px;
+    border-top-color: var(--simpsons-blue);
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
+    box-shadow: 0 4px 20px rgba(86, 160, 211, 0.15);
+}
+
+.cardHighlighted:hover {
+    box-shadow: 0 10px 32px rgba(86, 160, 211, 0.25);
+}
+
+.primaryRow {
+    justify-content: center;
+}
+
+.additionalSection {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e8e8e8;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+}
+
 .cardAction {
     display: inline-block;
     margin-top: 1rem;

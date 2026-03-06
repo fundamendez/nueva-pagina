@@ -9,7 +9,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./index.module.css";
 import React from "react";
 
-const courseCards = [
+const primaryCards = [
   {
     emoji: "\u{1F3EB}",
     title: "Horarios y Aulas",
@@ -21,15 +21,15 @@ const courseCards = [
     description: "Reglas y condiciones de aprobación",
     link: "/regimen-de-cursada",
   },
-  {
-    emoji: "\u{1F4CA}",
-    title: "Encuestas",
-    description: "Encuestas de fin de curso",
-    link: "/encuestas",
-  },
 ];
 
-const studentActions = [
+const additionalLinks = [
+  {
+    emoji: "\u{1F9EA}",
+    title: "AlgoTron",
+    description: "Entregas de trabajos prácticos",
+    link: "https://algotron.com.ar/",
+  },
   {
     emoji: "\u{1F4E4}",
     title: "RPL",
@@ -37,10 +37,10 @@ const studentActions = [
     link: "https://www.myrpl.ar/",
   },
   {
-    emoji: "\u{1F9EA}",
-    title: "AlgoTron",
-    description: "Entregas de trabajos prácticos",
-    link: "https://algotron.com.ar/",
+    emoji: "\u{1F4CA}",
+    title: "Encuestas",
+    description: "Encuestas de fin de curso",
+    link: "/encuestas",
   },
 ];
 
@@ -69,14 +69,24 @@ function CourseCard({
   title,
   description,
   link,
+  highlighted,
+  colClass,
 }: {
   emoji: string;
   title: string;
   description: string;
   link?: string;
+  highlighted?: boolean;
+  colClass?: string;
 }) {
   const content = (
-    <div className={clsx(styles.card, link && styles.cardLink)}>
+    <div
+      className={clsx(
+        styles.card,
+        link && styles.cardLink,
+        highlighted && styles.cardHighlighted
+      )}
+    >
       <div className={styles.cardIcon}>{emoji}</div>
       <Heading as="h3" className={styles.cardTitle}>
         {title}
@@ -87,7 +97,7 @@ function CourseCard({
   );
 
   return (
-    <div className={clsx("col col--4", styles.cardCol)}>
+    <div className={clsx(colClass ?? "col col--4", styles.cardCol)}>
       {link ? (
         <Link to={link} className={styles.cardLinkWrapper}>
           {content}
@@ -127,19 +137,23 @@ function CourseInfoSection() {
   return (
     <section className={styles.cardsSection}>
       <div className="container">
-        <div className="row">
-          {courseCards.map((card) => (
-            <CourseCard key={card.title} {...card} />
+        <div className={clsx("row", styles.primaryRow)}>
+          {primaryCards.map((card) => (
+            <CourseCard
+              key={card.title}
+              {...card}
+              highlighted
+              colClass="col col--6"
+            />
           ))}
         </div>
       </div>
-      <div className="container">
+      <div className={clsx("container", styles.additionalSection)}>
         <Heading as="h2" className={styles.sectionTitle}>
-          Accesos rápidos
+          Accesos adicionales
         </Heading>
-
         <div className="row">
-          {studentActions.map((card) => (
+          {additionalLinks.map((card) => (
             <CourseCard key={card.title} {...card} />
           ))}
         </div>
