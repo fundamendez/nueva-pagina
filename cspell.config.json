@@ -27,12 +27,22 @@
     "indentación",
     "inicialización",
     "indentado",
+    "ejecución",
+    "Massone",
+    "Fraccaro",
+    "Díaz",
+    "reentrega",
+    "Reentregas",
+    "reentregas",
+    "Trón",
+    "Plagios",
+    "signficará",
     "modularización",
     "subproblemas",
     "subproblema",
     "modularizar", 
     "submódulos", 
     "recordá"
-  ],
-  "flagWords": ["indentacion", "inicializacion", "modularizacion", "submodulos", "recorda"]
+    ],
+  "flagWords": ["indentacion", "inicializacion", "modularizacion", "submodulos", "recorda", "ejecucion"]
 }
