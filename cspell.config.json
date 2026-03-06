@@ -36,7 +36,13 @@
     "reentregas",
     "Trón",
     "Plagios",
-    "signficará"
-  ],
-  "flagWords": ["indentacion", "inicializacion", "ejecucion"]
+    "signficará",
+    "modularización",
+    "subproblemas",
+    "subproblema",
+    "modularizar", 
+    "submódulos", 
+    "recordá"
+    ],
+  "flagWords": ["indentacion", "inicializacion", "modularizacion", "submodulos", "recorda", "ejecucion"]
 }
