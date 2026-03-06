@@ -5,18 +5,29 @@ import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import {
+  faSchool,
+  faScroll,
+  faComments,
+  faFlask,
+  faPaperPlane,
+  faChartBar,
+  faInbox,
+} from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./index.module.css";
 import React from "react";
 
 const primaryCards = [
   {
-    emoji: "\u{1F3EB}",
+    icon: faSchool,
     title: "Horarios y Aulas",
     description: "Martes y Jueves de 18 a 21hs — Aulas a confirmar",
   },
   {
-    emoji: "\u{1F4DC}",
+    icon: faScroll,
     title: "Régimen de Cursada",
     description: "Reglas y condiciones de aprobación",
     link: "/regimen-de-cursada",
@@ -25,19 +36,19 @@ const primaryCards = [
 
 const additionalLinks = [
   {
-    emoji: "\u{1F9EA}",
+    icon: faInbox,
     title: "AlgoTron",
     description: "Entregas de trabajos prácticos",
     link: "https://algotron.com.ar/",
   },
   {
-    emoji: "\u{1F4E4}",
+    icon: faFlask,
     title: "RPL",
     description: "Ejercicios y práctica interactiva",
     link: "https://www.myrpl.ar/",
   },
   {
-    emoji: "\u{1F4CA}",
+    icon: faChartBar,
     title: "Encuestas",
     description: "Encuestas de fin de curso",
     link: "/encuestas",
@@ -65,14 +76,14 @@ function HomepageHero() {
 }
 
 function CourseCard({
-  emoji,
+  icon,
   title,
   description,
   link,
   highlighted,
   colClass,
 }: {
-  emoji: string;
+  icon: IconDefinition;
   title: string;
   description: string;
   link?: string;
@@ -84,10 +95,12 @@ function CourseCard({
       className={clsx(
         styles.card,
         link && styles.cardLink,
-        highlighted && styles.cardHighlighted
+        highlighted && styles.cardHighlighted,
       )}
     >
-      <div className={styles.cardIcon}>{emoji}</div>
+      <div className={styles.cardIcon}>
+        <FontAwesomeIcon icon={icon} />
+      </div>
       <Heading as="h3" className={styles.cardTitle}>
         {title}
       </Heading>
@@ -115,7 +128,9 @@ function SlackBanner() {
       <Link to="#" className={styles.slackBannerLink}>
         <div className="container">
           <div className={styles.slackBannerContent}>
-            <span className={styles.slackBannerEmoji}>{"\u{1F4AC}"}</span>
+            <span className={styles.slackBannerEmoji}>
+              <FontAwesomeIcon icon={faComments} />
+            </span>
             <div>
               <Heading as="h3" className={styles.slackBannerTitle}>
                 Unite al Slack del curso

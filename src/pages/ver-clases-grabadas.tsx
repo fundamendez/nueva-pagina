@@ -4,6 +4,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
 import styles from "./ver-clases-grabadas.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import {
   CLASES,
@@ -53,7 +55,7 @@ export default function VerClasesGrabadas() {
         <div className={styles.section}>
           <div className={styles.headerRow}>
             <Link className={styles.backLink} to={useBaseUrl("/clases-grabadas")}>
-              ← Volver
+              <FontAwesomeIcon icon={faArrowLeft} /> Volver
             </Link>
 
             <h1 className={styles.title}>{title}</h1>
