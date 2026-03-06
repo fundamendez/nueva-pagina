@@ -1,0 +1,70 @@
+/* ===== Encuestas Page — Simpsons theme ===== */
+
+.yearsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 997px) {
+  .yearsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.yearCard {
+  background: #fff;
+  border-radius: 16px;
+  border-top: 4px solid var(--simpsons-yellow);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.yearCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.yearCard h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.quarterList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quarterList li {
+  border-bottom: 1px solid #eee;
+}
+
+.quarterList li:last-child {
+  border-bottom: none;
+}
+
+.quarterLink {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  color: var(--simpsons-blue);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.quarterLink:hover {
+  background: rgba(123, 200, 246, 0.15);
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+}
