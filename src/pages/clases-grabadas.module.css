@@ -1,139 +1,75 @@
-/* ===== Page Background ===== */
-.container {
-  background: #fafafa;
-  min-height: calc(100vh - 60px);
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
-.content {
-  padding: 2.5rem 1rem;
+@media (min-width: 997px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* ===== Content Section ===== */
-.section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  border-radius: 16px;
+.categoryCard {
   background: #fff;
+  border-radius: 16px;
   border-top: 4px solid var(--simpsons-yellow);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
-/* ===== Headings ===== */
-.title {
-  font-size: 2.5rem;
-  color: var(--simpsons-yellow);
-  margin-bottom: 1.25rem;
+.categoryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.categoryCard h2 {
   text-align: center;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
-}
-
-/* ===== Layout: Sections Spacing ===== */
-.sectionSpacer {
-  height: 2rem;
-}
-
-/* ===== List/Table Layout ===== */
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.row {
-  width: 100%;
-  padding: 1rem 1rem;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.75rem;
-}
-
-.rowTitle {
-  font-size: 1.3rem;
-  text-align: center;
-  color: #111;
-  width: 100%;
+  font-size: 1.25rem;
   font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
 }
 
-.rowActions {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
+.videoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-@media (min-width: 700px) {
-  .row {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .rowTitle {
-    text-align: left;
-    width: auto;
-    flex: 1;
-    padding-right: 1rem;
-  }
-
-  .rowActions {
-    justify-content: flex-end;
-  }
+.videoList li {
+  border-bottom: 1px solid #eee;
 }
 
-/* ===== Buttons ===== */
-.primaryButton {
-  display: inline-block;
-  padding: 0.55rem 0.9rem;
-  border-radius: 12px;
-  font-weight: 700;
-  text-decoration: none;
-  background: var(--simpsons-yellow);
-  color: #111;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+.videoList li:last-child {
+  border-bottom: none;
 }
 
-.primaryButton:hover {
-  text-decoration: none;
-  filter: brightness(0.95);
-}
-
-.secondaryButton {
-  display: inline-block;
-  padding: 0.55rem 0.9rem;
-  border-radius: 12px;
+.videoLink {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  color: var(--simpsons-blue);
   font-weight: 600;
   text-decoration: none;
-  background: #f0f0f0;
-  color: #111;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  text-align: center;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
-.secondaryButton:hover {
+.videoLink:hover {
+  background: rgba(123, 200, 246, 0.15);
+  color: var(--ifm-color-primary-dark);
   text-decoration: none;
-  filter: brightness(0.95);
 }
 
-.downloadButton {
-  display: inline-block;
-  padding: 0.55rem 0.9rem;
-  border-radius: 12px;
-  font-weight: 700;
-  text-decoration: none;
-  background: var(--simpsons-sky);
-  color: #0b2230;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.downloadButton:hover {
-  text-decoration: none;
-  filter: brightness(0.95);
+.emptyMessage {
+  color: #888;
+  font-style: italic;
+  padding: 1rem 0;
+  text-align: center;
 }

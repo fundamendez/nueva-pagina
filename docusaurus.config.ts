@@ -4,7 +4,10 @@ import type { LoadContext, Plugin } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import { readdirSync, readFileSync, existsSync, statSync } from "fs";
 import { join, extname } from "path";
-import { getCronogramaDataForPlugin, DEFAULT_YEAR } from "./lib/cronograma/parse";
+import {
+  getCronogramaDataForPlugin,
+  DEFAULT_YEAR,
+} from "./lib/cronograma/parse";
 import { getBadgeVariant, getModalityVariant } from "./lib/cronograma/html";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -119,7 +122,7 @@ const config: Config = {
             },
           }));
           return {
-            rows
+            rows,
           };
         },
         async contentLoaded({ content, actions }) {
@@ -163,14 +166,13 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Apuntes",
-        },
-        {
           to: "/material",
           label: "Material",
+          position: "left",
+        },
+        {
+          to: "/cronograma",
+          label: "Cronograma",
           position: "left",
         },
         {
@@ -179,13 +181,14 @@ const config: Config = {
           position: "left",
         },
         {
-          to: "/docentes",
-          label: "Docentes",
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
           position: "left",
+          label: "Apuntes",
         },
         {
-          to: "/cronograma",
-          label: "Cronograma",
+          to: "/docentes",
+          label: "Docentes",
           position: "left",
         },
         {
@@ -206,4 +209,3 @@ const config: Config = {
 };
 
 export default config;
-
