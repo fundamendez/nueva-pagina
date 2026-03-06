@@ -179,6 +179,11 @@ const config: Config = {
           position: "left",
         },
         {
+          to: "/docentes",
+          label: "Docentes",
+          position: "left",
+        },
+        {
           to: "/cronograma",
           label: "Cronograma",
           position: "left",
