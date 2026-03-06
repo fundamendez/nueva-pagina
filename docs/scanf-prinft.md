@@ -1,3 +1,8 @@
+---
+title: 'Entrada y Salida en C: printf y scanf'
+
+---
+
 # Entrada y Salida en C: printf y scanf
 
 La comunicación con el usuario es fundamental en cualquier programa que desarrollemos. En C, las funciones `printf` y `scanf` son las herramientas básicas para mostrar información en pantalla y obtener datos del usuario.
@@ -65,7 +70,7 @@ La función `scanf` (de "scan formatted") lee datos del teclado siguiendo un for
 scanf("formato", &variable);
 ```
 
-**Importante:** Observa el símbolo `&` antes de la variable. Este simbolo es importante para permitir que la funcion `scanf()` pueda modificar la variable que le pasamos.
+**Importante:** Observa el símbolo `&` antes de la variable. Este simbolo es importante para permitir que la funcion `scanf()` pueda modificar la variable que le pasamos, vamos a entender como funciona en profundidad mas adelante.
 
 ### Ejemplos de scanf
 
@@ -97,14 +102,15 @@ int main() {
 
 ### Cuidados con scanf
 
-1. **El ampersand (&):** No olvides el `&` antes de variables simples (int, float, char). Los vectores son la excepción.
+1. **El ampersand (&):** No olvides el `&` antes de variables simples (int, float, char). Los vectores son la excepción. Si no lo usamos, no vamos a poder guardar lo que ingresa el usuario
 
-2. **Espacios en blanco:** Para leer caracteres después de números, usa un espacio antes de `%c`:
+2. **Espacios en blanco:** Para leer caracteres, usa un espacio antes de `%c` (si no lo usamos se almacena el caracter junto con basura y lo que guardamos no es lo que esperamos):
    ```c
-   scanf(" %c", &caracter);  // El espacio consume el '\n' residual
+   scanf(" %c", &caracter);
    ```
+3. **scanf siempre acompañado de printf:** Siempre que se ponga un scanf tiene que estar acompañado de un mensaje que aclare que es lo que se solicita y dando indicaciones.
 
-4. **scanf solo lee hasta el primer espacio**
+5. **scanf solo lee hasta el primer espacio:** Hay que tener cuidado si se ingresan espacios en el ingreso
 
 ## Secuencias de escape
 
@@ -237,26 +243,13 @@ if promedio >= 4.0:
 else:
     print("Estado: REPROBADO ✗")
 ```
-
-### Diferencias clave
-
-| Aspecto | C | Python |
-|---------|---|--------|
-| **Declaración de tipos** | Obligatoria (`int x;`) | Dinámica (`x = 5`) |
-| **Operador de dirección** | Necesario con `scanf` (`&variable`) | No existe |
-| **Formato de strings** | Especificadores (`%d`, `%f`) | F-strings o `.format()` |
-| **Conversión de tipos** | Manual al leer | Automática o con `int()`, `float()` |
-| **Simplicidad** | Más verboso y explícito | Más conciso y legible |
-| **Control de formato** | Muy preciso y potente | Flexible pero más moderno |
-
 ## Consejos prácticos
 
 1. **Siempre incluir `<stdio.h>`** al usar `printf` y `scanf`.
 
-2. **Acordate del espacio antes del %c:** Solemos pasarlo por alto y obtenemos resultados raros sin entender porque.
+2. **No olvidar el `&` con `scanf` para variables simples:** Solemos olvidarlo y nuestras variables no cambian su valor por lo que obtenemos resultados inesperados.
 
- 
-3. **No olvidar el `&` con `scanf` para variables simples:** Solemos olvidarlo y nuestras variables no cambian su valor por lo que obtenemos resultados inesperados. 
+3. **Acordate del espacio antes del %c:** Solemos pasarlo por alto y obtenemos resultados raros sin entender porque. 
 
 4. **Practicar los especificadores de formato (`%d`, `%f`, ` %c`, etc.)** Le dicen a estas funciones cómo interpretar los datos
 
