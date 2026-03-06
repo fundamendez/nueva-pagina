@@ -39,3 +39,11 @@ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+## Spell Check
+
+```bash
+npm run lint:spell
+```
+
+This command checks for typos in all Markdown files under `docs/` and `src/`, using English and Spanish dictionaries. It also runs automatically on every pull request via GitHub Actions.

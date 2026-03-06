@@ -4,7 +4,6 @@
  * work well for content-centric websites.
  */
 
-/* Simpsons-themed color palette */
 :root {
     --ifm-color-primary: #56A0D3;
     --ifm-color-primary-dark: #3d90cb;
@@ -25,3 +24,5 @@
 .yellow-text {
     color: var(--simpsons-yellow);
 }
+
+@import "./cronograma.css";
