@@ -3,11 +3,11 @@ title: 'Entrada y Salida en C: printf y scanf'
 
 ---
 
-# Entrada y Salida en C: printf y scanf
+# Entrada y Salida en C: `printf` y `scanf`
 
 La comunicación con el usuario es fundamental en cualquier programa que desarrollemos. En C, las funciones `printf` y `scanf` son las herramientas básicas para mostrar información en pantalla y obtener datos del usuario.
 
-## printf: Mostrando información
+## `printf`: Mostrando información
 
 La función `printf` (de "print formatted") te permite imprimir texto y variables en la consola con un formato específico. Es como el `print()` de Python, pero con esteroides.
 
@@ -60,7 +60,7 @@ int main() {
 }
 ```
 
-## scanf: Capturando entrada del usuario
+## `scanf`: Capturando entrada del usuario
 
 La función `scanf` (de "scan formatted") lee datos del teclado siguiendo un formato específico. Es el equivalente a `input()` en Python, pero necesitas especificar el tipo de dato que esperas.
 
@@ -70,9 +70,9 @@ La función `scanf` (de "scan formatted") lee datos del teclado siguiendo un for
 scanf("formato", &variable);
 ```
 
-**Importante:** Observa el símbolo `&` antes de la variable. Este simbolo es importante para permitir que la funcion `scanf()` pueda modificar la variable que le pasamos, vamos a entender como funciona en profundidad mas adelante.
+**Importante:** Observa el símbolo `&` antes de la variable. Este símbolo es importante para permitir que la función `scanf()` pueda modificar la variable que le pasamos, vamos a entender como funciona en profundidad mas adelante.
 
-### Ejemplos de scanf
+### Ejemplos de `scanf`
 
 ```c
 #include <stdio.h>
@@ -100,7 +100,7 @@ int main() {
 }
 ```
 
-### Cuidados con scanf
+### Cuidados con `scanf`
 
 1. **El ampersand (&):** No olvides el `&` antes de variables simples (int, float, char). Los vectores son la excepción. Si no lo usamos, no vamos a poder guardar lo que ingresa el usuario
 
@@ -108,9 +108,7 @@ int main() {
    ```c
    scanf(" %c", &caracter);
    ```
-3. **scanf siempre acompañado de printf:** Siempre que se ponga un scanf tiene que estar acompañado de un mensaje que aclare que es lo que se solicita y dando indicaciones.
-
-5. **scanf solo lee hasta el primer espacio:** Hay que tener cuidado si se ingresan espacios en el ingreso
+3. **`scanf` siempre acompañado de `printf`:** Siempre que se ponga un `scanf` tiene que estar acompañado de un mensaje que aclare que es lo que se solicita y dando indicaciones.
 
 ## Secuencias de escape
 
@@ -254,4 +252,4 @@ else:
 4. **Practicar los especificadores de formato (`%d`, `%f`, ` %c`, etc.)** Le dicen a estas funciones cómo interpretar los datos
 
 
-Con estas herramientas ya puedes crear programas interactivos desde lo mas basico a cosas avanzadas. ¡A practicar!
+Con estas herramientas ya puedes crear programas interactivos desde lo mas básico a cosas avanzadas. ¡A practicar!

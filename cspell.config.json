@@ -40,9 +40,20 @@
     "modularización",
     "subproblemas",
     "subproblema",
-    "modularizar", 
-    "submódulos", 
-    "recordá"
-    ],
-  "flagWords": ["indentacion", "inicializacion", "modularizacion", "submodulos", "recorda", "ejecucion"]
+    "modularizar",
+    "submódulos",
+    "recordá",
+    "especificadores",
+    "caracter",
+    "tabulación",
+    "acordate"
+  ],
+  "flagWords": [
+    "indentacion",
+    "inicializacion",
+    "modularizacion",
+    "submodulos",
+    "recorda",
+    "ejecucion"
+  ]
 }
