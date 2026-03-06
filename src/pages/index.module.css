@@ -102,7 +102,7 @@
     border-radius: 16px;
     padding: 2rem 1.5rem;
     text-align: center;
-    border-top: 4px solid var(--simpsons-yellow);
+    border-top: 4px solid var(--simpsons-sky);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     transition:
         transform 0.2s,
@@ -155,7 +155,7 @@
 
 .cardLink {
     cursor: pointer;
-    border-top-color: var(--simpsons-blue);
+    border-top-color: var(--simpsons-sky);
 }
 
 .cardLink:hover {
@@ -164,7 +164,7 @@
 
 .cardHighlighted {
     border-top-width: 6px;
-    border-top-color: var(--simpsons-blue);
+    border-top-color: var(--simpsons-sky);
     padding: 2.5rem 2rem;
     background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
     box-shadow: 0 4px 20px rgba(86, 160, 211, 0.15);
