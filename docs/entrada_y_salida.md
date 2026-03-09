@@ -1,15 +1,14 @@
 ---
-title: 'Entrada y Salida en C: printf y scanf'
-
+title: "Entrada y Salida"
 ---
 
-# Entrada y Salida en C: `printf` y `scanf`
+# Entrada y Salida
 
 La comunicación con el usuario es fundamental en cualquier programa que desarrollemos. En C, las funciones `printf` y `scanf` son las herramientas básicas para mostrar información en pantalla y obtener datos del usuario.
 
 ## `printf`: Mostrando información
 
-La función `printf` (de "print formatted") te permite imprimir texto y variables en la consola con un formato específico. Es como el `print()` de Python, pero con esteroides.
+La función `printf` (de "print formatted") permite imprimir texto y variables en la consola con un formato específico. Es el equivalente a `print()` en Python, con la diferencia de que requiere especificar el formato de cada dato a mostrar.
 
 ### Sintaxis básica
 
@@ -25,14 +24,16 @@ Los especificadores le dicen a `printf` cómo interpretar y mostrar cada variabl
 - `%f` - Números de punto flotante (float, double)
 - `%c` - Caracteres (char)
 
-##### Estos los vemos mas adelante
+:::note
+Los siguientes especificadores los vemos más adelante:
+
 - `%s` - Cadenas de texto (strings)
 - `%p` - Punteros (direcciones de memoria)
-
+  :::
 
 ### Modificadores útiles
 
-Podes controlar el formato con más precisión:
+Se puede controlar el formato con más precisión:
 
 ```c
 printf("%5d", 42);        // Ancho mínimo de 5 caracteres: "   42"
@@ -49,20 +50,20 @@ int main() {
     int edad = 25;
     float altura = 1.75;
     char inicial = 'F';
-    
+
     printf("Hola, mundo!\n");
     printf("Tengo %d años\n", edad);
     printf("Mi altura es %.2f metros\n", altura);
     printf("Mi inicial es: %c\n", inicial);
     printf("Todo junto: %d años, %.2f m, inicial %c\n", edad, altura, inicial);
-    
+
     return 0;
 }
 ```
 
 ## `scanf`: Capturando entrada del usuario
 
-La función `scanf` (de "scan formatted") lee datos del teclado siguiendo un formato específico. Es el equivalente a `input()` en Python, pero necesitas especificar el tipo de dato que esperas.
+La función `scanf` (de "scan formatted") lee datos del teclado siguiendo un formato específico. Es el equivalente a `input()` en Python, con la diferencia de que es necesario especificar el tipo de dato que se espera recibir.
 
 ### Sintaxis básica
 
@@ -70,7 +71,7 @@ La función `scanf` (de "scan formatted") lee datos del teclado siguiendo un for
 scanf("formato", &variable);
 ```
 
-**Importante:** Observa el símbolo `&` antes de la variable. Este símbolo es importante para permitir que la función `scanf()` pueda modificar la variable que le pasamos, vamos a entender como funciona en profundidad mas adelante.
+**Importante:** el símbolo `&` antes de la variable es necesario para que `scanf` pueda modificar la variable que le pasamos. Vamos a entender cómo funciona en profundidad más adelante.
 
 ### Ejemplos de `scanf`
 
@@ -81,38 +82,38 @@ int main() {
     int edad;
     float peso;
     char inicial;
-    
-    printf("Ingresa tu edad: ");
+
+    printf("Ingresá tu edad: ");
     scanf("%d", &edad);
-    
-    printf("Ingresa tu peso (kg): ");
+
+    printf("Ingresá tu peso (kg): ");
     scanf("%f", &peso);
-    
-    printf("Ingresa tu inicial: ");
-    scanf(" %c", &inicial);  // prestar atencion el espacio antes de %c, es necesario para que funcione!
-    
+
+    printf("Ingresá tu inicial: ");
+    scanf(" %c", &inicial);  // prestar atención al espacio antes de %c, es necesario para que funcione
+
     printf("\nResumen:\n");
     printf("Edad: %d años\n", edad);
     printf("Peso: %.1f kg\n", peso);
     printf("Inicial: %c\n", inicial);
-    
+
     return 0;
 }
 ```
 
 ### Cuidados con `scanf`
 
-1. **El ampersand (&):** No olvides el `&` antes de variables simples (int, float, char). Los vectores son la excepción. Si no lo usamos, no vamos a poder guardar lo que ingresa el usuario
+1. **El ampersand (`&`):** no olvidar el `&` antes de variables simples (int, float, char). Los vectores son la excepción. Sin él, no es posible guardar el valor ingresado por el usuario.
 
-2. **Espacios en blanco:** Para leer caracteres, usa un espacio antes de `%c` (si no lo usamos se almacena el caracter junto con basura y lo que guardamos no es lo que esperamos):
+2. **Espacios en blanco:** para leer caracteres, se usa un espacio antes de `%c` (sin él, se almacena el caracter junto con basura del buffer y el valor guardado no es el esperado):
    ```c
    scanf(" %c", &caracter);
    ```
-3. **`scanf` siempre acompañado de `printf`:** Siempre que se ponga un `scanf` tiene que estar acompañado de un mensaje que aclare que es lo que se solicita y dando indicaciones.
+3. **`scanf` siempre acompañado de `printf`:** todo `scanf` debe estar precedido por un mensaje que indique qué se solicita y cómo ingresarlo.
 
 ## Secuencias de escape
 
-Caracteres especiales que puedes usar en `printf`:
+Caracteres especiales que se pueden usar en `printf`:
 
 - `\n` - Nueva línea
 - `\t` - Tabulación
@@ -132,22 +133,24 @@ Veamos cómo se comparan estas operaciones en ambos lenguajes.
 
 ### Ejemplo 1: Saludar al usuario
 
-**C:**
+#### C
+
 ```c
 #include <stdio.h>
 
 int main() {
     char nombre[50];
-    
+
     printf("¿Cómo te llamas? ");
     scanf("%s", nombre);
     printf("¡Hola, %s!\n", nombre);
-    
+
     return 0;
 }
 ```
 
-**Python:**
+#### Python
+
 ```python
 nombre = input("¿Cómo te llamas? ")
 print(f"¡Hola, {nombre}!")
@@ -155,30 +158,32 @@ print(f"¡Hola, {nombre}!")
 
 ### Ejemplo 2: Calculadora simple
 
-**C:**
+#### C
+
 ```c
 #include <stdio.h>
 
 int main() {
     float num1, num2, resultado;
-    
-    printf("Ingresa el primer número: ");
+
+    printf("Ingresá el primer número: ");
     scanf("%f", &num1);
-    
-    printf("Ingresa el segundo número: ");
+
+    printf("Ingresá el segundo número: ");
     scanf("%f", &num2);
-    
+
     resultado = num1 + num2;
     printf("%.2f + %.2f = %.2f\n", num1, num2, resultado);
-    
+
     return 0;
 }
 ```
 
-**Python:**
+#### Python
+
 ```python
-num1 = float(input("Ingresa el primer número: "))
-num2 = float(input("Ingresa el segundo número: "))
+num1 = float(input("Ingresá el primer número: "))
+num2 = float(input("Ingresá el segundo número: "))
 
 resultado = num1 + num2
 print(f"{num1:.2f} + {num2:.2f} = {resultado:.2f}")
@@ -186,47 +191,49 @@ print(f"{num1:.2f} + {num2:.2f} = {resultado:.2f}")
 
 ### Ejemplo 3: Calculadora de promedios
 
-**C:**
+#### C
+
 ```c
 #include <stdio.h>
 
 int main() {
     float nota1, nota2, nota3, promedio;
-    
+
     printf("=== Calculadora de Promedio ===\n");
-    printf("Ingresa la nota 1: ");
+    printf("Ingresá la nota 1: ");
     scanf("%f", &nota1);
-    
-    printf("Ingresa la nota 2: ");
+
+    printf("Ingresá la nota 2: ");
     scanf("%f", &nota2);
-    
-    printf("Ingresa la nota 3: ");
+
+    printf("Ingresá la nota 3: ");
     scanf("%f", &nota3);
-    
+
     promedio = (nota1 + nota2 + nota3) / 3.0;
-    
+
     printf("\nResultados:\n");
     printf("Nota 1: %.2f\n", nota1);
     printf("Nota 2: %.2f\n", nota2);
     printf("Nota 3: %.2f\n", nota3);
     printf("Promedio: %.2f\n", promedio);
-    
+
     if (promedio >= 4.0) {
         printf("Estado: APROBADO ✓\n");
     } else {
         printf("Estado: REPROBADO ✗\n");
     }
-    
+
     return 0;
 }
 ```
 
-**Python:**
+#### Python
+
 ```python
 print("=== Calculadora de Promedio ===")
-nota1 = float(input("Ingresa la nota 1: "))
-nota2 = float(input("Ingresa la nota 2: "))
-nota3 = float(input("Ingresa la nota 3: "))
+nota1 = float(input("Ingresá la nota 1: "))
+nota2 = float(input("Ingresá la nota 2: "))
+nota3 = float(input("Ingresá la nota 3: "))
 
 promedio = (nota1 + nota2 + nota3) / 3
 
@@ -241,15 +248,11 @@ if promedio >= 4.0:
 else:
     print("Estado: REPROBADO ✗")
 ```
+
 ## Consejos prácticos
 
 1. **Siempre incluir `<stdio.h>`** al usar `printf` y `scanf`.
 
-2. **No olvidar el `&` con `scanf` para variables simples:** Solemos olvidarlo y nuestras variables no cambian su valor por lo que obtenemos resultados inesperados.
+2. **No olvidar el `&` con `scanf` para variables simples:** sin él, las variables no cambian su valor y se obtienen resultados inesperados.
 
-3. **Acordate del espacio antes del %c:** Solemos pasarlo por alto y obtenemos resultados raros sin entender porque. 
-
-4. **Practicar los especificadores de formato (`%d`, `%f`, ` %c`, etc.)** Le dicen a estas funciones cómo interpretar los datos
-
-
-Con estas herramientas ya puedes crear programas interactivos desde lo mas básico a cosas avanzadas. ¡A practicar!
+3. **Recordar el espacio antes de `%c`:** es un detalle fácil de pasar por alto que genera resultados incorrectos difíciles de diagnosticar.

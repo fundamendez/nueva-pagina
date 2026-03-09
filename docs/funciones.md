@@ -21,7 +21,7 @@ int main() {
 }
 ```
 
-**⚠️ ¿Qué problemas tendría eso?**
+**¿Qué problemas tendría esto?**
 
 * El código sería largo y difícil de entender.
 * Mezclaríamos muchas responsabilidades en un solo lugar.
@@ -49,7 +49,7 @@ Cada módulo:
 * Resuelve un subproblema.
 * Puede entenderse sin analizar todo el programa.
 
-:::important[INFO]
+:::info
 Cada módulo debería tener una única responsabilidad.
 Si realiza demasiadas tareas, probablemente debería dividirse en más submódulos.
 :::
@@ -95,7 +95,7 @@ int sumar(int a, int b) {
 }
 ```
 
-### 🔎 ¿Qué significa cada parte?
+### ¿Qué significa cada parte?
 * `int` → tipo de dato que devuelve la función.
 * `sumar` → nombre de la función.
 * `a, b` → parámetros.
@@ -108,7 +108,7 @@ int sumar(int a, int b)
 ```
 La lista de parámetros consiste en una serie de declaraciones de variables, separadas por comas, que especifican el tipo y el nombre de cada dato que conforma su entrada.
 
-### 🤔 ¿Cómo se usa?
+### ¿Cómo se usa?
 
 Al llamar a una función, los parámetros se reemplazan con valores literales o con variables que contengan un valor:
 
@@ -124,7 +124,7 @@ En este caso:
 * Ese valor se guarda en `resultado`.
 
 
-:::important[INFO]
+:::info
 La instrucción return cumple dos funciones:
 * Devuelve un valor.
 * Finaliza inmediatamente la ejecución de la función, por lo que todo el código que siga después de una llamada a `return`, no se ejecuta.
@@ -193,7 +193,7 @@ Una función `void` puede usar `return;` sin valor, pero no es obligatorio.
 Normalmente se usa cuando se quiere terminar con la ejecución de la función de manera temprana.
 :::
 
-## 📌 Diferencia entre función y procedimiento
+## Diferencia entre función y procedimiento
 
 **Comparación conceptual**
 | Función (con retorno) |  Procedimiento (`void`) |
@@ -203,7 +203,7 @@ Normalmente se usa cuando se quiere terminar con la ejecución de la función de
 | `int resultado = sumar(2,3);` |	`imprimir_saludo();` |
 
 
-### 🔎 Diferencia práctica
+### Diferencia práctica
 ```c
 int sumar(int a, int b) {
     return a + b;
@@ -235,11 +235,11 @@ tipo_retorno nombre_funcion(tipo_1 parametro_1, tipo_2 parametro_2) {
 }
 ```
 
-## 📌 Reglas de Diseño
-:::tip[RECORDÁ]
+## Reglas de diseño
+:::tip
 Estas reglas no son obligatorias para que el programa funcione, pero sí para que el código sea claro y fácil de mantener.
 :::
-### ✔️ Nombre descriptivo
+### Nombre descriptivo
 ```c
 float calcular_promedio();
 void leer_notas();
@@ -252,7 +252,7 @@ float promedio_calculado(); // ❌
 int leeran_notas(); // ❌
 ```
 
-### ✔️ Responsabilidad única
+### Responsabilidad única
 
 Una función debería:
 * **O** calcular y devolver un valor
@@ -260,14 +260,14 @@ Una función debería:
 
 Pero no ambas cosas al mismo tiempo.
 
-### ✔️ Funciones cortas
+### Funciones cortas
 
 Funciones pequeñas:
 * Son más fáciles de entender.
 * Son más fáciles de probar.
 * Son más fáciles de reutilizar.
 
-## ⚠️ Errores comunes
+## Errores comunes
 
 * Hacer todo dentro de `main`.
 * Funciones demasiado largas.

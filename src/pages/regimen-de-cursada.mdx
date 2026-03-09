@@ -3,7 +3,7 @@ title: Régimen de Cursada
 description: Régimen de cursada de Fundamentos de Programación - FIUBA - Curso Mendez
 ---
 
-import '../css/pages.css';
+import "../css/pages.css";
 
 <div className="page-wrapper">
 
@@ -11,7 +11,9 @@ import '../css/pages.css';
 
 <div className="page-subtitle">
   <div className="page-subtitle-line">Fundamentos de Programación - TB021</div>
-  <div>Mendez - Rodriguez Dala - Massone - Bocaccio - Fraccaro - Díaz Real - Rey</div>
+  <div>
+    Mendez - Rodriguez Dala - Bocaccio - Díaz Real - Fraccaro - Massone - Rey
+  </div>
 </div>
 
 ## 1. Trabajos Prácticos
@@ -56,7 +58,7 @@ Cualquier indicio de plagio o del uso de herramientas de inteligencia artificial
 
 ## 2. Examen Parcial
 
-Se tomará 1 (un) examen parcial con 2 (dos) instancias de recuperación, todas las fechas están publicadas en el cronograma de la materia, la aprobación de este examen es de carácter obligatorio en alguna de sus 3 (tres) instancias. No estará
+Se tomará 1 (un) examen parcial con 2 (dos) instancias de recuperación, todas las fechas están publicadas en el cronograma de la materia, la aprobación de este examen es de caracter obligatorio en alguna de sus 3 (tres) instancias. No estará
 disponible la posibilidad de recuperar para subir nota.
 
 Dicho examen durará 3 (tres) horas y constará de entre 3 y 6 ejercicios teórico-prácticos.
@@ -86,30 +88,36 @@ La nota de cursada se calcula como el promedio entre la nota del parcial y las n
 
 export const Fraction = ({ numerator, denominator }) => (
   <span className="fraction-wrapper">
-    <span className="fraction-numerator">
-      {numerator}
-    </span>
-    <span className="fraction-denominator">
-      {denominator}
-    </span>
+    <span className="fraction-numerator">{numerator}</span>
+    <span className="fraction-denominator">{denominator}</span>
   </span>
 );
 
 <div className="formulas-container">
   <div className="formula-row">
-    <span className="formula-variable">Nota Cursada</span> 
+    <span className="formula-variable">Nota Cursada</span>
     <span className="formula-equals">=</span>
-    <Fraction 
-      numerator={<span>TP₀ + TP₁ + TP₂ + <span className="formula-variable">Nota Parcial</span></span>}
+    <Fraction
+      numerator={
+        <span>
+          TP₀ + TP₁ + TP₂ +{" "}
+          <span className="formula-variable">Nota Parcial</span>
+        </span>
+      }
       denominator="4"
     />
   </div>
-  
+
   <div className="formula-row">
-    <span className="formula-variable">Nota Final</span> 
+    <span className="formula-variable">Nota Final</span>
     <span className="formula-equals">=</span>
-    <Fraction 
-      numerator={<span><span className="formula-variable">Nota Cursada</span> + <span className="formula-variable">Nota Examen Final</span></span>}
+    <Fraction
+      numerator={
+        <span>
+          <span className="formula-variable">Nota Cursada</span> +{" "}
+          <span className="formula-variable">Nota Examen Final</span>
+        </span>
+      }
       denominator="2"
     />
   </div>
