@@ -15,6 +15,7 @@ import {
   faPaperPlane,
   faChartBar,
   faInbox,
+  faClock,
 } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./index.module.css";
@@ -22,9 +23,14 @@ import React from "react";
 
 const primaryCards = [
   {
+    icon: faClock,
+    title: "Horario",
+    description: "Martes y Jueves de 18 a 21hs",
+  },
+  {
     icon: faSchool,
-    title: "Horarios y Aulas",
-    description: "Martes y Jueves de 18 a 21hs — Aulas a confirmar",
+    title: "Aulas",
+    description: "Martes: Aula 414 · Jueves: Aula 203",
   },
   {
     icon: faScroll,
@@ -154,12 +160,7 @@ function CourseInfoSection() {
       <div className="container">
         <div className={clsx("row", styles.primaryRow)}>
           {primaryCards.map((card) => (
-            <CourseCard
-              key={card.title}
-              {...card}
-              highlighted
-              colClass="col col--6"
-            />
+            <CourseCard key={card.title} {...card} highlighted />
           ))}
         </div>
       </div>
