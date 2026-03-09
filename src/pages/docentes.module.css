@@ -41,10 +41,37 @@
   opacity: 1;
 }
 
-.name {
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 15px;
+}
+
+.name {
+  margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+.slackLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #611f69;
+  font-size: 1.1rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(97, 31, 105, 0.1);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.slackLink:hover {
+  background: #611f69;
+  color: #fff;
+  transform: scale(1.1);
 }
 
 .gridContainer {
