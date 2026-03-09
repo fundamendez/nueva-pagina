@@ -131,7 +131,10 @@ function CourseCard({
 function SlackBanner() {
   return (
     <section className={styles.slackBanner}>
-      <Link to="#" className={styles.slackBannerLink}>
+      <Link
+        to="https://fundamendez.slack.com/"
+        className={styles.slackBannerLink}
+      >
         <div className="container">
           <div className={styles.slackBannerContent}>
             <span className={styles.slackBannerEmoji}>
