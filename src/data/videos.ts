@@ -64,18 +64,7 @@ export type VideoItem = {
 
 // This section is where the recorded classes are uploaded.
 export const CLASES: VideoItem[] = [
-  { title: "Clase del 19-08-2025", source: "drive", fileId: "1M7jPCvLj-j7ynN2vYHU5LmthMdw6c2ic" },
-  { title: "Clase del 16-09-2025", source: "drive", fileId: "1EJU-UcQREmv-HyGWeBpbdfgjrIGNGGq0" },
-  { title: "Clase del 18-09-2025", source: "drive", fileId: "1ibLVwRDZcEqjM0DnQkRSCBgeXKfcdmTC" },
-  { title: "Clase del 23-09-2025", source: "drive", fileId: "1LpU1R6wovti8FA-KJllH8ohS9Fv4RUdv" },
-  { title: "Clase del 25-09-2025", source: "drive", fileId: "1m94fsBYrmrPZ1AvAihv4JjGIZzYg70dU" },
-  { title: "Clase del 21-10-2025", source: "drive", fileId: "1p4UhHTl3_2LW1GnxjuWXwfZcl0DthWIi" },
-  { title: "Clase del 28-10-2025", source: "drive", fileId: "1pxjVM9WLMiFSZFzUaCEdYhnVK-cgudD_" },
-  { title: "Clase del 30-10-2025", source: "drive", fileId: "1bafpuTdeq8Gy3gA1xEhhscBK7-OuQebk" },
-  { title: "Clase del 13-11-2025", source: "drive", fileId: "1pYwSiUBkghe663zWs3yICeKXjcAFHgTg" },
-  { title: "Clase del 18-11-2025", source: "drive", fileId: "1sVBTC5ri7XlA1OLzXYbJcgXJG5ZQo2pS" },
-  { title: "Clase del 20-11-2025", source: "drive", fileId: "1iDLUHFbgk1Vx9GprA1Qpr5LgZhLBhoDj" },
-  { title: "Clase del 25-11-2025", source: "drive", fileId: "1xFGKC5-rTcHKl44BattLFYxBAjKe8xfG" },
+  // { title: "Clase del 19-08-2025", source: "drive", fileId: "1M7jPCvLj-j7ynN2vYHU5LmthMdw6c2ic" },
 ];
 
 // This section is where the tutorials are uploaded.
