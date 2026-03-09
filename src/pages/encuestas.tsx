@@ -15,11 +15,11 @@ const encuestas: {
     quarters: [
       {
         label: "1er Cuatrimestre",
-        url: "/nueva-pagina/encuestas/encuesta_2025_1C.html",
+        url: "/encuestas/encuesta_2025_1C.html",
       },
       {
         label: "2do Cuatrimestre",
-        url: "/nueva-pagina/encuestas/encuesta_2025_2C.html",
+        url: "/encuestas/encuesta_2025_2C.html",
       },
     ],
   },
@@ -28,11 +28,11 @@ const encuestas: {
     quarters: [
       {
         label: "1er Cuatrimestre",
-        url: "/nueva-pagina/encuestas/encuesta_2024_1C.html",
+        url: "/encuestas/encuesta_2024_1C.html",
       },
       {
         label: "2do Cuatrimestre",
-        url: "/nueva-pagina/encuestas/encuesta_2024_2C.html",
+        url: "/encuestas/encuesta_2024_2C.html",
       },
     ],
   },
