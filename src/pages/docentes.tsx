@@ -26,7 +26,7 @@ const docentesList: DocenteProps[] = [
   { name: "Berni", id: "berni", slackCode: "D06LDB9N77W" },
   { name: "Caro", id: "caro", slackCode: "D0AKX4FTK09" },
   { name: "Danny", id: "danny", slackCode: "D07J4FT25QC" },
-  { name: "Feli", id: "feli", slackCode: "" },
+  { name: "Feli", id: "feli", slackCode: "D0AKLK89U8N" },
   { name: "Juampi", id: "juampi", slackCode: "D07EZEPTPMW" },
   {
     name: "Mariano",
