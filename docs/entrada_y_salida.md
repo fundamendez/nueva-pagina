@@ -1,5 +1,7 @@
 ---
+sidebar_position: 4
 title: "Entrada y Salida"
+label: Introducción
 ---
 
 # Entrada y Salida

@@ -1,3 +1,9 @@
+---
+sidebar_position: 1
+title: "Tipos de datos, variables, literales y constantes"
+label: Introducción
+---
+
 # Tipos de datos, variables, literales y constantes
 
 ## Tipos de datos

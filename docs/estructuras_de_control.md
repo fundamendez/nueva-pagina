@@ -1,3 +1,9 @@
+---
+sidebar_position: 2
+title: "Estructuras de control"
+label: Introducción
+---
+
 # Estructuras de control
 
 Las estructuras de control permiten modificar el flujo de ejecución de un programa en C, tomando decisiones o repitiendo bloques de código según condiciones lógicas.
