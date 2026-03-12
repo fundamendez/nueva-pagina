@@ -192,7 +192,7 @@ const config: Config = {
           position: "left",
         },
         {
-          href: "https://docs.google.com/forms/d/e/1FAIpQLScNk-4PjhDOEC5KKiIpYg-FVf78DLZFY3hBWwn6l9Y3mi6kSQ/viewform",
+          href: "https://docs.google.com/forms/d/e/1FAIpQLSe4umz8M_Hmb7N8S2E0rml-DKGRIIMAimv00iCw0hUQxhP_yQ/viewform",
           label: "Buzón de quejas",
           position: "right",
         },
