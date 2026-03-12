@@ -17,48 +17,49 @@ interface DocenteProps {
 }
 
 const docentesList: DocenteProps[] = [
-  { name: "Agus B.", id: "agusB", slackCode: "D06L48CPD8E" },
-  { name: "Agus F.", id: "agusF", slackCode: "D06LAT5KY3C" },
-  { name: "Agus J.", id: "agusJ", slackCode: "D09FW4UDCKE" },
-  { name: "Agus S.", id: "agusS", slackCode: "D0AKX47ELSV" },
-  { name: "Ani", id: "ani", ext1: "jpeg", slackCode: "D09GPGNQUKF" },
-  { name: "Bauti", id: "bauti", slackCode: "D06TS2F21P1" },
-  { name: "Berni", id: "berni", slackCode: "D06LDB9N77W" },
-  { name: "Caro", id: "caro", slackCode: "D0AKX4FTK09" },
-  { name: "Danny", id: "danny", slackCode: "D07J4FT25QC" },
-  { name: "Feli", id: "feli", slackCode: "D0AKLK89U8N" },
-  { name: "Juampi", id: "juampi", slackCode: "D07EZEPTPMW" },
-  {
-    name: "Mariano",
-    id: "mariano",
-    ext1: "jpeg",
-    ext2: "jpeg",
-    slackCode: "D06LDER208L",
-  },
+  { name: "Agus B.", id: "agusB", slackCode: "U06LZLXPLLQ" },
+  { name: "Agus F.", id: "agusF", slackCode: "U06LZL8G43A" },
+  { name: "Agus J.", id: "agusJ", slackCode: "U09B6SG6A5A" },
+  { name: "Agus S.", id: "agusS", slackCode: "U09AG00G8KV" },
+  { name: "Ani", id: "ani", ext1: "jpeg", slackCode: "U08FSCC1DHQ" },
+  { name: "Bauti", id: "bauti", slackCode: "U06P4J0UWH1" },
+  { name: "Berni", id: "berni", slackCode: "U06LAPZE7GT" },
+  { name: "Caro", id: "caro", slackCode: "U0AJYJZU10X" },
+  { name: "Danny", id: "danny", slackCode: "U06QGSZQK8X" },
+  { name: "Feli", id: "feli", slackCode: "U0AJYJYHTT9" },
+  { name: "Juampi", id: "juampi", slackCode: "U06P4J00V0T" },
   {
     name: "Mar",
     id: "mar",
     ext1: "jpeg",
     ext2: "jpeg",
-    slackCode: "D0AK2PBKDCP",
+    slackCode: "U08FSCBH2F4",
   },
-  { name: "Martu", id: "martu", slackCode: "D0AKJ75EYCS" },
-  { name: "May", id: "may", ext1: "jpeg", slackCode: "D07G4BTEWTA" },
-  { name: "Solci", id: "sol", slackCode: "D0AD6ULTL5V" },
-  { name: "Tomi", id: "tomi", slackCode: "D06LPH2Q1PT" },
+  { name: "Marcos", id: "marcos", slackCode: "U09BWBVHKUY" },
+  {
+    name: "Mariano",
+    id: "mariano",
+    ext1: "jpeg",
+    ext2: "jpeg",
+    slackCode: "U06LPLJ19S5",
+  },
+  { name: "Martu", id: "martu", slackCode: "U07EJQSN65R" },
+  { name: "May", id: "may", ext1: "jpeg", slackCode: "U06P1Q1EE4D" },
+  { name: "Solci", id: "sol", slackCode: "U07F7BEKCHW" },
+  { name: "Tomi", id: "tomi", slackCode: "U06LZLXV132" },
   {
     name: "Tute",
     id: "tute",
     ext1: "jpeg",
     ext2: "jpeg",
-    slackCode: "D06MQE3AD9B",
+    slackCode: "U06MLNCF99U",
   },
   {
     name: "Yoel",
     id: "yoel",
     ext1: "jpeg",
     ext2: "jpeg",
-    slackCode: "D06MT8M6Y2X",
+    slackCode: "U06MCQN0EAK",
   },
 ];
 
@@ -86,12 +87,12 @@ function DocenteCard({
         <h3 className={styles.name}>{name}</h3>
         {slackCode && (
           <a
-            href={`https://fundamendez.slack.com/archives/${slackCode}`}
+            href={`https://slack.com/app_redirect?channel=${slackCode}`}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.slackLink}
             title={`Mensaje a ${name} en Slack`}
-          >
+>
             <FontAwesomeIcon icon={faSlack} />
           </a>
         )}
