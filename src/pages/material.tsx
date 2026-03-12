@@ -45,7 +45,7 @@ function FileTable({ files, dir }: { files: MaterialFile[]; dir: string }) {
   const baseUrl = useBaseUrl(`/material/${dir}/`);
 
   if (files.length === 0) {
-    return <p className={styles.emptyMessage}>No hay archivos disponibles.</p>;
+    return <p className={styles.emptyMessage}>No hay material disponible.</p>;
   }
 
   return (
@@ -71,8 +71,28 @@ export default function MaterialPage(): ReactNode {
     "plugin-material-files",
   ) as MaterialCategory[];
 
-  const imgSrc = useBaseUrl("/img/ralph-gato.jpg");
+  const expectedCategories = [
+    { name: "teórica", dir: "teórica" },
+    { name: "práctica", dir: "práctica" },
+    { name: "apuntesViejos", dir: "apuntesViejos" },
+  ];
 
+  const categoriesToRender = expectedCategories.map((expected) => {
+    const existingCategory = categories.find(
+      (category) => category.name === expected.name,
+    );
+
+    return (
+      existingCategory ?? {
+        name: expected.name,
+        dir: expected.dir,
+        files: [],
+      }
+    );
+  });
+
+  const imgSrc = useBaseUrl("/img/ralph-gato.jpg");
+  
   return (
     <Layout
       title="Material"
@@ -87,7 +107,7 @@ export default function MaterialPage(): ReactNode {
         />
         <div className="container margin-vert--lg">
           <div className={styles.categoriesGrid}>
-            {categories.map((category) => (
+            {categoriesToRender.map((category) => (
               <section key={category.name} className={styles.categoryCard}>
                 <Heading as="h2">{formatCategoryName(category.name)}</Heading>
                 <FileTable files={category.files} dir={category.dir} />
