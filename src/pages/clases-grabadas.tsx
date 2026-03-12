@@ -5,7 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import styles from "./clases-grabadas.module.css";
 import PageHero from "../components/PageHero";
-import { CLASES, TUTORIALES, type VideoItem } from "../data/videos";
+import { CLASES, TUTORIALES, type VideoItem } from "../../data/videos";
 
 function VideoList({
   items,

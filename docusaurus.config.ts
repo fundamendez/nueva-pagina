@@ -170,11 +170,11 @@ const config: Config = {
           label: "Material",
           position: "left",
         },
-        // {
-        //   to: "/cronograma",
-        //   label: "Cronograma",
-        //   position: "left",
-        // },
+        {
+          to: "/cronograma",
+          label: "Cronograma",
+          position: "left",
+        },
         {
           to: "/clases-grabadas",
           label: "Clases Grabadas",

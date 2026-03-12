@@ -13,7 +13,7 @@ import {
   buildEmbedUrl,
   buildOpenUrl,
   buildDownloadUrl,
-} from "../data/videos";
+} from "../../data/videos";
 
 export default function VerClasesGrabadas() {
   const location = useLocation();
@@ -21,7 +21,7 @@ export default function VerClasesGrabadas() {
   const { title, embedUrl, openUrl, downloadUrl, section } = useMemo(() => {
     const params = new URLSearchParams(location.search);
     const sec = params.get("sec"); // "clases" | "tutoriales"
-    const t = params.get("t");     // Title
+    const t = params.get("t"); // Title
 
     const normalizedSection = sec === "tutoriales" ? "tutoriales" : "clases";
     const list = normalizedSection === "tutoriales" ? TUTORIALES : CLASES;
@@ -54,7 +54,10 @@ export default function VerClasesGrabadas() {
       <main className={styles.container}>
         <div className={styles.section}>
           <div className={styles.headerRow}>
-            <Link className={styles.backLink} to={useBaseUrl("/clases-grabadas")}>
+            <Link
+              className={styles.backLink}
+              to={useBaseUrl("/clases-grabadas")}
+            >
               <FontAwesomeIcon icon={faArrowLeft} /> Volver
             </Link>
 

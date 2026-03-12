@@ -1,12 +1,10 @@
 Semana,Teórica Fecha,Teórica Temas,Teórica Modalidad,Teórica Badge,Práctica Fecha,Práctica Temas,Práctica Modalidad,Práctica Badge,,,
 1,10/03,"Lenguaje C:
-- Variables,Constantes, Literales
 - Tipos de Datos
-- Estructuras de control 
 - Compilación
-- printf() - scanf()",Presencial,,12/03,"Modularización:
-- Funciones
-- Pasaje x valor y referencia
+- Entrada y saldia
+- Funciones",Presencial,,12/03,"- Régimen de cursada
+- Pasaje por valor y referencia
 - Buenas prácticas",Presencial,,,Fecha Inicio,10/3
 2,17/03,"- Vectores
 - Busqueda lineal
@@ -21,7 +19,8 @@ Semana,Teórica Fecha,Teórica Temas,Teórica Modalidad,Teórica Badge,Práctica
 5,7/04,"- Recursividad
 - Búsqueda Binaria",Virtual,,9/04,"- Recursividad
 - Búsqueda binaria",Virtual,,,,
-6,14/04,Debugging,Virtual,,16/04,"- Recursividad 2.0 
+6,14/04,"- Manejo de memoria
+- Debugging",Virtual,,16/04,"- Recursividad 2.0
 - Debugging",Virtual,,,,
 7,21/04,"Memoria dinámica:
 - Aritmética de punteros
@@ -43,19 +42,12 @@ Semana,Teórica Fecha,Teórica Temas,Teórica Modalidad,Teórica Badge,Práctica
 - Vector dinámico",Presencial,,14/05,"- Memoria dinámica
 - TDAs
 - Vector dinámico",Presencial,Reentrega TP1,,,
-11,19/05,"- Manejo de archivos de texto en C
+11,19/05,"- Archivos de texto
 - CSV",Virtual,,21/05,Archivos CSV,Virtual,TP2,,,
-12,26/05,"Lineas de comando
-Operaciones con archivos:
-- Mezcla
-- Union
-- Diferencias
-- Intersección",Presencial,,28/05,Ejercicios con archivos y TDAs,Presencial,,,,
-13,2/06,,Sin definir,Primer recuperatorio,4/06,"Operaciones con archivos:
-- Mezcla
-- Union
-- Diferencias
-- Intersección",Sin definir,,,,
+12,26/05,"- Argumentos por linea de comando
+- Operaciones con archivos",Presencial,,28/05,"- Archivos
+- TDAs",Presencial,,,,
+13,2/06,,Presencial,Primer recuperatorio,4/06,- Operaciones con archivos,Virtual,,,,
 14,9/06,"TDAs:
 - Pilas
 - Colas
@@ -63,6 +55,6 @@ Operaciones con archivos:
 - Pilas
 - Colas
 - Lista enlazada",Virtual,Entrega TP2,,,
-15,16/06,,Sin definir,Ejercicios de final,18/06,,Sin definir,Laboratorio,,,
-16,23/06,Tema nuevo,Presencial,,25/06,,Presencial,"Reentrega TP2, Retrospectiva",,,
-,30/06,,Presencial,"Segundo recuperatorio, Final",2/07,,,,,,
+15,16/06,,Virtual,Ejercicios de final,18/06,,Presencial,"Laboratorio, Ejercicios de final",,,
+16,23/06,Tema nuevo,Presencial,,25/06,Fin de cursada,Presencial,"Reentrega TP2, Retrospectiva",,,
+17,30/06,,Presencial,Segundo recuperatorio,2/07,,,,,,
