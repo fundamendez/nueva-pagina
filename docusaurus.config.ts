@@ -130,6 +130,15 @@ const config: Config = {
         },
       };
     },
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "enunciados", 
+        path: "enunciados", 
+        routeBasePath: "enunciados", 
+        sidebarPath: "./sidebars.ts", 
+      },
+    ],
   ],
 
   presets: [
@@ -185,6 +194,13 @@ const config: Config = {
           sidebarId: "tutorialSidebar",
           position: "left",
           label: "Apuntes",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          docsPluginId: "enunciados",
+          position: "left",
+          label: "Enunciados",
         },
         {
           to: "/docentes",
