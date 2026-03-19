@@ -1,22 +1,11 @@
 ---
 id: tp0
 title: ""
-sidebar_label: Trabajo práctico Nº0 - Prueba de iniciación de los Magios
+sidebar_label: TP0 - Prueba de iniciación de los Magios
 sidebar_position: 1
 ---
 
 <div style={{ maxWidth: "900px", margin: "0 auto", paddingTop: "10px" }}>
-
-<div style={{
-  fontSize: "1rem",
-  letterSpacing: "2px",
-  textTransform: "uppercase",
-  borderBottom: "1px solid #999",
-  paddingBottom: "6px",
-  marginBottom: "25px"
-}}>
-Fundamentos de Programación - Curso Méndez
-</div>
 
 <div style={{ textAlign: "center" }}>
 
@@ -354,7 +343,6 @@ El trabajo deberá cumplir tanto con las **pruebas automatizadas** como con los 
 ## 7. Ejemplos de ejecución
 
 ### Ejemplo 1
-:::note[ejecución]
 
 **Pregunta 1:** ¿Quién fundó realmente Springfield?
 
@@ -400,11 +388,9 @@ P4 = 40
 ```
 -MAGIO NOVATO-
 ```
-:::
 ---
 
 ### Ejemplo 2
-:::note[ejecución]
 
 **Pregunta 1:** ¿Quién fundó realmente Springfield? 
 - Respuesta: J  
@@ -428,7 +414,7 @@ P3 = 60
 P4 = 40
 ```
 
-**Resultado final:**
+**Puntaje final:**
 
 ```
 100 − 300 + 60 + 40 = −300
@@ -439,11 +425,9 @@ P4 = 40
 ```
 -RECHAZADO-
 ```
-:::
 ---
 
 ### Ejemplo 3
-:::note[ejecución]
 
 **Pregunta 1:** ¿Quién fundó realmente Springfield?
 - Respuesta: J  
@@ -467,7 +451,7 @@ P3 = 70
 P4 = 120
 ```
 
-**Resultado final:**
+**Puntaje final:**
 
 ```
 340
@@ -478,11 +462,9 @@ P4 = 120
 ```
 -MAGIO-
 ```
-:::
 
 ---
 ### Ejemplo 4
-:::note[ejecución]
 
 **Pregunta 1:** ¿Quién fundó realmente Springfield?  
 
@@ -495,7 +477,8 @@ P4 = 120
 - Respuesta: B  
     - Respuesta incorrecta → intentos: 3
 
+**Resultado:**
+
 ```
 -RECHAZADO-
 ```
-:::

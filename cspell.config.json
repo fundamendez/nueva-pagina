@@ -46,7 +46,8 @@
     "especificadores",
     "caracter",
     "tabulación",
-    "acordate"
+    "acordate",
+    "elif"
   ],
   "flagWords": [
     "indentacion",
