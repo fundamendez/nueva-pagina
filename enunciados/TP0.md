@@ -41,6 +41,25 @@ Prueba de Iniciación de los Magios
 
 </div>
 
+<div style={{ display: "flex", justifyContent: "center", margin: "24px 0 0 0" }}>
+  <a
+    href="/tps/1c2026/correctores_tp0.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: "inline-block",
+      backgroundColor: "#FDD835",
+      color: "#1a1a1a",
+      fontWeight: "700",
+      fontSize: "1.1rem",
+      padding: "12px 28px",
+      borderRadius: "8px",
+      textDecoration: "none",
+      lineHeight: "1"
+    }}
+  >Ver lista de correctores</a>
+</div>
+
 ---
 
 ## 1. Introducción
