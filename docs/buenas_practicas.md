@@ -6,6 +6,25 @@ label: Introducción
 
 # Buenas prácticas de programación
 
+<div style={{ display: "flex", justifyContent: "center", margin: "24px 0 0 0" }}>
+  <a
+    href="/buenas_practicas.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: "inline-block",
+      backgroundColor: "#FDD835",
+      color: "#1a1a1a",
+      fontWeight: "700",
+      fontSize: "1.1rem",
+      padding: "12px 28px",
+      borderRadius: "8px",
+      textDecoration: "none",
+      lineHeight: "1"
+    }}
+  >Pdf Buenas Prácticas</a>
+</div>
+
 ## 1. El Software
 Etimológicamente, la palabra proviene del inglés: soft (blando) y ware (utensilio). Fue acuñada por analogía al hardware para describir la parte "maleable" de la informática. Según la RAE, es el conjunto de programas e instrucciones que permiten ejecutar tareas en una computadora.
 
