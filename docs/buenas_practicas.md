@@ -52,7 +52,7 @@ Existen dos cosas difíciles en la Informática:
 2- La Concurrencia
 3-Errarle por uno
 
-Se recomienda usar nombres descriptivos, tanto para nombrar funciones como variables, ya que le aporta legibilidadd y claridad al código. Esto ayudará también si se trabaja en grupo, el compañero (y uno mismo) sabrá para qué fue declarada la variable/función.
+Se recomienda usar nombres descriptivos, tanto para nombrar funciones como variables, ya que le aporta legibilidad y claridad al código. Esto ayudará también si se trabaja en grupo, el compañero (y uno mismo) sabrá para qué fue declarada la variable/función.
 
 No es recomendable usar nombres muy largos.
 
@@ -94,7 +94,7 @@ bool funcion_que_calcula_si_un_numero_es_par(int numero){
 }
 ```
 
-Es visiblemente evidente que la longitud del nombre de la función es bien auto-descriptivo, pero seguramente se volverá una tortura tener que escribir ese nombre mas de una vez. Entonces, ¿Cuán largo debe ser el nombre de una función? El nombre de una función debe seguir los mismos lineamientos que los nombres de las variables pero además el mismo debe indicar una acción atómica. Con atómica se refiere que lo que la funcion diga hacer debe ser solamente un concepto.
+Es visiblemente evidente que la longitud del nombre de la función es bien auto-descriptivo, pero seguramente se volverá una tortura tener que escribir ese nombre mas de una vez. Entonces, ¿Cuán largo debe ser el nombre de una función? El nombre de una función debe seguir los mismos lineamientos que los nombres de las variables pero además el mismo debe indicar una acción atómica. Con atómica se refiere que lo que la función diga hacer debe ser solamente un concepto.
 
 #### Mala práctica
 ```c
@@ -188,7 +188,7 @@ const float PI = 3.14;
 printf("El perimetro ...", PI * radio * 2);
 ```
 
-En este ejemplo se puede ver que si en el caso de la mala praćtica que se quisiera agregar más dígitos en el valor de pi, se deberá buscar en todo el programa dicho valor y agregarlo. Caso contrario, en la buena práctica bastará con cambiar el valor de la constante en PI.
+En este ejemplo se puede ver que si en el caso de la mala práctica que se quisiera agregar más dígitos en el valor de pi, se deberá buscar en todo el programa dicho valor y agregarlo. Caso contrario, en la buena práctica bastará con cambiar el valor de la constante en PI.
 
 #### Mala práctica
 ```c
@@ -642,7 +642,7 @@ Llegado el caso y si el cálculo a realizar es muy largo se puede utilizar una v
 
 Las estructuras iterativas tienen una condición de corte, la cual debe ser respetada y debe ser la única puerta de salida de dicha estructura.
 
-Usar instrucciones commo break o return dentro de estructuras iterativas rompe con el normal flujo del algoritmo, obstruyendo la lectura y comprensión del código.
+Usar instrucciones como break o return dentro de estructuras iterativas rompe con el normal flujo del algoritmo, obstruyendo la lectura y comprensión del código.
 :::warning
 Está PROHIBIDO el uso de instrucciones como break o return dentro de los bucles para forzar una salida anticipada (salida anómala). Estas prácticas rompen el flujo natural del algoritmo y dificultan la lectura del código.
 :::
