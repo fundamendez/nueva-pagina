@@ -25,18 +25,18 @@ label: Introducción
   >Pdf Buenas Prácticas</a>
 </div>
 
-## 1. El Software
+## El Software
 Etimológicamente, la palabra proviene del inglés: soft (blando) y ware (utensilio). Fue acuñada por analogía al hardware para describir la parte "maleable" de la informática. Según la RAE, es el conjunto de programas e instrucciones que permiten ejecutar tareas en una computadora.
 
 Sin embargo, para entender por qué necesitamos buenas prácticas, debemos mirar más allá. En su famoso artículo "No hay balas de plata", Fred Brooks utiliza conceptos aristotélicos para definir la esencia del software a través de cuatro propiedades únicas:
 
-Complejidad: A diferencia de los autos o edificios, el software no tiene partes repetidas; cada función o subrutina es única, lo que lo convierte en una de las construcciones humanas más complejas.
+**Complejidad:** A diferencia de los autos o edificios, el software no tiene partes repetidas; cada función o subrutina es única, lo que lo convierte en una de las construcciones humanas más complejas.
 
-Conformidad: No siempre sigue leyes lógicas o físicas (como la gravedad), sino que debe "conformarse" a caprichos de interfaces, leyes o sistemas externos.
+**Conformidad:** No siempre sigue leyes lógicas o físicas (como la gravedad), sino que debe "conformarse" a caprichos de interfaces, leyes o sistemas externos.
 
-Variabilidad: El software está bajo presión constante para cambiar. A diferencia de un puente, que se termina y listo, el software se modifica incluso mientras está en funcionamiento.
+**Variabilidad:** El software está bajo presión constante para cambiar. A diferencia de un puente, que se termina y listo, el software se modifica incluso mientras está en funcionamiento.
 
-Invisibilidad: No tiene una forma geométrica o espacial. No podemos "ver" el software; lo que graficamos son flujos de datos o de control que suelen ser imposibles de representar en un solo plano.
+**Invisibilidad:** No tiene una forma geométrica o espacial. No podemos "ver" el software; lo que graficamos son flujos de datos o de control que suelen ser imposibles de representar en un solo plano.
 
 ¿Por qué estudiamos buenas prácticas?
 De estas cuatro, la complejidad y la variabilidad son las que podemos atacar. Los principios que verás a continuación no son reglas arbitrarias, sino herramientas probadas para reducir el caos y hacer que tu código sea capaz de sobrevivir al tiempo y al cambio.
@@ -45,12 +45,12 @@ De estas cuatro, la complejidad y la variabilidad son las que podemos atacar. Lo
 En resumen: el software es complejo e invisible por naturaleza. Las buenas prácticas son tu armadura para que esa complejidad no te gane
 :::
 
-## 2. Nombres Descriptivos
+## 1. Nombres Descriptivos
 
 Existen dos cosas difíciles en la Informática:
-1- Poner buenos nombres
-2- La Concurrencia
-3-Errarle por uno
+1. Poner buenos nombres
+2. La Concurrencia
+3. Errarle por uno
 
 Se recomienda usar nombres descriptivos, tanto para nombrar funciones como variables, ya que le aporta legibilidad y claridad al código. Esto ayudará también si se trabaja en grupo, el compañero (y uno mismo) sabrá para qué fue declarada la variable/función.
 
@@ -94,7 +94,8 @@ bool funcion_que_calcula_si_un_numero_es_par(int numero){
 }
 ```
 
-Es visiblemente evidente que la longitud del nombre de la función es bien auto-descriptivo, pero seguramente se volverá una tortura tener que escribir ese nombre mas de una vez. Entonces, ¿Cuán largo debe ser el nombre de una función? El nombre de una función debe seguir los mismos lineamientos que los nombres de las variables pero además el mismo debe indicar una acción atómica. Con atómica se refiere que lo que la función diga hacer debe ser solamente un concepto.
+Es visiblemente evidente que la longitud del nombre de la función es bien auto-descriptivo, pero seguramente se volverá una tortura tener que escribir ese nombre mas de una vez.   
+Entonces, ¿cuán largo debe ser el nombre de una función? El nombre de una función debe seguir los mismos lineamientos que los nombres de las variables pero además el mismo debe indicar una acción atómica. Con atómica se refiere que lo que la función diga hacer debe ser solamente un concepto.
 
 #### Mala práctica
 ```c
@@ -112,7 +113,7 @@ char nombre_alumno[MAX_NOMBRE];
 
 En este ejemplo es evidente que los nombres de las variables del primer código no aportan información sobre lo que la variable almacena.
 
-### 2.1. Reglas para Poner Nombres
+### 1.1. Reglas para Poner Nombres
 
 
 | Regla | ❌ Evitar (Mala práctica) | ✅ Preferir (Buena práctica) |
@@ -128,23 +129,23 @@ En este ejemplo es evidente que los nombres de las variables del primer código 
 
 
 :::tip
-**La prueba de la "Voz Alta"**
+**La prueba de la "Voz Alta"**  
 Si no podés pronunciar el nombre de una variable en una conversación técnica sin que suene a código indescifrable (ejemplo: `cnt_usr_act_v2`), el nombre no es adecuado. Un buen nombre debe poder leerse como parte de una oración natural.
 :::
 
 ### Detalles de las reglas:
 
 
-1.  **Nombres Reveladores**: El nombre debe responder por qué existe la variable y qué hace. Si usás `int d;`, obligás al lector a buscar el comentario (`// días`). Si usás `dias_transcurridos`, la intención queda clara de inmediato.
-2.  **Evitar la Desinformación**: El nombre no debe inducir a error ni generar contradicciones. Si llamás a una variable booleana `verdadero`, escribir `if (verdadero == false)` es confuso. Es preferible usar `es_valido` o `es_par`.
-3.  **Nombres Distinguibles**: Evitá diferenciar variables por números o letras arbitrarias que no expliquen su rol. En una función de copiado, `a1` y `a2` son ambiguas; `destino` y `origen` indican exactamente el flujo de los datos.
-4.  **Nombres Fáciles de Buscar**: Si usás `int i;` en un archivo extenso, buscarla con un editor será imposible porque resaltará cada letra "i" del documento. Un nombre específico como `indice_usuario` es único y fácil de localizar.
+1.  **Nombres Reveladores**: El nombre debe responder por qué existe la variable y qué hace. Si se usa `int d;`, obliga al lector a buscar el comentario (`// días`). Si en cambio se usa  `dias_transcurridos`, la intención queda clara de inmediato.
+2.  **Evitar la Desinformación**: El nombre no debe inducir a error ni generar contradicciones. Si se llama a una variable booleana `verdadero`, escribir `if (verdadero == false)` es confuso. Es preferible usar `es_valido` o `es_par`.
+3.  **Nombres Distinguibles**: Evitar diferenciar variables por números o letras arbitrarias que no expliquen su rol. En una función de copiado, `a1` y `a2` son ambiguas; `destino` y `origen` indican exactamente el flujo de los datos.
+4.  **Nombres Fáciles de Buscar**: Si se usa `int i;` (exceptuando los iteradores de las estructuras iterativas) en un archivo extenso, buscarla con un editor será imposible porque resaltará cada letra "i" del documento. Un nombre específico como `indice_usuario` es único y fácil de localizar.
 5.  **No Te Hagas el Canchero**: La claridad siempre es prioritaria sobre el humor. `hacer_magia()` puede parecer ingenioso, pero no describe la operación. `calcular_area()` es comprensible para cualquier programador.
-6.  **Una Sola Palabra por Concepto**: Mantené la consistencia terminológica en todo el proyecto. Si elegís el verbo `obtener` para traer un dato, no alternes con `lograr`, `conseguir`, `alcanzar`, `conquistar`, `ganar`, etc. para la misma acción en otras funciones. 
-7.  **Nombres Pronunciables**: Evitá las abreviaturas extremas o crípticas. `dta_rcd_32` es difícil de comunicar verbalmente. `registro_datos` es simple de decir y de entender al escucharlo.
+6.  **Una Sola Palabra por Concepto**: Mantener la consistencia terminológica en todo el proyecto. Si se elige el verbo `obtener` para traer un dato, no se debe alternar con `lograr`, `conseguir`, `alcanzar`, `conquistar`, `ganar`, etc. para la misma acción en otras funciones. 
+7.  **Nombres Pronunciables**: Evitar las abreviaturas extremas o crípticas. `dta_rcd_32` es difícil de comunicar verbalmente. `registro_datos` es simple de decir y de entender al escucharlo.
 8.  **Evitar los Nombres Genéricos**: Nombres como `temp` o `aux` suelen ser resultado de la pereza. Siempre es mejor describir el contexto específico: `temperatura_agua` aporta mucho más valor que un simple `temp`.
 
-## 3. Declaración de variables
+## 2. Declaración de variables
 
 Se pueden declarar distintas variables de un mismo tipo en una línea. Es recomendable **solo** cuando las variables tienen el mismo uso (por ejemplo, índice de iteración) y no entorpezca la lectura del código.
 
@@ -172,7 +173,7 @@ En el ejemplo de la mala práctica se puede observar que por más que las variab
 
 En la buena práctica se observa que las variables están agrupadas por finalidad de las mismas (por ejemplo en la primera línea son variables que se usarán como índices) y a la vez por dimensiones (matrices y vectores).
 
-## 4. Uso de constantes
+## 3. Uso de constantes
 
 Si se usarán constantes o literales, declararlos antes del main y las funciones. Esto servirá para que si en el futuro dicha constante tiene que ser modificada, sólo se hará en la declaración y se ahorrará trabajo al estar buscándola en todo el código. Como convención, deben estar escritos en mayúscula.
 
@@ -249,7 +250,7 @@ if (respuesta == SI) {
 ```
 Usar constantes para caracteres hace que las condiciones sean mucho más descriptivas y fáciles de leer, evitando que queden "caracteres mágicos" sueltos.
 
-## 5. Inicialización de variables
+## 4. Inicialización de variables
 
 Principalmente si se usarán como contadores o para posiciones en vectores, esto evitará que se esté trabajando con "basura" durante la ejecución del programa y/o intentar acceder a una porción no asignada de memoria, siempre y cuando el usuario no tenga que inicializarla durante la ejecución del programa con los valores que necesite.
 :::warning
@@ -272,28 +273,31 @@ for (int i = 0; i < TOPE_SUMA; i++){
 }
 ```
 
-Al no asignarle un valor a suma y  luego sumar sobre dicha variable, no garantiza que se obtenga el resultado deseado, ya que el compilador de C no sabe de antemano que valor desea el usuario. En este ejemplo, se desea sumar desde cero, y es por eso que le asignamos ese valor al declararla.
+Al no asignarle un valor a suma y luego sumar sobre dicha variable, no garantiza que se obtenga el resultado deseado, ya que el compilador de C no sabe de antemano que valor desea el usuario. En este ejemplo, se desea sumar desde cero, y es por eso que le asignamos ese valor al declararla.
 
-## 6. Emplear una sola convención
+## 5. Emplear una sola convención
 
-La convención elegida debe ser usada en todo el código y por todos los integrantes del grupo, si fuera el caso. Para la escritura de la declaración de variables y funciones, algunas de las convenciones más utilizadas son snakecase y camelcase (**En este curso utilizaremos snakecase**). En el caso de apertura y cierre de llaves también se debe emplear una sola convención en todo el programa. 
+La convención elegida debe ser usada en todo el código y por todos los integrantes del grupo, si fuera el caso. Para la escritura de la declaración de variables y funciones, algunas de las convenciones más utilizadas son snake_case y camelCase. En el caso de apertura y cierre de llaves también se debe emplear una sola convención en todo el programa. 
+:::warning
+En este curso utilizaremos snake_case
+:::
 
 #### Mala práctica
 Para la declaración de variables y funciones:
 
 ```c
-int cantidadalumnos, sumadorNotas;
-int mes1,segundomes;
+int cantidad_alumnos, sumadorNotas;
+int mes1,segundo_mes;
 ```
 
 Para la apertura y cierre de llaves:
 
 ```c
-if (numero1 &lt; numero2)
+if (numero1 < numero2)
 {
-    resultado= numero2 numero1;
+    resultado = numero2 + numero1;
 } else { 
-    resultado =numero1 numero2;
+    resultado = numero1 - numero2;
 }
 ```
 
@@ -329,7 +333,7 @@ int sumar(int numero1 , int numero2)
 
 La diferencia que se nota en los ejemplos es que no se ve una uniformidad en las convenciones usadas. No sólo indica que no se respetaron las convenciones sino que también le quita claridad al código.
 
-## 7. Variables globales
+## 6. Variables globales
 
 El uso de variables globales no es recomendable, ya que al ser parte del entorno global del programa dicha variable se puede modificar en cualquier parte del mismo, a su vez que todo el programa dependería de ella y también dificultaría la lectura del código. 
 :::warning
@@ -375,7 +379,7 @@ int main(){
 }
 ```
 
-## 8. Indentación
+## 7. Indentación
 
 Para darle más claridad al código, cuando comienza una estructura de control, dentro de la misma se deja un espacio tabulado. Esto aplica aún cuando la sentencia para la estructura es una sola.
 
@@ -407,7 +411,7 @@ while(suma < MAXPERSONAS){
 
 En el ejemplo de mala práctica se puede ver que es díficil saber dónde comienzan las instrucciones para la estructura de control, así como también la totalidad del código. En cambio en el ejemplo de la buena práctica se puede apreciar que es más claro saber qué instrucciones pertenecen a las estructuras de control y cuales no, sin importar si son varias instrucciones o una sola.
 
-## 9. Una instrucción por línea
+## 8. Una instrucción por línea
 
 Si se escribe la totalidad del programa en una sola línea, el compilador no tendrá problemas en compilarlo y ejecutarlo (si no hubiesen errores de compilación y ejecución), se escribe de esta manera para hacer el seguimiento del código de una manera más sencilla.
 #### Mala práctica
@@ -426,7 +430,7 @@ for(int i = 0; i < MAX_PERSONAS; i++){
 
 Al igual que la identación, el indicar una instrucción por línea hace que el seguimiento del código sea mucho más llevadero. En la mala práctica, por más que el programa funcione correctamente, es dificultoso hacer un seguimiento del mismo. En cambio en la buena práctica, es más visible ver al menos cuántas instrucciones hay.
 
-## 10. Usar paréntesis para cada operación lógica
+## 9. Usar paréntesis para cada operación lógica
 
 No sólo será más legible para el programador, sino que también para el compilador.
 
@@ -442,14 +446,14 @@ if((numero < MAX_PERSONAS) && (opcion == OPCION_SI)){
 }
 ```
 
-## 11. Evitar comentarios redundantes en el código
+## 10. Evitar comentarios redundantes en el código
 
 ```c
 int i = 1; /* asigno 1 a la variable 'i' */
 ```
 Un buen código debe ser **autodocumentado**, es decir, su lógica y propósito deben entenderse por sí solos mediante el uso de nombres de variables y funciones descriptivos. Si se agregan comentarios extras para describir cada paso técnico o instrucción elemental, es una señal de que el código no es lo suficientemente claro o que se está subestimando al lector.
 
-## 12. Modularización ("Divide y vencerás")
+## 11. Modularización ("Divide y vencerás")
 
 Modularizar un programa con funciones sencillas no solo da legibilidad al código, sino que también ayuda a evitar la repetición innecesaria del mismo.
 
@@ -529,35 +533,31 @@ int main() {
 En el primer ejemplo se observa mucha repetición de código y no hay uso de constantes. En el segundo ejemplo, el problema se dividió en funciones sencillas y generales. Por ejemplo, `pedir_cantidad_oficinas` se reutiliza cuatro veces cambiando solo el argumento, lo que hace al código más fácil de mantener y escalar si la Planta Nuclear decidiera abrir un nuevo sector.
 
 
-## 13. Usar pre y post condiciones
+## 12. Usar pre y post condiciones
 
 Principalmente al trabajar en grupo, ayuda mucho saber qué hace una función sin necesidad de hacer un seguimiento de la misma. Esta práctica se aplica incluso cuando la función es muy sencilla.
 
 #### Mala práctica
 ```c
-void listar_estrellas(int cantidad_estrellas){
-    for(int i = 1; i <= cantidad_estrellas; i++){ 
-        printf("Estrella Nro.: %d\n", i);
-    }
+int division_entera(int numerador, int denominador){
+    return numerador / denominador;
 }
 ```
-*En este caso, el programador que quiera usar la función no sabe si `cantidad_estrellas` puede ser cero, negativa, o qué resultado exacto esperar en la consola sin leer el `for`.*
 
 #### Buena práctica
 ```c
-/* * Pre: 'cantidad_estrellas' debe ser un número entero mayor a 0.
- * Post: Imprime por pantalla una lista numerada desde 1 hasta 'cantidad_estrellas'.
+/* * Pre: El parámetro 'denominador' debe ser un número distinto de 0.
+ * Post: Retorna el resultado truncado de la división entre 'numerador' y 'denominador'.
  */
-void listar_estrellas(int cantidad_estrellas){
-    for(int i = 1; i <= cantidad_estrellas; i++){ 
-        printf("Estrella Nro.: %d\n", i);
-    }
+int division_entera(int numerador, int denominador){
+    return numerador / denominador;
 }
 ```
+En este caso, si otro programador usa la función pasando un 0 en el denominador, el programa fallará. No hay una advertencia clara sobre este riesgo mortal. Lo mismo sucede con el aviso de que la función trunca el resultado, si no lo dijera la post el otro programador se llevaría una sorpresa.  
 
 - **Contrato de uso (Pre):** Indica qué condiciones deben cumplirse **antes** de llamar a la función para que no rompa el programa (ej: no pasar un puntero NULL o un número negativo).
 - **Garantía de resultado (Post):** Indica qué hizo la función exactamente **después** de ejecutarse, permitiendo al resto del equipo confiar en el resultado sin auditar el código interno.
-## 14. Una función que tenga interacción con el usuario, no debería devolver un tipo de dato que no sea void.
+## 13. Una función que tenga interacción con el usuario, no debería devolver un tipo de dato que no sea void.
 Una función que tiene interacción directa con el usuario (usa `printf` o `scanf`) no debería devolver un tipo de dato que no sea `void`. Por el contrario, si una función realiza un cálculo o proceso lógico, debe recibir los parámetros necesarios por valor o referencia, devolver el resultado y permitir que otra parte del programa decida cómo mostrarlo.
 :::tip
 Principio de Responsabilidad Única: Una función debe "saber hacer" o "saber hablar", pero no ambas cosas. Si mezclás un scanf con un cálculo matemático, esa función muere dentro de ese programa y no podrás llevártela a otro proyecto.
@@ -605,7 +605,7 @@ void ejecutar_calculo_usuario() {
 Ahora se puede llamar a `calcular_area` desde cualquier parte del código, incluso pasando valores fijos o calculados previamente, sin que aparezcan carteles en la consola.
 Es mucho más simple verificar si la lógica matemática es correcta si no se depende de que alguien tipee valores manualmente cada vez que haya que probar la función.
 
-## 15. No declarar variables de más
+## 14. No declarar variables de más
 
 
 No solo que puede llegar a confundir en la lectura del código, sino que también estaría ocupando memoria innecesaria.
@@ -638,7 +638,7 @@ Menos variables significan menos nombres que recordar y menos riesgo de equivoca
 Los compiladores modernos suelen dar *warnings* (avisos) cuando detectan variables sin usar, lo que "ensucia" la salida de la consola al compilar.
 Llegado el caso y si el cálculo a realizar es muy largo se puede utilizar una variable auxiliar con un buen nombre para ayudar a entender que se está calculando.
 
-## 16. Cortar estructuras iterativas correctamente
+## 15. Cortar estructuras iterativas correctamente
 
 Las estructuras iterativas tienen una condición de corte, la cual debe ser respetada y debe ser la única puerta de salida de dicha estructura.
 
@@ -680,7 +680,7 @@ bool buscar_figurita_en_caja(int caja[], int tamaño, int numero_buscado) {
 
 #### Buena práctica
 ```c
-bool buscar_figurita_en_caja(int caja[], int tamaño, int numero_buscado) {
+bool buscar_figurita_en_caja(int caja[MAX_FIGURITAS], int tamaño, int numero_buscado) {
     int i = 0;
     bool encontrada = false;
 
