@@ -305,13 +305,13 @@ if (numero1 < numero2)
 Para la declaración de variables y funciones:
 
 ```c
-int cantidad_alumnos; // (snakecase)
+int cantidad_alumnos; // (snake_case)
 
 int mes1, mes2;
 ```
 ó
 ```c
-int cantidadAlumnos; // (camelcase)
+int cantidadAlumnos; // (camelCase)
 ```
 
 Para la apertura y cierre de llaves:
@@ -491,10 +491,11 @@ int main() {
 ```c
 #include <stdio.h>
 
-#define S7G "Sector 7-G"
-#define SEG "Seguridad"
-#define QUI "Química"
-#define ADM "Administración"
+const char SECTORES[4][20] = {"Sector 7-G", "Seguridad", "Química", "Administración"};
+const int INDICE_S7G = 0;
+const int INDICE_SEGURIDAD = 1;
+const int INDICE_QUIMICA = 2;
+const int INDICE_ADMINISTRACION = 3;
 
 const int EMPLEADOS_POR_OFICINA = 2;
 const int ENERGIA_POR_EMPLEADO = 300;
@@ -516,10 +517,10 @@ int main() {
     int s7g, seguridad, quimica, administracion;
     int total_oficinas, total_energia;
 
-    pedir_cantidad_oficinas(&s7g, S7G);
-    pedir_cantidad_oficinas(&seguridad, SEG);
-    pedir_cantidad_oficinas(&quimica, QUI);
-    pedir_cantidad_oficinas(&administracion, ADM);
+    pedir_cantidad_oficinas(&s7g, SECTORES[INDICE_S7G]);
+    pedir_cantidad_oficinas(&seguridad, SECTORES[INDICE_SEGURIDAD]);
+    pedir_cantidad_oficinas(&quimica, SECTORES[INDICE_QUIMICA]);
+    pedir_cantidad_oficinas(&administracion, SECTORES[INDICE_ADMINISTRACION]);
 
     total_oficinas = sumar_oficinas(s7g, seguridad, quimica, administracion);
     total_energia = calcular_total_energia(total_oficinas);
@@ -668,7 +669,7 @@ do {
 
 #### Mala práctica
 ```c
-bool buscar_figurita_en_caja(int caja[], int tamaño, int numero_buscado) {
+bool buscar_figurita_en_caja(int caja[MAX_FIGURITAS], int tamaño, int numero_buscado) {
     for (int i = 0; i < tamaño; i++) {
         if (caja[i] == numero_buscado) {
             return true; // Salida forzada: corta el flujo del for
