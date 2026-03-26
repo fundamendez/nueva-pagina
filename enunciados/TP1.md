@@ -29,7 +29,7 @@ Prueba de Ascensión de los Magios
 </div>
 
 <p align="center">
-  <img src="/img/enunciados/los_magios.jpg" width="450"></img>
+  <img src="/img/enunciados/piedra_del_castigo.jpg" width="450"></img>
 </p>
 
 
@@ -108,6 +108,7 @@ Homero se inicializará en una posición aleatoria y podrá moverse por todo el 
 :::info[Reglas especiales]
 - Homero podrá transportar los pergaminos empujandolos, de a uno a la vez.
 - Cada pergamino tiene un altar asignado, y solo puede ser colocado en ese altar específico.
+:::
 
 ### 3.2 Donas
 QUE LE DEN ENERGÍA
@@ -120,6 +121,7 @@ Los portales unidireccionales podrán teletransportan a Homero o pergaminos.
 
 :::info[Reglas especiales]
 - Si se teletransporta un pergamino, este quedará en el extremo de salida bloqueandolo y no permitiendo a Homero usar ese portal hasta que el pergamino sea retirado.
+:::
 
 ### 3.5 Tablas
 Todos los demás magios de rango superior, exceptuando al líder supremo, se encuentran en el terreno con tablas de castigo. Si Homero pasa a una distancia (manhattan) menor o igual a 2, perderá X puntos de energía al ser golpeado por estos.
