@@ -5,20 +5,59 @@ import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import {
+  faSchool,
+  faScroll,
+  faComments,
+  faFlask,
+  faPaperPlane,
+  faChartBar,
+  faInbox,
+  faClock,
+} from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./index.module.css";
+import React from "react";
 
-const courseCards = [
+const primaryCards = [
   {
-    emoji: "\u{1F3EB}",
-    title: "Horarios y Aulas",
-    description: "Martes y Jueves de 18 a 21hs — Aulas a confirmar",
+    icon: faClock,
+    title: "Horario",
+    description: "Martes y Jueves de 18 a 21hs",
   },
   {
-    emoji: "\u{1F4DC}",
+    icon: faSchool,
+    title: "Aulas",
+    description: "Martes: Aula 414 · Jueves: Aula 203",
+  },
+  {
+    icon: faScroll,
     title: "Régimen de Cursada",
     description: "Reglas y condiciones de aprobación",
     link: "/regimen-de-cursada",
+  },
+];
+
+const additionalLinks = [
+  {
+    icon: faInbox,
+    title: "AlgoTron",
+    description: "Entregas de trabajos prácticos",
+    link: "https://algotron.com.ar/",
+  },
+  {
+    icon: faFlask,
+    title: "RPL",
+    description: "Ejercicios y práctica interactiva",
+    link: "https://www.myrpl.ar/",
+  },
+  {
+    icon: faChartBar,
+    title: "Encuestas",
+    description: "Encuestas de fin de curso",
+    link: "/encuestas",
   },
 ];
 
@@ -43,19 +82,31 @@ function HomepageHero() {
 }
 
 function CourseCard({
-  emoji,
+  icon,
   title,
   description,
   link,
+  highlighted,
+  colClass,
 }: {
-  emoji: string;
+  icon: IconDefinition;
   title: string;
   description: string;
   link?: string;
+  highlighted?: boolean;
+  colClass?: string;
 }) {
   const content = (
-    <div className={clsx(styles.card, link && styles.cardLink)}>
-      <div className={styles.cardIcon}>{emoji}</div>
+    <div
+      className={clsx(
+        styles.card,
+        link && styles.cardLink,
+        highlighted && styles.cardHighlighted,
+      )}
+    >
+      <div className={styles.cardIcon}>
+        <FontAwesomeIcon icon={icon} />
+      </div>
       <Heading as="h3" className={styles.cardTitle}>
         {title}
       </Heading>
@@ -65,7 +116,7 @@ function CourseCard({
   );
 
   return (
-    <div className={clsx("col col--6", styles.cardCol)}>
+    <div className={clsx(colClass ?? "col col--4", styles.cardCol)}>
       {link ? (
         <Link to={link} className={styles.cardLinkWrapper}>
           {content}
@@ -80,10 +131,15 @@ function CourseCard({
 function SlackBanner() {
   return (
     <section className={styles.slackBanner}>
-      <Link to="#" className={styles.slackBannerLink}>
+      <Link
+        to="https://fundamendez.slack.com/"
+        className={styles.slackBannerLink}
+      >
         <div className="container">
           <div className={styles.slackBannerContent}>
-            <span className={styles.slackBannerEmoji}>{"\u{1F4AC}"}</span>
+            <span className={styles.slackBannerEmoji}>
+              <FontAwesomeIcon icon={faComments} />
+            </span>
             <div>
               <Heading as="h3" className={styles.slackBannerTitle}>
                 Unite al Slack del curso
@@ -105,8 +161,18 @@ function CourseInfoSection() {
   return (
     <section className={styles.cardsSection}>
       <div className="container">
+        <div className={clsx("row", styles.primaryRow)}>
+          {primaryCards.map((card) => (
+            <CourseCard key={card.title} {...card} highlighted />
+          ))}
+        </div>
+      </div>
+      <div className={clsx("container", styles.additionalSection)}>
+        <Heading as="h2" className={styles.sectionTitle}>
+          Accesos adicionales
+        </Heading>
         <div className="row">
-          {courseCards.map((card) => (
+          {additionalLinks.map((card) => (
             <CourseCard key={card.title} {...card} />
           ))}
         </div>

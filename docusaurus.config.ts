@@ -2,8 +2,13 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type { LoadContext, Plugin } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
-import { readdirSync, existsSync, statSync } from "fs";
+import { readdirSync, readFileSync, existsSync, statSync } from "fs";
 import { join, extname } from "path";
+import {
+  getCronogramaDataForPlugin,
+  DEFAULT_YEAR,
+} from "./lib/cronograma/parse";
+import { getBadgeVariant, getModalityVariant } from "./lib/cronograma/html";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -18,10 +23,10 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://fundamendez.github.io",
+  url: "https://fundamendez.com.ar",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/nueva-pagina/",
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   organizationName: "fundamendez",
@@ -83,6 +88,57 @@ const config: Config = {
         },
       };
     },
+    async function pluginCronograma(context: LoadContext): Promise<Plugin> {
+      return {
+        name: "plugin-cronograma",
+        async loadContent() {
+          const csvPath = join(context.siteDir, "data", "cronograma.csv");
+          if (!existsSync(csvPath)) {
+            return { rows: [], startDate: null, endDate: null };
+          }
+          const content = readFileSync(csvPath, "utf-8");
+          const data = getCronogramaDataForPlugin(content, DEFAULT_YEAR);
+          const rows = data.rows.map((row) => ({
+            weekLabel: row.weekLabel,
+            theory: {
+              date: row.theory.date,
+              modality: row.theory.modality,
+              modalityVariant: getModalityVariant(row.theory.modality),
+              topicLines: row.theory.topicLines,
+              badgeItems: row.theory.badgeLabels.map((label) => ({
+                label,
+                variant: getBadgeVariant(label),
+              })),
+            },
+            practice: {
+              date: row.practice.date,
+              modality: row.practice.modality,
+              modalityVariant: getModalityVariant(row.practice.modality),
+              topicLines: row.practice.topicLines,
+              badgeItems: row.practice.badgeLabels.map((label) => ({
+                label,
+                variant: getBadgeVariant(label),
+              })),
+            },
+          }));
+          return {
+            rows,
+          };
+        },
+        async contentLoaded({ content, actions }) {
+          actions.setGlobalData(content);
+        },
+      };
+    },
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "enunciados", 
+        path: "enunciados", 
+        routeBasePath: "enunciados", 
+        sidebarPath: "./sidebars.ts", 
+      },
+    ],
   ],
 
   presets: [
@@ -119,19 +175,41 @@ const config: Config = {
       },
       items: [
         {
+          to: "/material",
+          label: "Material",
+          position: "left",
+        },
+        {
+          to: "/cronograma",
+          label: "Cronograma",
+          position: "left",
+        },
+        {
+          to: "/clases-grabadas",
+          label: "Clases Grabadas",
+          position: "left",
+        },
+        {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
           label: "Apuntes",
         },
         {
-          to: "/material",
-          label: "Material",
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          docsPluginId: "enunciados",
+          position: "left",
+          label: "Enunciados",
+        },
+        {
+          to: "/docentes",
+          label: "Docentes",
           position: "left",
         },
         {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
+          href: "https://docs.google.com/forms/d/e/1FAIpQLSe4umz8M_Hmb7N8S2E0rml-DKGRIIMAimv00iCw0hUQxhP_yQ/viewform",
+          label: "Buzón de quejas",
           position: "right",
         },
       ],

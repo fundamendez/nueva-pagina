@@ -5,6 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { usePluginData } from "@docusaurus/useGlobalData";
 
 import styles from "./material.module.css";
+import PageHero from "../components/PageHero";
 
 interface MaterialFile {
   name: string;
@@ -40,17 +41,11 @@ function formatCategoryName(name: string): string {
   return spaced.charAt(0).toUpperCase() + spaced.slice(1);
 }
 
-function FileTable({
-  files,
-  dir,
-}: {
-  files: MaterialFile[];
-  dir: string;
-}) {
+function FileTable({ files, dir }: { files: MaterialFile[]; dir: string }) {
   const baseUrl = useBaseUrl(`/material/${dir}/`);
 
   if (files.length === 0) {
-    return <p className={styles.emptyMessage}>No hay archivos disponibles.</p>;
+    return <p className={styles.emptyMessage}>No hay material disponible.</p>;
   }
 
   return (
@@ -76,22 +71,49 @@ export default function MaterialPage(): ReactNode {
     "plugin-material-files",
   ) as MaterialCategory[];
 
+  const expectedCategories = [
+    { name: "teórica", dir: "teórica" },
+    { name: "práctica", dir: "práctica" },
+    { name: "apuntesViejos", dir: "apuntesViejos" },
+  ];
+
+  const categoriesToRender = expectedCategories.map((expected) => {
+    const existingCategory = categories.find(
+      (category) => category.name === expected.name,
+    );
+
+    return (
+      existingCategory ?? {
+        name: expected.name,
+        dir: expected.dir,
+        files: [],
+      }
+    );
+  });
+
+  const imgSrc = useBaseUrl("/img/ralph-gato.jpg");
+  
   return (
     <Layout
       title="Material"
       description="Material de cursada de Fundamentos de Programación - FIUBA - Curso Mendez"
     >
-      <main className="container margin-vert--lg">
-        <Heading as="h1">Material</Heading>
-        <p>Acá vas a encontrar el material complementario para la cursada.</p>
-
-        <div className={styles.categoriesGrid}>
-          {categories.map((category) => (
-            <section key={category.name} className={styles.categoryCard}>
-              <Heading as="h2">{formatCategoryName(category.name)}</Heading>
-              <FileTable files={category.files} dir={category.dir} />
-            </section>
-          ))}
+      <main>
+        <PageHero
+          title="Material"
+          subtitle="Acá vas a encontrar el material complementario para la cursada."
+          imageSrc={imgSrc}
+          imageAlt="Simpsons meme"
+        />
+        <div className="container margin-vert--lg">
+          <div className={styles.categoriesGrid}>
+            {categoriesToRender.map((category) => (
+              <section key={category.name} className={styles.categoryCard}>
+                <Heading as="h2">{formatCategoryName(category.name)}</Heading>
+                <FileTable files={category.files} dir={category.dir} />
+              </section>
+            ))}
+          </div>
         </div>
       </main>
     </Layout>

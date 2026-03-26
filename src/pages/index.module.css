@@ -102,7 +102,7 @@
     border-radius: 16px;
     padding: 2rem 1.5rem;
     text-align: center;
-    border-top: 4px solid var(--simpsons-yellow);
+    border-top: 4px solid var(--simpsons-sky);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     transition:
         transform 0.2s,
@@ -116,10 +116,12 @@
 }
 
 .cardIcon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     width: 4rem;
     height: 4rem;
-    line-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto 1rem;
     background: var(--simpsons-sky);
     border-radius: 50%;
@@ -153,11 +155,42 @@
 
 .cardLink {
     cursor: pointer;
-    border-top-color: var(--simpsons-blue);
+    border-top-color: var(--simpsons-sky);
 }
 
 .cardLink:hover {
     border-top-color: var(--simpsons-sky);
+}
+
+.cardHighlighted {
+    border-top-width: 6px;
+    border-top-color: var(--simpsons-sky);
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
+    box-shadow: 0 4px 20px rgba(86, 160, 211, 0.15);
+}
+
+.cardHighlighted:hover {
+    box-shadow: 0 10px 32px rgba(86, 160, 211, 0.25);
+}
+
+.primaryRow {
+    justify-content: center;
+}
+
+.additionalSection {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e8e8e8;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
 }
 
 .cardAction {

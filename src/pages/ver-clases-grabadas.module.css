@@ -1,0 +1,140 @@
+/* ===== Page Background ===== */
+.container {
+  padding: 3rem 1rem;
+  background: #fafafa;
+  min-height: calc(100vh - 60px);
+}
+
+/* ===== Content Section ===== */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: #fff;
+  border-top: 4px solid var(--simpsons-yellow);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Header Row ===== */
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.backLink {
+  text-decoration: none;
+  font-weight: 700;
+  color: #111;
+  background: #f0f0f0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.45rem 0.75rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.backLink:hover {
+  text-decoration: none;
+  filter: brightness(0.95);
+}
+
+.headerSpacer {
+  width: 86px;
+  flex: 0 0 auto;
+}
+
+/* ===== Headings ===== */
+.title {
+  flex: 1;
+  font-size: 2.2rem;
+  color: #111;
+  margin: 0;
+  text-align: center;
+}
+
+/* ===== Video Player ===== */
+.videoWrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  background: #000;
+}
+
+.videoWrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ===== Button Row ===== */
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== Buttons ===== */
+.primaryButton {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--simpsons-yellow);
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.primaryButton:hover {
+  text-decoration: none;
+  filter: brightness(0.95);
+}
+
+.downloadButton {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--simpsons-sky);
+  color: #0b2230;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.downloadButton:hover {
+  text-decoration: none;
+  filter: brightness(0.95);
+}
+
+.secondaryButton {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #f0f0f0;
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.secondaryButton:hover {
+  text-decoration: none;
+  filter: brightness(0.95);
+}
+
+/* ===== Empty / Error State ===== */
+.errorText {
+  text-align: center;
+  margin: 2rem 0;
+  color: #111;
+}

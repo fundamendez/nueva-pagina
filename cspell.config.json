@@ -26,7 +26,35 @@
     "swizzle",
     "indentación",
     "inicialización",
-    "indentado"
+    "indentado",
+    "ejecución",
+    "Massone",
+    "Fraccaro",
+    "Díaz",
+    "reentrega",
+    "Reentregas",
+    "reentregas",
+    "Trón",
+    "Plagios",
+    "signficará",
+    "modularización",
+    "subproblemas",
+    "subproblema",
+    "modularizar",
+    "submódulos",
+    "recordá",
+    "especificadores",
+    "caracter",
+    "tabulación",
+    "acordate",
+    "elif"
   ],
-  "flagWords": ["indentacion", "inicializacion"]
+  "flagWords": [
+    "indentacion",
+    "inicializacion",
+    "modularizacion",
+    "submodulos",
+    "recorda",
+    "ejecucion"
+  ]
 }
