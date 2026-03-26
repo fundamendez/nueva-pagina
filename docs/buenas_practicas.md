@@ -54,6 +54,21 @@ Existen dos cosas difíciles en la Informática:
 
 Se recomienda usar nombres descriptivos, tanto para nombrar funciones como variables, ya que le aporta legibilidad y claridad al código. Esto ayudará también si se trabaja en grupo, el compañero (y uno mismo) sabrá para qué fue declarada la variable/función.
 
+#### Mala práctica
+```c
+int x;
+int xx;
+char v[MAX];
+```
+
+#### Buena práctica
+```c
+int i;
+int contador_personas;
+char nombre_alumno[MAX_NOMBRE];
+```
+
+En este ejemplo es evidente que los nombres de las variables del primer código no aportan información sobre lo que la variable almacena.
 
 #### Mala práctica
 
@@ -95,22 +110,6 @@ bool funcion_que_calcula_si_un_numero_es_par(int numero){
 
 Es visiblemente evidente que la longitud del nombre de la función es bien auto-descriptivo, pero seguramente se volverá una tortura tener que escribir ese nombre mas de una vez.   
 Entonces, ¿cuán largo debe ser el nombre de una función? El nombre de una función debe seguir los mismos lineamientos que los nombres de las variables pero además el mismo debe indicar una acción atómica. Con atómica se refiere que lo que la función diga hacer debe ser solamente un concepto.
-
-#### Mala práctica
-```c
-int x;
-int xx;
-char v[MAX];
-```
-
-#### Buena práctica
-```c
-int i;
-int contador_personas;
-char nombre_alumno[MAX_NOMBRE];
-```
-
-En este ejemplo es evidente que los nombres de las variables del primer código no aportan información sobre lo que la variable almacena.
 
 ### 1.1. Reglas para Poner Nombres
 
