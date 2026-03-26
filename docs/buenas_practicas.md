@@ -179,7 +179,7 @@ Si se usarán constantes o literales, declararlos antes del main y las funciones
 
 #### Mala práctica
 ```c
-printf("El perimetro ...", 3,14 * radio * 2);
+printf("El perimetro ...", 3.14 * radio * 2);
 ```
 
 #### Buena práctica
