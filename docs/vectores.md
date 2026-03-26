@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+title: "Vectores"
+---
 # Vectores
 
 Imaginemos que tenemos que guardar en un programa de C nuestras notas a lo largo del cuatrimestre, con lo que sabemos hasta ahora lo podríamos hacer de la siguiente manera:
@@ -41,7 +45,7 @@ En este caso:
 
 * `notas` es el nombre del vector.
 
-* `4` indica la cantidad de elementos que tiene el vector.
+* `4` indica el tamaño que tiene el vector.
 
 :::danger[IMPORTANTE]
 Si bien el vector tiene 4 elementos, como el indice arranca desde `0`, el mismo va desde las posiciones `0 a 3`.
@@ -50,7 +54,7 @@ Si bien el vector tiene 4 elementos, como el indice arranca desde `0`, el mismo 
 Viéndolo gráficamente:
 
 <p align="center">
-  <img src="/nueva-pagina/img/docs/vector.png" width="400"></img>
+  <img src="/img/docs/vector.png" width="400"></img>
 </p>
 
 ## ¿Por qué necesitamos vectores en C?
@@ -69,7 +73,7 @@ Viéndolo gráficamente:
 En el ejemplo anterior tenemos:
 
 <p align="center">
-  <img src="/nueva-pagina/img/docs/vector_2.png" width="400"></img>
+  <img src="/img/docs/vector_2.png" width="400"></img>
 </p>
 
 Mediante los índices podemos acceder a cada uno de los elementos dentro del arreglo. 
@@ -81,7 +85,7 @@ int nota_4 = notas[3];
 ``` 
 
 :::danger[IMPORTANTE]
-Si bien el 7 es el ultimo elemento del arreglo y este tiene longitud 4, como se mencionó anteriormente, los indices van de `0 a longitud-1`. Esto es muy importante ya que si accediéramos de la siguiente manera:
+Si bien el 7 es el ultimo elemento del arreglo y este tiene tamaño 4, como se mencionó anteriormente, los indices van de `0 a tamaño-1`. Esto es muy importante ya que si accediéramos de la siguiente manera:
 ```c 
 int nota_4 = notas[4];
 ``` 
@@ -128,7 +132,7 @@ Es importante considerar **que** estamos guardando en el vector. En este ejemplo
 
 Viéndolo gráficamente:
 <p align="center">
-  <img src="/nueva-pagina/img/docs/vector_3.png" width="600"></img>
+  <img src="/img/docs/vector_3.png" width="600"></img>
 </p>
 
 ## ¿Cómo recorrer un vector?
@@ -167,7 +171,7 @@ Si la condición la definimos como `i <= tamaño_del_vector ` en la última iter
 
 Viéndolo gráficamente:
 <p align="center">
-  <img src="/nueva-pagina/img/docs/vector_recorrido.png" width="600"></img>
+  <img src="/img/docs/vector_recorrido.png" width="600"></img>
 </p>
 
 
