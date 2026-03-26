@@ -348,13 +348,12 @@ int resultado;
 
 int sumar(int num1, int num2){
     resultado = num1 + num2;
-    return resultado;
 }
 
 int main(){
     int numero1 = 2;
     int numero2 = 8;
-    resultado = sumar(numero1, numero2);
+    sumar(numero1, numero2);
     printf ("%d\n"  , resultado);
     return 0;
 }
