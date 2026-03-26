@@ -54,7 +54,6 @@ Existen dos cosas difíciles en la Informática:
 
 Se recomienda usar nombres descriptivos, tanto para nombrar funciones como variables, ya que le aporta legibilidad y claridad al código. Esto ayudará también si se trabaja en grupo, el compañero (y uno mismo) sabrá para qué fue declarada la variable/función.
 
-No es recomendable usar nombres muy largos.
 
 #### Mala práctica
 
