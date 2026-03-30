@@ -30,7 +30,7 @@ const primaryCards = [
   {
     icon: faSchool,
     title: "Aulas",
-    description: "Martes: Aula 414 · Jueves: Aula 203",
+    description: "Martes: Aula 414 · Jueves: Aula 313",
   },
   {
     icon: faScroll,
