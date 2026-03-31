@@ -4,7 +4,7 @@ title: "Vectores"
 ---
 # Vectores
 
-Imaginemos que tenemos que guardar en un programa de C nuestras notas a lo largo del cuatrimestre, con lo que sabemos hasta ahora lo podríamos hacer de la siguiente manera:
+Imaginemos que tenemos que guardar en un programa de C nuestras notas a lo largo del cuatrimestre, con lo que sabemos hasta ahora podríamos hacerlo de la siguiente manera:
 
 ```c
 int nota_1 = 6;
@@ -45,7 +45,7 @@ En este caso:
 
 * `notas` es el nombre del vector.
 
-* `4` indica el tamaño que tiene el vector.
+* `4` indica el tamaño que tiene el vector, es decir, la cantidad de elementos que **puede** almacenar. 
 
 :::danger[IMPORTANTE]
 Si bien el vector tiene 4 elementos, como el índice arranca desde `0`, el mismo va desde las posiciones `0 a 3`.
@@ -107,7 +107,7 @@ notas[3]   // vale 7
 
 ## ¿Qué pasa cuando no sé cuantos elementos quiero guardar?
 
-Un vector tiene un tamaño fijo por lo que no podemos definir un vector de tamaño 4 y luego intentar almacenar 5 elementos. En este caso estaríamos intentando acceder a memoria que no le pertenece.
+Un vector tiene un tamaño fijo por lo que no podemos definir un vector de tamaño 4 y luego intentar almacenar 5 elementos. En este caso estaríamos intentando acceder a memoria que no nos pertenece.
 
 Por ejemplo:
 ```c 
@@ -130,7 +130,7 @@ int tope_notas = 0;
 :::tip ¿Cómo pensar el tope?
 Hay dos formas equivalentes de entenderlo:
 - Es la **cantidad de elementos cargados** en el vector.
-- Es el **índice de la primera posición con basura** (donde aún no cargamos nada).
+- Es el **índice de la primera posición con basura** (donde aún no cargamos nada). También puede ser la primer posición que no nos pertence en caso de tener un vector lleno.
 
 Ambas describen lo mismo. Usá la que te resulte más intuitiva.
 :::
@@ -174,11 +174,39 @@ float promedio = (float)suma / tope_notas;
 * En cada iteración:
     * Se accede al elemento notas[i].
     * Se lo suma a la variable suma.
-    *  El ciclo termina cuando i alcanza el tamaño tope del vector (4).
+    *  El ciclo termina cuando i alcanza el tamaño tope del vector (4). 
 * Finalmente, se divide la suma total por la cantidad de elementos para obtener el promedio.
 
 :::warning[Error común]
-Si la condición la definimos como ` i <= tope_notas ` en la última iteración estaríamos accediendo a una posición inválida. 
+Si la condición la definimos como `i<=tope_notas` en la última iteración estaríamos accediendo a una posición inválida. 
+
+Tengo 4 notas, por lo que necesito hacer 4 iteraciones. Si yo usara la condición `i<=tope_notas` estaría haciendo 5. 
+
+Veamoslo paso a paso:
+```
+tope = 4
+------
+i = 0
+notas[0] = 6
+suma = 6
+------
+i = 1
+notas[1] = 8
+suma = 14
+------
+i = 2
+notas[2] = 5
+suma = 19
+------
+i = 3
+notas[3] = 7
+suma = 26
+------
+i = 4 ---> ‼️Acá la condicion i <= tope_notas sigue siendo true porque 4 <= 4‼️
+notas[5] = ERROR ---> segmentation fault
+------
+```
+***Moraleja:*** siempre la condion del `for` es **menor estricto** no menor igual al tope. 
 :::
 
 Viéndolo gráficamente:
