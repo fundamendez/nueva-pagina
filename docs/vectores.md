@@ -130,7 +130,7 @@ int tope_notas = 0;
 :::tip ¿Cómo pensar el tope?
 Hay dos formas equivalentes de entenderlo:
 - Es la **cantidad de elementos cargados** en el vector.
-- Es el **índice de la primera posición con basura** (donde aún no cargamos nada). También puede ser la primer posición que no nos pertenece en caso de tener un vector lleno.
+- Es el **índice de la primera posición con basura** (donde aún no cargamos nada).
 
 Ambas describen lo mismo. Usá la que te resulte más intuitiva.
 :::
