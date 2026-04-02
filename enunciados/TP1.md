@@ -353,10 +353,7 @@ Para la entrega en **AlgoTrón** (patente pendiente), recuerde que deberá subir
 
 ## 7. Anexos
 
-### 7.1 FAQ
-En <a>este link</a> encontrarán el documento de FAQ del TP, donde se irán cargando dudas realizadas con sus respuestas. Todo lo que esté en ese documento es válido y oficial para la realización del TP.
-
-### 7.2 Uso de la biblioteca utiles.h
+### 7.1 Uso de la biblioteca utiles.h
 La cátedra brindará a los alumnos una biblioteca que facilitará la creación de las paredes y los caminos en
 el juego.
 Deben usarla a la hora de inicializar el juego y sirve para crear las posiciones de todas
@@ -381,7 +378,7 @@ void obtener_mapa(coordenada_t paredes[MAX_PAREDES], int* tope_paredes, coordena
 #endif
 ```
 
-### 7.3 Obtención de números aleatorios en C
+### 7.2 Obtención de números aleatorios en C
 Para obtener números aleatorios debe utilizarse la función **rand()**, la cual está disponible en la biblioteca *stdlib.h*.
 
 Esta función devuelve números pseudo-aleatorios, esto quiere decir que, cuando uno ejecuta nuevamente el programa, los números, aunque aleatorios, son los mismos.
@@ -406,7 +403,7 @@ int main(){
 }
 ```
 
-### 7.4 Limpiar la pantalla durante la ejecución de un programa
+### 7.3 Limpiar la pantalla durante la ejecución de un programa
 Muchas veces nos gustaría que nuestro programa pueda verse siempre en la pantalla sin ver texto anterior.
 
 Para esto, podemos utilizar la llamada al sistema **clear**, de esta manera, limpiaremos todo lo que hay en nuestra terminal hasta el momento y podremos dibujar la información actualizada.
@@ -429,7 +426,7 @@ int main(){
 }
 ```
 
-### 7.5 Distancia Manhattan
+### 7.4 Distancia Manhattan
 
 Para obtener la distancia entre 2 puntos mediante este método, se debe conocer a priori las coordenadas de dichos puntos.
 
@@ -451,3 +448,8 @@ Se ve claramente en los siguientes ejemplos:
 ```	
 | 7 - 9 | + | 8 - 8 | = 2 + 0 = 2
 ```	
+
+# 8 FAQs
+En esta sección se irán cargando dudas realizadas con sus respuestas.
+
+...
