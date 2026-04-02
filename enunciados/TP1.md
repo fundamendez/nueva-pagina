@@ -94,7 +94,7 @@ El juego consiste en 3 niveles donde cada nivel tiene un camino distinto que sol
 
 Si Homero se sale del camino, perderá una vida por cada movimiento que realice estando por fuera.
 
-Al comenzar el juego, se deberá posicionar los elementos que lo componen en posiciones aleatorias en el terreno.
+Al comenzar el juego, se deberán posicionar los elementos que lo componen en posiciones aleatorias en el terreno.
 
 :::warning[IMPORTANTE]
 - Ningún elemento puede inicializarse por fuera de los límites del terreno ni pisar otros elementos ya inicializados ni las paredes (con excepcion del camino).
@@ -170,6 +170,8 @@ Homero se podrá mover en 4 direcciones:
 * Abajo: **S**
 * Derecha: **D**
 * Izquierda: **A**
+
+Además para activar las herramientas usará las siguientes instrucciones:
 * Hechizo revelador: **H**
 * Antorchas: **L**
 
@@ -188,9 +190,19 @@ El juego finaliza cuando:
 ## 5. Especificaciones
 ### 5.1 Convenciones
 * Homero: **H**
-* Piedra del castigo: **R**
-* Tótem: **T**
+* Pergamino: **P**
+* Altar: **A**
+* Runa: **U**
+* Paredes: **X**
+* Camino: **C**
+
+Obstáculos:
 * Catapulta: **F**
+* Piedra del castigo: **R**
+
+Herramientas:
+* Tótem: **T**
+
 
 ### 5.2 Funciones y procedimientos
 
