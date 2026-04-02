@@ -212,11 +212,12 @@ Herramientas:
 
 #include <stdbool.h>
 
-#define MAX_FILAS 30
-#define MAX_COLUMNAS 20
-#define MAX_TABLAS 20
-#define MAX_ELEMENTOS 20
-#define MAX_PAREDES 20
+#define MAX_FILAS 20
+#define MAX_COLUMNAS 30
+#define MAX_ELEMENTOS 40
+#define MAX_PAREDES 500
+#define MAX_CAMINO 200
+#define MAX_NIVELES 3
 
 typedef struct coordenada {
     int fil;
@@ -242,9 +243,9 @@ typedef struct nivel {
     coordenada_t camino[MAX_CAMINO];
     int tope_camino;
     coordenada_t pergamino;
-    objeto_t herramientas[MAX_HERRAMIENTAS];
+    objeto_t herramientas[MAX_ELEMENTOS];
     int tope_herramientas;
-    objeto_t obstaculos[MAX_HERRAMIENTAS];
+    objeto_t obstaculos[MAX_ELEMENTOS];
     int tope_obstaculos;
     
 } nivel_t;
@@ -373,7 +374,7 @@ las paredes y el camino que habrá en el terreno.
  *  Recibe dos vectores de coordenadas y su tope. En el primer vector se almacenan las paredes y en el segundo el camino de ese nivel.
  *  Inicializa los vectores con las coordenadas de algún mapa para un nivel dado.
 */
-void obtener_mapa(coordenada_t paredes[MAX_PAREDES], int* tope_paredes, coordenada_t camino[MAX_PAREDES], int* tope_camino, int nivel);
+void obtener_mapa(coordenada_t paredes[MAX_PAREDES], int* tope_paredes, coordenada_t camino[MAX_CAMINO], int* tope_camino, int nivel);
 
 #endif
 ```
