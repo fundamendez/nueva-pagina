@@ -29,7 +29,7 @@ Rito de Ascensión de los Magios
 </div>
 
 <p align="center">
-  <img src="/img/enunciados/piedra_magios.png" width="450"></img>
+  <img src="/img/enunciados/1c2026tp1/piedra_magios.png" width="450"></img>
 </p>
 
 
@@ -121,7 +121,7 @@ Cuando el personaje esté ubicado sobre la runa, se iluminará el camino que deb
 El pergamino se ubicará en una posición random del camino. Homero lo recolecta posicionándose sobre el mismo, y además mientras esté sobre el pergamino se le va a mostrar otra vez el camino que tiene que realizar por única vez, hasta que haga el próximo movimiento.
 
 ### 3.5 Altar
-El altar estará al final del camino. Homero tendrá que ponerse sobre el mismo para colocar el pergamino una vez que lo haya recolectado. Una vez colocado, se pasará al siguiente nivel.
+El altar será la última posición del camino. Homero tendrá que ponerse sobre el mismo para colocar el pergamino una vez que lo haya recolectado. Una vez colocado, se pasará al siguiente nivel.
 
 ### 3.6 Paredes
 A lo largo del terreno habrá paredes que no le permitirán a Homero avanzar. 
@@ -154,11 +154,27 @@ En caso de pegarle a una posición del camino, la misma se destruirá y deberá 
 ### 3.9 Terreno
 El terreno está compuesto por los elementos mencionados anteriormente, cada uno de ellos con una coordenada (x, y) con x siendo un valor entre 0 y 19 inclusives e y siendo un valor entre 0 y 29 inclusives.
 
+A continuación dejamos un posible terreno del nivel 1. Los cuadrados negros son las paredes y lo blanco el camino.
+
+<p align="center">
+  <img src="/img/enunciados/1c2026tp1/terreno_ejemplo.png" width="450"></img>
+</p>
+
+### 3.10 Orden de inicialización
+1. Paredes
+2. Caminos
+3. Homero
+4. Runa
+5. Altar
+6. Pergamino
+7. Herramientas
+8. Obstáculos
+
 ---
 
 ## 4. Modo de juego
 Al moverse, Homero no puede pasarse de los límites del terreno ni atravesar paredes. 
-Por ejemplo, si Homero está en la fila 0 y el usuario lo quiere mover para arriba, ese movimiento queda sin efecto y no resta vida ya que no se movió.
+Por ejemplo, si Homero está en la fila 0 y el usuario lo quiere mover para arriba, ese movimiento queda sin efecto.
 
 :::warning[IMPORTANTE]
 - Antes de realizar el movimiento, se debe validar lo que ingresa el usuario, volviéndole a preguntar hasta que ingrese un movimiento correcto.
@@ -205,6 +221,7 @@ Herramientas:
 
 
 ### 5.2 Funciones y procedimientos
+A continuación está la biblioteca que se deberá realizar y que va a contener todo lo necesario para el desarrollo del juego. Este archivo .h **NO** se puede modificar de ninguna forma.
 
 ```c
 #ifndef __ASCENSION_MAGIOS_H__
@@ -265,7 +282,7 @@ void inicializar_juego(juego_t *juego);
 
 
 /*
- * Pre condiciones: -
+ * Pre condiciones: El juego debe estar inicializado previamente con `inicializar_juego` y el nivel actual del juego tiene que ser 1 o 2.
  * Post condiciones: Actualizará el nivel actual el juego y el personaje para comenzar el siguiente nivel.
  */
 void cambiar_nivel(juego_t* juego);
@@ -342,8 +359,10 @@ gcc juego.c ascension_magios.c utiles.o -o juego -std=c99 -Wall -Wconversion -We
 Por último debe ser entregado en la plataforma de corrección de trabajos prácticos **AlgoTrón** (patente pendiente), en la cual deberá tener la etiqueta **¡Exito!** significando que ha pasado las pruebas a las que la cátedra someterá al trabajo.
 
 :::danger[IMPORTANTE]
-La etiqueta **¡Éxito!** es un requisito **necesario pero no suficiente** para la aprobación del trabajo práctico.  
+La etiqueta **¡Éxito!** es un requisito necesario pero no suficiente para la aprobación del trabajo práctico.  
 El trabajo deberá cumplir tanto con las **pruebas automatizadas** como con los **criterios de calidad evaluados por la cátedra**.
+
+Además, para que el trabajo sea corregido por un colaborador, el mismo debe pasar todas las **pruebas mínimas**, las cuales verifican el funcionamiento mínimo del trabajo.
 :::
 
 :::info[ACLARACIÓN]
