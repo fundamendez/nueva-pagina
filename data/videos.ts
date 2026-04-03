@@ -74,6 +74,10 @@ export const TUTORIALES: VideoItem[] = [
   { title: "Primeros pasos en Linux", source: "youtube", youtubeId: "dPs_cimCYmQ" },
 ];
 
+export const OCULTOS: VideoItem[] = [
+  { title: "Presentación TP1", source: "drive", fileId: "1vaw9eb355_TikRNImC6Vop-K21QgFE1P" },
+];
+
 export function buildEmbedUrl(v: VideoItem): string {
   if (v.source === "drive") return `https://drive.google.com/file/d/${v.fileId}/preview`;
   return `https://www.youtube.com/embed/${v.youtubeId}`;
