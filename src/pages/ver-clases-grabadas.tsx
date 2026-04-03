@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import Layout from "@theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
-import { useLocation } from "@docusaurus/router";
+import { useHistory, useLocation } from "@docusaurus/router";
 import styles from "./ver-clases-grabadas.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +10,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import {
   CLASES,
   TUTORIALES,
+  OCULTOS,
   buildEmbedUrl,
   buildOpenUrl,
   buildDownloadUrl,
@@ -17,14 +18,23 @@ import {
 
 export default function VerClasesGrabadas() {
   const location = useLocation();
+  const history = useHistory();
 
   const { title, embedUrl, openUrl, downloadUrl, section } = useMemo(() => {
     const params = new URLSearchParams(location.search);
     const sec = params.get("sec"); // "clases" | "tutoriales"
     const t = params.get("t"); // Title
 
-    const normalizedSection = sec === "tutoriales" ? "tutoriales" : "clases";
-    const list = normalizedSection === "tutoriales" ? TUTORIALES : CLASES;
+    let list = CLASES;
+    let normalizedSection = "clases";
+
+    if (sec === "tutoriales") {
+      list = TUTORIALES;
+      normalizedSection = "tutoriales";
+    } else if (sec === "ocultos") {
+      list = OCULTOS;
+      normalizedSection = "ocultos";
+    }
 
     const item = t ? list.find((v) => v.title === t) : undefined;
 
@@ -54,12 +64,16 @@ export default function VerClasesGrabadas() {
       <main className={styles.container}>
         <div className={styles.section}>
           <div className={styles.headerRow}>
-            <Link
+            <a
               className={styles.backLink}
-              to={useBaseUrl("/clases-grabadas")}
+              href="#"
+              onClick={(e) => {
+                e.preventDefault(); 
+                history.goBack();  
+              }}
             >
               <FontAwesomeIcon icon={faArrowLeft} /> Volver
-            </Link>
+            </a>
 
             <h1 className={styles.title}>{title}</h1>
 
