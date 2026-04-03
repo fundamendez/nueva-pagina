@@ -1,0 +1,464 @@
+---
+id: tp1
+title: ""
+sidebar_label: TP1 - Rito de ascensión de los Magios
+sidebar_position: 2
+---
+
+import BuscadorCorrector from '@site/src/components/BuscadorCorrectores'
+
+
+
+<div style={{ maxWidth: "900px", margin: "0 auto", paddingTop: "10px" }}>
+
+<div style={{ textAlign: "center" }}>
+
+<h1 style={{
+  fontSize: "2.5rem",
+  marginBottom: "10px",
+  fontWeight: "700"
+}}>
+Trabajo Práctico Nº 1
+</h1>
+
+<h2 style={{
+  fontSize: "2rem",
+  fontWeight: "700"
+}}>
+Rito de Ascensión de los Magios
+</h2>
+
+
+</div>
+
+</div>
+
+<p align="center">
+  <img src="/img/enunciados/1c2026tp1/piedra_magios.png" width="450"></img>
+</p>
+
+
+<div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+
+| Fecha de presentación | Fecha de entrega |
+|:---------------------:|:----------------:|
+| 03/04/2026            | 01/05/2026       |
+
+</div>
+
+
+<!-- <BuscadorCorrector /> -->
+---
+
+## 1. Introducción
+
+Los Magios son una antigua sociedad secreta que opera en las sombras de Springfield. A lo largo de los años han ejercido su influencia sobre distintos aspectos de la ciudad mediante rituales misteriosos, decisiones arbitrarias y una gran cantidad de donas.
+
+Luego de ser aceptado como miembro, Homero se enfrentará a la siguiente prueba: el **Rito de Ascensión de los Magios**.
+
+Para determinar si una persona es digna de ascender dentro de la jerarquía de la sociedad secreta, los Magios realizan un desafío en el cual los participantes deben demostrar su valía y lealtad.
+
+---
+
+## 2. Objetivo
+
+El presente trabajo práctico tiene como objetivo evaluar a los alumnos en aspectos fundamentales de la programación.
+
+Entre ellos:
+
+- Diseñe y desarrolle las funcionalidades de una biblioteca con un contrato preestablecido.
+- Se familiarice con y utilice correctamente los tipos de datos estructurados.
+- Desarrolle una interfaz gráfica amigable y entendible para el usuario.
+
+Por supuesto, se requiere que el trabajo cumpla con los objetivos de los previos trabajos prácticos en especial con las **buenas prácticas de programación** profesadas por la cátedra. Se considerarán críticos la modularización, reutilización y claridad del código.
+
+---
+
+## 3. Enunciado
+
+Se solicita implementar un programa que realice el **Rito de ascensión de los Magios** en forma de juego.
+
+El juego consiste en 3 niveles donde cada nivel tiene un camino distinto que solo se podrá ver si Homero se encuentra sobre una runa. En cada nivel se deberá llevar un pergamino sagrado de los magios a través de ese camino hacia el altar que le corresponde. 
+
+Si Homero se sale del camino, perderá una vida por cada movimiento que realice estando por fuera.
+
+Al comenzar el juego, se deberán posicionar los elementos que lo componen en posiciones aleatorias en el terreno.
+
+:::warning[IMPORTANTE]
+- Ningún elemento puede inicializarse por fuera de los límites del terreno ni pisar otros elementos ya inicializados ni las paredes (con excepcion del camino).
+:::
+
+
+### 3.1 Homero
+Al comienzo del juego, Homero se inicializará en la primera posición del camino del primer nivel. 
+
+Cuando se cambie de nivel, Homero deberá estar también en la primera posición del camino del nuevo nivel.
+
+El personaje contará con 5 vidas para usar durante todo el juego.
+
+
+### 3.2 Caminos
+Cada nivel tendrá un camino que Homero deberá recorrer para recoger el pergamino y colocarlo en el altar. Cada vez que Homero pise en una posición por fuera del camino, perderá una vida.
+
+### 3.3 Runas
+Habrá una única runa colocada en la primera posición del camino de cada nivel, justo donde se encuentra Homero. 
+Cuando el personaje esté ubicado sobre la runa, se iluminará el camino que debe hacer hasta el altar. Caso contrario, el camino estará oculto.
+
+
+### 3.4 Pergaminos
+El pergamino se ubicará en una posición random del camino. Homero lo recolecta posicionándose sobre el mismo, y además mientras esté sobre el pergamino se le va a mostrar otra vez el camino que tiene que realizar por única vez, hasta que haga el próximo movimiento.
+
+### 3.5 Altar
+El altar será la última posición del camino. Homero tendrá que ponerse sobre el mismo para colocar el pergamino una vez que lo haya recolectado. Una vez colocado, se pasará al siguiente nivel.
+
+### 3.6 Paredes
+A lo largo del terreno habrá paredes que no le permitirán a Homero avanzar. 
+
+### 3.7 Herramientas 
+
+#### 3.7.1 Hechizo revelador
+Homero tendrá 5 oportunidades durante todo el juego para ver el camino en caso de no recordarlo. Se activará por teclado con la letra **H**.
+
+#### 3.7.2 Antorcha mágica
+Homero tendrá 5 antorchas mágicas para usar en cada nivel. Cuando la active, se revelará el camino que tenga Homero a una distancia manhattan 3. 
+Para prender una antorcha, deberá ingresarse la letra **L**.
+
+#### 3.7.3 Tótem
+Habra 5 tótems inicializados de forma aleatoria en todo el terreno en cada nivel. Si Homero se posiciona sobre uno, este le otorgará una vida extra. Una vez que Homero se haya posicionado sobre un tótem, este se eliminará del vector de herramientas.
+
+
+### 3.8 Obstáculos
+
+#### 3.8.1 Piedra del castigo
+Habrá 10 piedras de castigo en cada nivel, siempre ubicadas de forma random. Son de gran tamaño y peso que cuenta con una cadena y collar al que se le ata a un magio que ha cometido una falta grave. 
+Por eso, cuando Homero se topa con una piedra de castigo la deberá romper poniendose en su lugar y el pergamino se colocará en otra posición random del camino, haya sido previamente recolectado por Homero o no.
+Al encontrarse con la piedra, esta se elimina del vector de obstáculos.
+
+
+#### 3.8.2 Catapulta 
+Como los magios no estan del todo convencidos de la participación de Homero, se deberá inicializar una catapulta fuera del camino en cada nivel. Cada vez que se pise una runa o se lance un hechizo, la catapulta lanzará una bola de fuego que caerá en una posición random (no deberá caer arriba de una pared, la runa, el altar u Homero).
+En caso de pegarle a una posición del camino, la misma se destruirá y deberá eliminarse de su vector sin perder el orden original del mismo. 
+
+### 3.9 Terreno
+El terreno está compuesto por los elementos mencionados anteriormente, cada uno de ellos con una coordenada (x, y) con x siendo un valor entre 0 y 19 inclusives e y siendo un valor entre 0 y 29 inclusives.
+
+A continuación dejamos un posible terreno del nivel 1. Los cuadrados negros son las paredes y lo blanco el camino.
+
+<p align="center">
+  <img src="/img/enunciados/1c2026tp1/terreno_ejemplo.png" width="450"></img>
+</p>
+
+### 3.10 Orden de inicialización
+1. Paredes
+2. Caminos
+3. Homero
+4. Runa
+5. Altar
+6. Pergamino
+7. Herramientas
+8. Obstáculos
+
+---
+
+## 4. Modo de juego
+Al moverse, Homero no puede pasarse de los límites del terreno ni atravesar paredes. 
+Por ejemplo, si Homero está en la fila 0 y el usuario lo quiere mover para arriba, ese movimiento queda sin efecto.
+
+:::warning[IMPORTANTE]
+- Antes de realizar el movimiento, se debe validar lo que ingresa el usuario, volviéndole a preguntar hasta que ingrese un movimiento correcto.
+:::
+
+Homero se podrá mover en 4 direcciones:
+
+* Arriba: **W**
+* Abajo: **S**
+* Derecha: **D**
+* Izquierda: **A**
+
+Además para activar las herramientas usará las siguientes instrucciones:
+* Hechizo revelador: **H**
+* Antorchas: **L**
+
+Luego de realizar una acción en caso de chocar o estar a la distancia de reacción con un elemento se activará la reacción relacionada al mismo que afectará a Homero y el estado del juego.
+
+Al cambiar de nivel, Homero quedará con la cantidad de vidas que quedó en el nivel anterior. Es decir que si Homero ganó vidas, estas quedarán disponibles para los siguientes niveles. 
+
+Un nivel se da por ganado cuando:
+* Homero se posiciona en el altar con el pergamino recolectado. 
+
+El juego finaliza cuando:
+* Homero coloca el pergamino en su altar correspondiente y está en el último nivel del juego. En este caso, el juego se dará por ganado.
+* Homero se queda sin vida. En este caso, el juego se dará por perdido.
+
+---
+## 5. Especificaciones
+### 5.1 Convenciones
+* Homero: **H**
+* Pergamino: **P**
+* Altar: **A**
+* Runa: **U**
+* Paredes: **X**
+* Camino: **C**
+
+Obstáculos:
+* Catapulta: **F**
+* Piedra del castigo: **R**
+
+Herramientas:
+* Tótem: **T**
+
+
+### 5.2 Funciones y procedimientos
+A continuación está la biblioteca que se deberá realizar y que va a contener todo lo necesario para el desarrollo del juego. Este archivo .h **NO** se puede modificar de ninguna forma.
+
+```c
+#ifndef __ASCENSION_MAGIOS_H__
+#define __ASCENSION_MAGIOS_H__
+
+#include <stdbool.h>
+
+#define MAX_FILAS 20
+#define MAX_COLUMNAS 30
+#define MAX_ELEMENTOS 40
+#define MAX_PAREDES 600
+#define MAX_CAMINO 600
+#define MAX_NIVELES 3
+
+typedef struct coordenada {
+    int fil;
+    int col;
+} coordenada_t;
+
+typedef struct personaje {
+    coordenada_t posicion;
+    bool recolecto_pergamino;
+    int hechizos_reveladores;
+    int vidas_restantes; 
+    int antorchas;
+} personaje_t;
+
+typedef struct objeto {
+    char tipo;
+    coordenada_t posicion;
+} objeto_t;
+
+typedef struct nivel {
+    coordenada_t paredes[MAX_PAREDES];
+    int tope_paredes;
+    coordenada_t camino[MAX_CAMINO];
+    int tope_camino;
+    coordenada_t pergamino;
+    objeto_t herramientas[MAX_ELEMENTOS];
+    int tope_herramientas;
+    objeto_t obstaculos[MAX_ELEMENTOS];
+    int tope_obstaculos;
+    
+} nivel_t;
+
+typedef struct juego {
+    personaje_t homero;
+    nivel_t niveles[MAX_NIVELES];
+    int tope_niveles;
+    int nivel_actual;
+} juego_t;
+
+/*
+ * Pre condiciones: -
+ * Post condiciones: Inicializará el juego, cargando toda la información inicial de Homero y de los 3 niveles.
+ */
+void inicializar_juego(juego_t *juego);
+
+
+/*
+ * Pre condiciones: El juego debe estar inicializado previamente con `inicializar_juego` y el nivel actual del juego tiene que ser 1 o 2.
+ * Post condiciones: Actualizará el nivel actual el juego y el personaje para comenzar el siguiente nivel.
+ */
+void cambiar_nivel(juego_t* juego);
+
+/*
+ * Pre condiciones: El juego debe estar inicializado previamente con `inicializar_juego` y la acción
+ * debe ser válida.
+ * Post condiciones: Realizará la acción recibida por parámetro actualizando el juego.
+ */
+void realizar_jugada(juego_t *juego, char movimiento);
+
+/*
+ * Pre condiciones: El juego debe estar inicializado previamente con `inicializar_juego `.
+ * Post condiciones: Imprime el juego por pantalla.
+ */
+void mostrar_juego(juego_t juego);
+
+/*
+ * Recibe un nivel con todas sus estructuras válidas. 
+ * El nivel se dará por ganado cuando el pergamino esté en el altar
+ * Devolverá:
+ * >  0 si el estado es jugando.
+ * >  1 si el estado es ganado.
+ */
+int estado_nivel(nivel_t nivel);
+
+/*
+ * Pre condiciones: El juego deberá estar inicializado previamente con `inicializar_juego `
+ * Post condiciones: Devuelve:
+ * --> 1 si es ganado
+ * --> -1 si es perdido
+ * --> 0 si se sigue jugando
+ * El juego se dará por ganado cuando Homero lleve todos los pergaminos a sus altares correspondientes.
+ * Se dará por perdido si se le termina la vida antes de llevar todos los pergaminos a sus altares.
+ */
+int estado_juego(juego_t juego);
+
+
+#endif // __ASCENSION_MAGIOS_H__
+```
+
+
+---
+
+## 6. Resultado Esperado
+
+El trabajo práctico es un juego. Se espera que el trabajo cumpla la funcionalidad explicada anteriormente. Se deberá:
+- Implementar todas las funciones especificadas en la biblioteca. 
+- Inicializar **todos** los campos del registro *juego_t*.
+- Pedirle al usuario que ingrese una acción **válida** a realizar cada turno.
+- Mostrar todos los elementos en forma de terreno de forma clara con información que pueda serle útil al usuario (cuánta vida resta, antorchas, etc).
+- Respetar las buenas prácticas de programación que profesamos en la cátedra.
+
+### 6.1 Compilación y entrega
+La funcionalidad indicada en ***ascension_magios.h*** debe ser implementada en un archivo llamado:
+
+```
+ascension_magios.c
+```
+
+conformando una biblioteca que luego será utilizada por el programa principal en un archivo llamado:
+
+```
+juego.c
+```
+e incluyendo el pedido del movimiento al usuario y la validación del mismo.
+
+Se espera que el programa compile sin errores utilizando la siguiente línea:
+
+```
+gcc juego.c ascension_magios.c utiles.o -o juego -std=c99 -Wall -Wconversion -Werror -lm
+```
+
+Por último debe ser entregado en la plataforma de corrección de trabajos prácticos **AlgoTrón** (patente pendiente), en la cual deberá tener la etiqueta **¡Exito!** significando que ha pasado las pruebas a las que la cátedra someterá al trabajo.
+
+:::danger[IMPORTANTE]
+La etiqueta **¡Éxito!** es un requisito necesario pero no suficiente para la aprobación del trabajo práctico.  
+El trabajo deberá cumplir tanto con las **pruebas automatizadas** como con los **criterios de calidad evaluados por la cátedra**.
+
+Además, para que el trabajo sea corregido por un colaborador, el mismo debe pasar todas las **pruebas mínimas**, las cuales verifican el funcionamiento mínimo del trabajo.
+:::
+
+:::info[ACLARACIÓN]
+Para la entrega en **AlgoTrón** (patente pendiente), recuerde que deberá subir un archivo **zip** conteniendo únicamente los archivos antes mencionados, sin carpetas internas ni otros archivos. De lo contrario, la entrega no será validada por la plataforma.
+:::
+
+---
+
+## 7. Anexos
+
+### 7.1 Uso de la biblioteca utiles.h
+La cátedra brindará a los alumnos una biblioteca que facilitará la creación de las paredes y los caminos en
+el juego.
+Deben usarla a la hora de inicializar el juego y sirve para crear las posiciones de todas
+las paredes y el camino que habrá en el terreno.
+
+```c
+#ifndef __UTILES__
+#define __UTILES__
+
+#define MAX_PAREDES 600
+#define MAX_CAMINO 600
+
+#include "ascension_magios.h"
+
+
+/*
+ *  Recibe dos vectores de coordenadas y su tope. En el primer vector se almacenan las paredes y en el segundo el camino de ese nivel.
+ *  Inicializa los vectores con las coordenadas de algún mapa para un nivel dado.
+*/
+void obtener_mapa(coordenada_t paredes[MAX_PAREDES], int* tope_paredes, coordenada_t camino[MAX_CAMINO], int* tope_camino, int nivel);
+
+#endif
+```
+
+### 7.2 Obtención de números aleatorios en C
+Para obtener números aleatorios debe utilizarse la función **rand()**, la cual está disponible en la biblioteca *stdlib.h*.
+
+Esta función devuelve números pseudo-aleatorios, esto quiere decir que, cuando uno ejecuta nuevamente el programa, los números, aunque aleatorios, son los mismos.
+
+Para resolver este problema debe inicializarse una semilla, cuya función es determinar desde dónde empezarán a calcularse los números aleatorios.
+
+Los números arrojados por **rand()** son enteros sin signo, generalmente queremos que estén acotados a un rango (queremos números aleatorios entre tal y tal). Para esto, podemos obtener el resto de la división de **rand()** por el valor máximo del rango que necesitamos.
+
+Aquí dejamos un breve ejemplo de como obtener números aleatorios entre 10 y 30.
+
+```c
+#include <stdio.h>
+#include <stdlib.h> // Para usar rand
+#include <time.h>   // Para obtener una semilla desde el reloj
+
+int main(){
+	srand ((unsigned)time(NULL)); 
+	int numero = rand() % 20 + 10; // la amplitud del rango es 20 y el valor mínimo es 10.
+	printf("El valor aleatorio es: %i\n", numero);
+
+	return 0;
+}
+```
+
+### 7.3 Limpiar la pantalla durante la ejecución de un programa
+Muchas veces nos gustaría que nuestro programa pueda verse siempre en la pantalla sin ver texto anterior.
+
+Para esto, podemos utilizar la llamada al sistema **clear**, de esta manera, limpiaremos todo lo que hay en nuestra terminal hasta el momento y podremos dibujar la información actualizada.
+
+Y se utiliza de la siguiente manera:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	printf("Escribimos algo\n");
+	printf("que debería\n");
+	printf("desaparecer...\n");
+	
+	system("clear"); // Limpiamos la pantalla
+	
+	printf("Solo deberiamos ver esto...\n");
+	return 0;
+}
+```
+
+### 7.4 Distancia Manhattan
+
+Para obtener la distancia entre 2 puntos mediante este método, se debe conocer a priori las coordenadas de dichos puntos.
+
+Luego, la distancia entre ellos es la suma de los valores absolutos de las diferencias de las coordenadas.
+Se ve claramente en los siguientes ejemplos:
+
+
+* La distancia entre los puntos (0,0) y (1,1) es 2 ya que:
+```
+| 0 - 1 | + | 0 - 1 | = 1 + 1 = 2
+```	
+
+* La distancia entre los puntos (10,5) y (2,12) es 15 ya que:
+```	
+| 10 - 2 | + | 5 - 12 | = 8 + 7 = 15
+```	
+
+* La distancia entre los puntos (7,8) y (9,8) es 2 ya que:
+```	
+| 7 - 9 | + | 8 - 8 | = 2 + 0 = 2
+```	
+
+# 8 FAQs
+En esta sección se irán cargando dudas realizadas con sus respuestas.
+
+#### ¿La catapulta lanza una bola de fuego al principio del nivel? (Ya que Homero comienza encima de la runa)
+No, solo se debe lanzar cuando vuelve a pisar la runa, no al comienzo del nivel.
