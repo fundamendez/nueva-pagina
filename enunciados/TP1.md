@@ -232,8 +232,8 @@ A continuación está la biblioteca que se deberá realizar y que va a contener 
 #define MAX_FILAS 20
 #define MAX_COLUMNAS 30
 #define MAX_ELEMENTOS 40
-#define MAX_PAREDES 500
-#define MAX_CAMINO 200
+#define MAX_PAREDES 600
+#define MAX_CAMINO 600
 #define MAX_NIVELES 3
 
 typedef struct coordenada {
@@ -383,8 +383,8 @@ las paredes y el camino que habrá en el terreno.
 #ifndef __UTILES__
 #define __UTILES__
 
-#define MAX_PAREDES 500
-#define MAX_CAMINO 200
+#define MAX_PAREDES 600
+#define MAX_CAMINO 600
 
 #include "ascension_magios.h"
 
