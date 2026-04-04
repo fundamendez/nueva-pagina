@@ -342,13 +342,13 @@ void realizar_jugada(juego_t *juego, char movimiento);
 void mostrar_juego(juego_t juego);
 
 /*
- * Recibe un nivel con todas sus estructuras válidas. 
+ * 'nivel' tiene todas sus estructuras válidas.
  * El nivel se dará por ganado cuando el pergamino esté en el altar
  * Devolverá:
  * >  0 si el estado es jugando.
  * >  1 si el estado es ganado.
  */
-int estado_nivel(nivel_t nivel);
+int estado_nivel(nivel_t nivel, personaje_t homero);
 
 /*
  * Pre condiciones: El juego deberá estar inicializado previamente con `inicializar_juego `
@@ -517,5 +517,6 @@ En esta sección se irán cargando dudas realizadas con sus respuestas.
 No, solo se debe lanzar cuando vuelve a pisar la runa, no al comienzo del nivel.
 
 ## 9 Fe de erratas
-* El struct `juego_t` tiene un campo `bool camino_visible` el cual indica si el camino debe ser o no mostrado al usuario. Esto no fue mencionado en el video de presentación.
-* El struct `personaje_t` tiene un campo `bool antorcha_encendida` el cual indica si una antorcha fue encendida por el usuario en ese turno y deberá mostrar las partes del camino a la distancia indicada. Esto no fue mencionado en el video de presentación.
+* El struct `juego_t` tiene un campo `bool camino_visible` el cual indica si el camino debe ser o no mostrado al usuario. **Esto no fue mencionado en el video de presentación**.
+* El struct `personaje_t` tiene un campo `bool antorcha_encendida` el cual indica si una antorcha fue encendida por el usuario en ese turno y deberá mostrar las partes del camino a la distancia indicada. **Esto no fue mencionado en el video de presentación**.
+* La función `estado_nivel` de `ascension_magios.h` también recibe por parámetro el `personaje_t`. **Esto no fue mencionado en el video de presentación**.
