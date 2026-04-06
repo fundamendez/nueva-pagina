@@ -185,11 +185,6 @@ const config: Config = {
           position: "left",
         },
         {
-          to: "/clases-grabadas",
-          label: "Clases Grabadas",
-          position: "left",
-        },
-        {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
