@@ -184,12 +184,9 @@ const config: Config = {
               label: "Clases",
             },
             {
-              to: "/tutoriales", 
-              label: "Tutoriales",
-            },
-            {
-              to: "/bibliografia-complementaria",
-              label: "Bibliografía complementaria",
+              type: "docSidebar",
+              sidebarId: "tutorialSidebar",
+              label: "Apuntes",
             },
             {
               type: "docSidebar",
@@ -198,9 +195,12 @@ const config: Config = {
               label: "Enunciados",
             },
             {
-              type: "docSidebar",
-              sidebarId: "tutorialSidebar",
-              label: "Apuntes",
+              to: "/tutoriales", 
+              label: "Tutoriales",
+            },
+            {
+              to: "/bibliografia-complementaria",
+              label: "Bibliografía complementaria",
             },
           ],
         },
