@@ -143,7 +143,7 @@ export default function MaterialPage(): ReactNode {
             </section>
 
             <section className={styles.categoryCard}>
-              <Heading as="h2">Apuntes Viejos</Heading>
+              <Heading as="h2">{formatCategoryName(apuntesViejos.name)}</Heading>
               <FileTable files={apuntesViejos.files} dir={apuntesViejos.dir} />
             </section>
 
