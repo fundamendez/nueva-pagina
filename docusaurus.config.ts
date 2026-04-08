@@ -175,27 +175,39 @@ const config: Config = {
       },
       items: [
         {
-          to: "/material",
-          label: "Material",
+          type: "dropdown", 
+          label: "Recursos",
           position: "left",
+          items: [
+            {
+              to: "/clases",
+              label: "Clases",
+            },
+            {
+              to: "/tutoriales", 
+              label: "Tutoriales",
+            },
+            {
+              to: "/bibliografia-complementaria",
+              label: "Bibliografía complementaria",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "tutorialSidebar",
+              docsPluginId: "enunciados", 
+              label: "Enunciados",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "tutorialSidebar",
+              label: "Apuntes",
+            },
+          ],
         },
         {
           to: "/cronograma",
           label: "Cronograma",
           position: "left",
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Apuntes",
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          docsPluginId: "enunciados",
-          position: "left",
-          label: "Enunciados",
         },
         {
           to: "/docentes",

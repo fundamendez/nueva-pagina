@@ -8,7 +8,7 @@ import Link from "@docusaurus/Link";
 import styles from "./material.module.css";
 import PageHero from "../components/PageHero";
 
-import { CLASES, TUTORIALES, type VideoItem } from "../../data/videos";
+import { CLASES, type VideoItem } from "../../data/videos";
 
 interface MaterialFile {
   name: string;
@@ -22,17 +22,13 @@ interface MaterialCategory {
 }
 
 function formatFileName(name: string): string {
-
   const withoutExt = name.replace(/\.[^.]+$/, "");
-
   const withoutPrefix = withoutExt.replace(/^\d+_/, "");
-
   const spaced = withoutPrefix
     .replace(/([a-z])([A-Z])/g, "$1 $2")
     .replace(/([A-Z]+)([A-Z][a-z])/g, "$1 $2")
     .replace(/([a-zA-Z])(\d)/g, "$1 $2")
     .replace(/(\d)([a-zA-Z])/g, "$1 $2");
-
   return spaced.charAt(0).toUpperCase() + spaced.slice(1);
 }
 
@@ -47,57 +43,58 @@ function FileTable({ files, dir }: { files: MaterialFile[]; dir: string }) {
   const baseUrl = useBaseUrl(`/material/${dir}/`);
 
   if (files.length === 0) {
-    return <p className={styles.emptyMessage}>No hay material disponible.</p>;
+    return <p className={styles.emptyMessage} style={{ textAlign: "center", fontStyle: "italic", opacity: 0.7 }}>No hay material disponible.</p>;
   }
 
   return (
-    <ul className={styles.fileList}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       {files.map((file) => (
-        <li key={file.name}>
-          <a
-            href={`${baseUrl}${file.name}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.fileLink}
-          >
+        <a
+          key={file.name}
+          href={`${baseUrl}${file.name}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.resourceCardCompact}
+        >
+          <div className={styles.resourceTitleCompact}>
             {formatFileName(file.name)}
-          </a>
-        </li>
+          </div>
+          <div className={styles.resourceIconCompact}>
+            ↓
+          </div>
+        </a>
       ))}
-    </ul>
+    </div>
   );
 }
 
-function VideoList({
-  items,
-  section,
-}: {
-  items: VideoItem[];
-  section: "clases" | "tutoriales";
-}) {
+function VideoList({ items, section }: { items: VideoItem[]; section: "clases" | "tutoriales" }) {
   const baseUrl = useBaseUrl("/ver-clases-grabadas");
 
   if (items.length === 0) {
-    return <p className={styles.emptyMessage}>No hay videos aún.</p>;
+    return <p className={styles.emptyMessage} style={{ textAlign: "center", fontStyle: "italic", opacity: 0.7 }}>No hay videos aún.</p>;
   }
 
   return (
-    <ul className={styles.fileList}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       {items.map((v) => {
         const href = `${baseUrl}?sec=${section}&t=${encodeURIComponent(v.title)}`;
         return (
-          <li key={v.title}>
-            <Link to={href} className={styles.fileLink}>
+          <Link key={v.title} to={href} className={styles.resourceCardCompact}>
+            <div className={styles.resourceTitleCompact}>
               {v.title}
-            </Link>
-          </li>
+            </div>
+            <div className={styles.resourceIconCompact}>
+              ▶
+            </div>
+          </Link>
         );
       })}
-    </ul>
+    </div>
   );
 }
 
-export default function MaterialPage(): ReactNode {
+export default function ClasesPage(): ReactNode {
   const categories = usePluginData(
     "plugin-material-files",
   ) as MaterialCategory[];
@@ -108,49 +105,43 @@ export default function MaterialPage(): ReactNode {
 
   const teorica = getCategory("teórica", "teórica");
   const practica = getCategory("práctica", "práctica");
-  const apuntesViejos = getCategory("apuntesViejos", "apuntesViejos");
 
-  const imgSrc = useBaseUrl("/img/ralph-gato.jpg");
+  const imgSrc = useBaseUrl("/img/homero-clase.jpg");
   
   return (
     <Layout
-      title="Material"
-      description="Material de cursada de Fundamentos de Programación - FIUBA - Curso Mendez"
+      title="Clases"
     >
       <main>
         <PageHero
-          title="Material"
-          subtitle="Acá vas a encontrar todo el material complementario, clases grabadas y tutoriales de la cursada."
+          title="Clases"
+          subtitle="Acá vas a encontrar el material visto en las clases y clases grabadas."
           imageSrc={imgSrc}
           imageAlt="Simpsons meme"
         />
-        <div className="container margin-vert--lg">
-          <div className={styles.categoriesGrid}>
+        <div className="container margin-vert--xl">
+          <div className="row">
             
-            <section className={styles.categoryCard}>
-              <Heading as="h2">{formatCategoryName(teorica.name)}</Heading>
+            <div className="col col--4">
+              <Heading as="h2" style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+                {formatCategoryName(teorica.name)}
+              </Heading>
               <FileTable files={teorica.files} dir={teorica.dir} />
-            </section>
+            </div>
 
-            <section className={styles.categoryCard}>
-              <Heading as="h2">{formatCategoryName(practica.name)}</Heading>
+            <div className="col col--4">
+              <Heading as="h2" style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+                {formatCategoryName(practica.name)}
+              </Heading>
               <FileTable files={practica.files} dir={practica.dir} />
-            </section>
+            </div>
 
-            <section className={styles.categoryCard}>
-              <Heading as="h2">Clases Grabadas</Heading>
+            <div className="col col--4">
+              <Heading as="h2" style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+                Clases Grabadas
+              </Heading>
               <VideoList items={CLASES} section="clases" />
-            </section>
-
-            <section className={styles.categoryCard}>
-              <Heading as="h2">{formatCategoryName(apuntesViejos.name)}</Heading>
-              <FileTable files={apuntesViejos.files} dir={apuntesViejos.dir} />
-            </section>
-
-            <section className={styles.categoryCard}>
-              <Heading as="h2">Tutoriales</Heading>
-              <VideoList items={TUTORIALES} section="tutoriales" />
-            </section>
+            </div>
 
           </div>
         </div>
