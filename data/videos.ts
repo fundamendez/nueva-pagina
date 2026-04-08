@@ -65,6 +65,7 @@ export type VideoItem = {
 // This section is where the recorded classes are uploaded.
 export const CLASES: VideoItem[] = [
   // { title: "Clase del 19-08-2025", source: "drive", fileId: "1M7jPCvLj-j7ynN2vYHU5LmthMdw6c2ic" },
+  { title: "Clase del 07-04-2026", source: "drive", fileId: "1LpcBkyiyiwYi0m4C0n2XSTnMb_U8b77n" },
 ];
 
 // This section is where the tutorials are uploaded.
