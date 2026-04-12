@@ -60,7 +60,7 @@ function FileTable({ files, dir }: { files: MaterialFile[]; dir: string }) {
             {formatFileName(file.name)}
           </div>
           <div className={styles.resourceIconCompact}>
-            ↓
+            <span>&#x2193;&#xFE0E;</span>
           </div>
         </a>
       ))}
@@ -85,7 +85,7 @@ function VideoList({ items, section }: { items: VideoItem[]; section: "clases" |
               {v.title}
             </div>
             <div className={styles.resourceIconCompact}>
-              ▶
+              <span>&#x25B6;&#xFE0E;</span>
             </div>
           </Link>
         );

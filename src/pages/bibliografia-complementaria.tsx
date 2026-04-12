@@ -50,7 +50,7 @@ function FileTable({ files, dir }: { files: MaterialFile[]; dir: string }) {
             </div>
 
             <div className={styles.resourceIcon}>
-              ↗
+              <span>&#x2197;&#xFE0E;</span>
             </div>
           </a>
         </div>

@@ -26,7 +26,7 @@ function VideoList({ items, section }: { items: VideoItem[]; section: "clases" |
                 {v.title}
               </div>
               <div className={styles.resourceIcon}>
-                ▶
+                <span>&#x25B6;&#xFE0E;</span>
               </div>
             </Link>
           </div>
