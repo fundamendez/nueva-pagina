@@ -3,8 +3,8 @@ export type VideoSource = "drive" | "youtube";
 export type VideoItem = {
   title: string;
   source: VideoSource;
-  fileId?: string;     // Google Drive file ID.
-  youtubeId?: string;  // YouTube video ID.
+  fileId?: string; // Google Drive file ID.
+  youtubeId?: string; // YouTube video ID.
 };
 
 /**
@@ -65,27 +65,54 @@ export type VideoItem = {
 // This section is where the recorded classes are uploaded.
 export const CLASES: VideoItem[] = [
   // { title: "Clase del 19-08-2025", source: "drive", fileId: "1M7jPCvLj-j7ynN2vYHU5LmthMdw6c2ic" },
-  { title: "Clase del 07-04-2026", source: "drive", fileId: "1LpcBkyiyiwYi0m4C0n2XSTnMb_U8b77n" },
+  {
+    title: "Clase del 07-04-2026",
+    source: "drive",
+    fileId: "1LpcBkyiyiwYi0m4C0n2XSTnMb_U8b77n",
+  },
+  {
+    title: "Clase del 14-04-2026",
+    source: "drive",
+    fileId: "1sxcuyQTjKu3_h32PmBuHKb2gdUMoTSN_",
+  },
 ];
 
 // This section is where the tutorials are uploaded.
 export const TUTORIALES: VideoItem[] = [
-  { title: "Instalación de Virtual Machine (Versión nueva)", source: "drive", fileId: "1ndhlBqWaWp8iBexmX_ASnW80i4hNzvlf" },
-  { title: "Instalación de Virtual Machine (Versión antigua)", source: "youtube", youtubeId: "oUR75_o6eXw" },
-  { title: "Primeros pasos en Linux", source: "youtube", youtubeId: "dPs_cimCYmQ" },
+  {
+    title: "Instalación de Virtual Machine (Versión nueva)",
+    source: "drive",
+    fileId: "1ndhlBqWaWp8iBexmX_ASnW80i4hNzvlf",
+  },
+  {
+    title: "Instalación de Virtual Machine (Versión antigua)",
+    source: "youtube",
+    youtubeId: "oUR75_o6eXw",
+  },
+  {
+    title: "Primeros pasos en Linux",
+    source: "youtube",
+    youtubeId: "dPs_cimCYmQ",
+  },
 ];
 
 export const OCULTOS: VideoItem[] = [
-  { title: "Presentación TP1", source: "drive", fileId: "1vaw9eb355_TikRNImC6Vop-K21QgFE1P" },
+  {
+    title: "Presentación TP1",
+    source: "drive",
+    fileId: "1vaw9eb355_TikRNImC6Vop-K21QgFE1P",
+  },
 ];
 
 export function buildEmbedUrl(v: VideoItem): string {
-  if (v.source === "drive") return `https://drive.google.com/file/d/${v.fileId}/preview`;
+  if (v.source === "drive")
+    return `https://drive.google.com/file/d/${v.fileId}/preview`;
   return `https://www.youtube.com/embed/${v.youtubeId}`;
 }
 
 export function buildOpenUrl(v: VideoItem): string {
-  if (v.source === "drive") return `https://drive.google.com/file/d/${v.fileId}/view`;
+  if (v.source === "drive")
+    return `https://drive.google.com/file/d/${v.fileId}/view`;
   return `https://www.youtube.com/watch?v=${v.youtubeId}`;
 }
 
