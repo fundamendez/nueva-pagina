@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import Layout from "@theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./material.module.css";
 import PageHero from "../components/PageHero";
@@ -26,7 +28,7 @@ function VideoList({ items, section }: { items: VideoItem[]; section: "clases" |
                 {v.title}
               </div>
               <div className={styles.resourceIcon}>
-                <span>&#x25B6;&#xFE0E;</span>
+                <FontAwesomeIcon icon={faPlay} />
               </div>
             </Link>
           </div>
