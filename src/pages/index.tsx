@@ -210,7 +210,10 @@ function CurrentWeekWidget() {
     
     if (!theoryDate) continue;
 
-    if (today >= theoryDate) {
+    const weekStart = new Date(theoryDate);
+    weekStart.setDate(weekStart.getDate() - 1);
+
+    if (today >= weekStart) {
       currentWeekRow = row;
     } else {
       break;

@@ -105,7 +105,10 @@ export default function CronogramaPage(): ReactNode {
     const theoryDate = parseDate(row.theory.date);
     if (!theoryDate) continue;
 
-    if (today >= theoryDate) {
+    const weekStart = new Date(theoryDate);
+    weekStart.setDate(weekStart.getDate() - 1);
+
+    if (today >= weekStart) {
       currentWeekIndex = i;
     } else {
       break;
