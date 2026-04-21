@@ -90,6 +90,7 @@
 
 .cardsSection {
     padding: 4rem 0;
+    padding-top: 1.5rem; 
     background: #fafafa;
 }
 
@@ -100,7 +101,7 @@
 .card {
     background: #fff;
     border-radius: 16px;
-    padding: 2rem 1.5rem;
+    padding: 1.25rem 1rem; /* CAMBIADO: Antes 2rem 1.5rem */
     text-align: center;
     border-top: 4px solid var(--simpsons-sky);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
@@ -116,27 +117,27 @@
 }
 
 .cardIcon {
-    font-size: 2rem;
-    width: 4rem;
-    height: 4rem;
+    font-size: 1.25rem; /* CAMBIADO: Antes 2rem */
+    width: 3rem; /* CAMBIADO: Antes 4rem */
+    height: 3rem; /* CAMBIADO: Antes 4rem */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.75rem; /* CAMBIADO: Antes 0 auto 1rem */
     background: var(--simpsons-sky);
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(86, 160, 211, 0.3);
 }
 
 .cardTitle {
-    font-size: 1.25rem;
+    font-size: 1.1rem; /* CAMBIADO: Antes 1.25rem */
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: #1a1a1a;
 }
 
 .cardDescription {
-    font-size: 1rem;
+    font-size: 0.95rem; /* CAMBIADO: Antes 1rem */
     color: #555;
     margin: 0;
 }
@@ -165,7 +166,7 @@
 .cardHighlighted {
     border-top-width: 6px;
     border-top-color: var(--simpsons-sky);
-    padding: 2.5rem 2rem;
+    padding: 1.5rem 1.25rem; /* CAMBIADO: Antes 2.5rem 2rem (Esta es la que achica las de arriba) */
     background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
     box-shadow: 0 4px 20px rgba(86, 160, 211, 0.15);
 }
@@ -204,6 +205,12 @@
 
 .cardLink:hover .cardAction {
     transform: translateX(4px);
+}
+
+/* ===== Widget cronograma ===== */
+.widgetSection {
+    margin-top: 1rem;
+    padding-top: 1rem;
 }
 
 /* ===== Slack Banner ===== */

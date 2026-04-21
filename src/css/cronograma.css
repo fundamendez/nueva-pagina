@@ -1,8 +1,8 @@
 :root {
     --cronograma-presencial-bg: #e0f4fc;
     --cronograma-presencial-text: #2b70a3;
-    --cronograma-virtual-bg: #fce8ec;
-    --cronograma-virtual-text: #b84d6a;
+    --cronograma-virtual-bg: #f3e8ff;   /* Un lila muy clarito y limpio */
+    --cronograma-virtual-text: #6b21a8;
     --cronograma-sin_definir-bg: #f1f5f9;
     --cronograma-sin_definir-text: #64748b;
 
@@ -12,8 +12,8 @@
     --cronograma-info-text: #0d5c4d;
     --cronograma-warning-bg: #fef9c3;
     --cronograma-warning-text: #8b6914;
-    --cronograma-danger-bg: #fce8ea;
-    --cronograma-danger-text: #e85d6a;
+    --cronograma-danger-bg: #ffe4e6;    /* Un rosa pastel muy sutil y limpio */
+    --cronograma-danger-text: #991b1b;
 }
 
 .cronograma-badge {
@@ -155,4 +155,13 @@
         padding: 0.1rem 0.35rem;
         font-size: 0.65rem;
     }
+}
+
+.current-week-row td {
+    background-color: rgba(251, 192, 45, 0.15) !important;
+}
+
+.current-week-row td:first-child {
+    border-left: 4px solid var(--simpsons-yellow) !important;
+    font-weight: bold;
 }

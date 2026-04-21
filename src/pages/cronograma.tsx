@@ -87,6 +87,34 @@ export default function CronogramaPage(): ReactNode {
   const { rows } = data;
   const imgSrc = useBaseUrl("/img/homer-panic.jpg");
 
+  const today = new Date(); 
+  const currentYear = today.getFullYear();
+
+  const parseDate = (dateStr: string | null): Date | null => {
+    if (!dateStr) return null;
+    const parts = dateStr.split("/");
+    if (parts.length !== 2) return null;
+    const day = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10) - 1;
+    return new Date(currentYear, month, day);
+  };
+
+  let currentWeekIndex = 0;
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i];
+    const theoryDate = parseDate(row.theory.date);
+    if (!theoryDate) continue;
+
+    const weekStart = new Date(theoryDate);
+    weekStart.setDate(weekStart.getDate() - 1);
+
+    if (today >= weekStart) {
+      currentWeekIndex = i;
+    } else {
+      break;
+    }
+  }
+
   return (
     <Layout
       title="Cronograma"
@@ -112,7 +140,10 @@ export default function CronogramaPage(): ReactNode {
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr key={i}>
+                  <tr 
+                    key={i} 
+                    className={i === currentWeekIndex ? "current-week-row" : undefined}
+                  >
                     <td>{row.weekLabel}</td>
                     <td>
                       <CellContent cell={row.theory} />
