@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import Layout from "@theme/Layout";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { usePluginData } from "@docusaurus/useGlobalData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./material.module.css";
 import PageHero from "../components/PageHero";
@@ -50,7 +52,7 @@ function FileTable({ files, dir }: { files: MaterialFile[]; dir: string }) {
             </div>
 
             <div className={styles.resourceIcon}>
-              ↗
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </div>
           </a>
         </div>

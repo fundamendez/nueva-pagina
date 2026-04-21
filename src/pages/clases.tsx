@@ -4,6 +4,8 @@ import Heading from "@theme/Heading";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { usePluginData } from "@docusaurus/useGlobalData";
 import Link from "@docusaurus/Link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDownLong, faPlay } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./material.module.css";
 import PageHero from "../components/PageHero";
@@ -60,7 +62,7 @@ function FileTable({ files, dir }: { files: MaterialFile[]; dir: string }) {
             {formatFileName(file.name)}
           </div>
           <div className={styles.resourceIconCompact}>
-            ↓
+            <FontAwesomeIcon icon={faArrowDownLong} />
           </div>
         </a>
       ))}
@@ -85,7 +87,7 @@ function VideoList({ items, section }: { items: VideoItem[]; section: "clases" |
               {v.title}
             </div>
             <div className={styles.resourceIconCompact}>
-              ▶
+              <FontAwesomeIcon icon={faPlay} />
             </div>
           </Link>
         );
