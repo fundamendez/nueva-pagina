@@ -8,7 +8,12 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import styles from "./material.module.css";
 import PageHero from "../components/PageHero";
 
-import { TUTORIALES, type VideoItem } from "../../data/videos";
+import {
+  TUTORIALES,
+  TUTORIALES_LINKS,
+  type ExternalLinkItem,
+  type VideoItem,
+} from "../../data/videos";
 
 function VideoList({ items, section }: { items: VideoItem[]; section: "clases" | "tutoriales" }) {
   const baseUrl = useBaseUrl("/ver-clases-grabadas");
@@ -38,6 +43,30 @@ function VideoList({ items, section }: { items: VideoItem[]; section: "clases" |
   );
 }
 
+function ExternalLinksList({ items }: { items: ExternalLinkItem[] }) {
+  if (items.length === 0) return null;
+
+  return (
+    <div className="row margin-top--md">
+      {items.map((item) => (
+        <div key={item.url} className="col col--6 margin-bottom--md">
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.resourceCard}
+          >
+            <div className={styles.resourceTitle}>{item.title}</div>
+            <div className={styles.resourceIcon}>
+              <FontAwesomeIcon icon={faPlay} />
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function TutorialesPage(): ReactNode {
   const imgSrc = useBaseUrl("/img/ralph-gato.jpg");
 
@@ -54,6 +83,7 @@ export default function TutorialesPage(): ReactNode {
           <div className="row">
             <div className="col col--10 col--offset-1">
               <VideoList items={TUTORIALES} section="tutoriales" />
+              <ExternalLinksList items={TUTORIALES_LINKS} />
             </div>
           </div>
         </div>

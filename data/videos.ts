@@ -7,6 +7,11 @@ export type VideoItem = {
   youtubeId?: string; // YouTube video ID.
 };
 
+export type ExternalLinkItem = {
+  title: string;
+  url: string;
+};
+
 /**
  * ============================================================
  * HOW TO ADD A NEW VIDEO
@@ -93,6 +98,18 @@ export const TUTORIALES: VideoItem[] = [
     title: "Primeros pasos en Linux",
     source: "youtube",
     youtubeId: "dPs_cimCYmQ",
+  },
+  {
+    title: "Debugger en Vscode",
+    source: "youtube",
+    youtubeId: "q0v6no9dTg4",
+  },
+];
+
+export const TUTORIALES_LINKS: ExternalLinkItem[] = [
+  {
+    title: "Playlist sobre GDB",
+    url: "https://www.youtube.com/playlist?list=PLvAMDfAtrhEcMcO70omayGFnjV9peBcFN",
   },
 ];
 
