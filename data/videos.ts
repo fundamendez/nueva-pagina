@@ -104,6 +104,16 @@ export const TUTORIALES: VideoItem[] = [
     source: "youtube",
     youtubeId: "q0v6no9dTg4",
   },
+  {
+    title: "Secuencias de escape ANSI (colores en consola)",
+    source: "youtube",
+    youtubeId: "BvubeR2OjfE",
+  },
+  {
+    title: "Emojis y ASCII Art en consola",
+    source: "youtube",
+    youtubeId: "OPR3LcCHP7Q",
+  }
 ];
 
 export const TUTORIALES_LINKS: ExternalLinkItem[] = [
