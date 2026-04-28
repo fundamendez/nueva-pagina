@@ -43,4 +43,22 @@ input[type="number"]::-webkit-outer-spin-button {
   padding-bottom: 0.5rem;
 }
 
+.menu__link {
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background-color: var(--simpsons-yellow) !important;
+  color: #000 !important;
+  transform: translateX(4px);
+  border-radius: 6px;
+}
+
+.menu__link--active {
+  border-left: 4px solid var(--simpsons-yellow-dark);
+  font-weight: bold;
+}
+
+
 @import "./cronograma.css";
+@import "./enunciados.css"

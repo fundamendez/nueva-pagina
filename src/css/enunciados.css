@@ -1,0 +1,61 @@
+
+.folder-tabs,
+.folder-tabs ul.tabs {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.folder-tabs::-webkit-scrollbar,
+.folder-tabs ul.tabs::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.folder-tabs ul.tabs {
+  border-bottom: 2px solid var(--ifm-color-emphasis-300);
+  padding-left: 10px;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.folder-tabs .tabs__item {
+  background: #f0f0f0; 
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0; 
+  margin-right: 5px;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.folder-tabs .tabs__item--active {
+  background: #fff !important;
+  color: var(--simpsons-blue) !important; 
+  border-top: 3px solid var(--simpsons-yellow) !important; 
+  position: relative;
+  top: 2px; 
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+.folder-tabs .tabs__item:hover:not(.tabs__item--active) {
+  background: var(--simpsons-yellow);
+  color: #000;
+}
+
+html:has(.folder-tabs li:nth-child(1).tabs__item--active) .table-of-contents > li:has(a[href*="pruebas"]),
+html:has(.folder-tabs li:nth-child(1).tabs__item--active) .table-of-contents > li:has(a[href*="pruebas"]) ~ li {
+    display: none !important;
+}
+
+html:has(.folder-tabs li:nth-child(2).tabs__item--active) .table-of-contents > li {
+    display: none !important;
+}
+
+html:has(.folder-tabs li:nth-child(2).tabs__item--active) .table-of-contents > li:has(a[href*="pruebas"]),
+html:has(.folder-tabs li:nth-child(2).tabs__item--active) .table-of-contents > li:has(a[href*="pruebas"]) ~ li {
+    display: block !important;
+}
