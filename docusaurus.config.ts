@@ -195,6 +195,10 @@ const config: Config = {
               label: "Enunciados",
             },
             {
+              to: "/examenes-anteriores", 
+              label: "Exámenes anteriores",
+            },
+            {
               to: "/tutoriales", 
               label: "Tutoriales",
             },
