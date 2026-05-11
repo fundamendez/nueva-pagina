@@ -80,6 +80,11 @@ export const CLASES: VideoItem[] = [
     source: "drive",
     fileId: "1sxcuyQTjKu3_h32PmBuHKb2gdUMoTSN_",
   },
+  {
+    title: "Clase teórica semana 10",
+    source: "drive",
+    fileId: "1p4UhHTl3_2LW1GnxjuWXwfZcl0DthWIi",
+  },
 ];
 
 // This section is where the tutorials are uploaded.
