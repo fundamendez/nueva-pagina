@@ -195,6 +195,10 @@ const config: Config = {
               label: "Enunciados",
             },
             {
+              href: 'https://fundamendez.github.io/simuladores-publicos/index.html',
+              label: 'Simuladores',
+            },
+            {
               to: "/examenes-anteriores", 
               label: "Exámenes anteriores",
             },
