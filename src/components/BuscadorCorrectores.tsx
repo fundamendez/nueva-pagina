@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import asignaciones from '@site/static/tps/1c2026/correctores_tp1.json';
+import asignacionesTp1 from '@site/static/tps/1c2026/correctores_tp1.json';
+import asignacionesTp2 from '@site/static/tps/1c2026/correctores_tp2.json';
 
-export default function BuscadorCorrector() {
+export default function BuscadorCorrector({ numeroTp }: { numeroTp: number }) {
   const [padron, setPadron] = useState('');
   const [resultado, setResultado] = useState(null);
+
+  const asignaciones = numeroTp === 1 ? asignacionesTp1 : numeroTp === 2 ? asignacionesTp2 : {};
 
   const buscar = () => {
     const padronLimpio = padron.trim();
