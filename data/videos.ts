@@ -91,9 +91,14 @@ export const CLASES: VideoItem[] = [
     fileId: "1viHhMePytEJRfuG0Kgtwcgxmj41EmzES",
   },
   {
-    title: "Clase 04-06-2026",
+    title: "Clase del 04-06-2026",
     source: "drive",
     fileId: "1P-7v8ynY_iyKFqxd07STx6C3ifZr48HF",
+  },
+  {
+    title: "Clase del 09-06-2026",
+    source: "drive",
+    fileId: "1J5vGgliPC6SGgslv4jq76Sgvdy1fs98I",
   }
 ];
 
