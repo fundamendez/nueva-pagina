@@ -99,6 +99,16 @@ export const CLASES: VideoItem[] = [
     title: "Clase del 09-06-2026",
     source: "drive",
     fileId: "1J5vGgliPC6SGgslv4jq76Sgvdy1fs98I",
+  },
+  {
+    title: "Clase del 11-06-2026",
+    source: "drive",
+    fileId: "1GY1Xik2ybdcUcptVl5ljEk7NKnXtqTYe",
+  },
+  {
+    title: "Clase del 16-06-2026",
+    source: "drive",
+    fileId: "16X6oOd9CJPt326R2QrDofMqskyPmx1mk",
   }
 ];
 
