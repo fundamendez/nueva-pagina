@@ -1,60 +1,69 @@
-Semana,Teórica Fecha,Teórica Temas,Teórica Modalidad,Teórica Badge,Práctica Fecha,Práctica Temas,Práctica Modalidad,Práctica Badge,,,
-1,10/03,"Lenguaje C:
+Semana,Teórica Fecha,Teórica Temas,Teórica Modalidad,Teórica Badge,Práctica Fecha,Práctica Temas,Práctica Modalidad,Práctica Badge
+1,18/08,"Lenguaje C:
 - Tipos de Datos
 - Compilación
-- Entrada y saldia
-- Funciones",Presencial,,12/03,"- Régimen de cursada
-- Pasaje por valor y referencia
-- Buenas prácticas",Presencial,,,Fecha Inicio,10/3
-2,17/03,"- Vectores
-- Busqueda lineal
-- Punteros",Presencial,,19/03,"
-- Matrices
-- Structs",Presencial,TP0,,Semanas,17
-3,24/03,,Presencial,Feriado,26/03,,Presencial,"Entrega TP0, Laboratorio",,,
-4,31/03,"- Inserción
-- Eliminación
-- Bibliotecas
-- Strings",Presencial,,2/04,,Presencial,"TP1, Feriado",,,
-5,7/04,"- Recursividad
-- Búsqueda Binaria",Virtual,,9/04,"- Recursividad
-- Búsqueda binaria",Presencial,,,,
-6,14/04,"- Manejo de memoria
-- Debugging",Virtual,,16/04,"- Recursividad 2.0
-- Debugging",Virtual,,,,
-7,21/04,"Memoria dinámica:
-- Aritmética de punteros
-- Malloc
-- Free",Presencial,,23/04,"Memoria dinámica:
-- Aritmética de punteros
-- Malloc
-- Free",Presencial,,,,
-8,28/04,"Ordenamientos:
+- Funciones",Presencial,,20/08,"- Régimen de cursada
+Modularización:
+- Buenas prácticas",Presencial,
+2,25/08,"- Pasaje por valor y referencia
+- Punteros
+- Vectores (inserción, eliminación y búsqueda lineal)",Presencial,,27/08,"- Vectores (búsqueda lineal)
+- Punteros
+- Pasaje por valor y referencia",Presencial,
+3,01/09,"- Matrices
+- Structs",Presencial,,03/09,"- Matrices
+- Structs",Presencial,TP0
+4,08/09,"- Recursividad
+- Búsqueda binaria",Presencial,,10/09,,Presencial,"Laboratorio, Entrega TP0"
+5,15/09,"- Bibliotecas
+- Strings
+- Debugging",Presencial,,17/09,"- Recursividad
+- Strings
+- Bibliotecas",Presencial,TP1
+6,22/09,"Ordenamiento:
 - Burbujeo
 - Selección
-- Inserción",Presencial,,30/04,,Presencial,"Entrega TP1, Repaso parcial, Laboratorio",,,
-9,5/05,,Presencial,Repaso parcial,7/05,,Presencial,Parcial,,,
-10,12/05,"Memoria dinámica 2.0
+- Inserción
+- Inserción ordenada
+- Eliminación ordenada",Presencial,,24/09,,Presencial,Laboratorio de parcial
+7,29/09,,Presencial,Repaso de parcial,01/10,,Presencial,Parcial
+8,06/10,"Memoria dinámica:
+- Aritmética de punteros
+- Malloc
+- Free",Presencial,,08/10,"Memoria dinámica:
+- Aritmética de punteros
+- Malloc
+- Free",Presencial,
+9,13/10,"Memoria dinámica 2.0
 - Realloc
 - void*
 - Valgrind
 - TDAs
-- Vector dinámico",Presencial,,14/05,"- Memoria dinámica
+- Vector dinámico",Presencial,,15/10,"- Memoria dinámica
 - TDAs
-- Vector dinámico",Presencial,Reentrega TP1,,,
-11,19/05,"- Archivos de texto
-- CSV",Virtual,,21/05,Archivos CSV,Presencial,TP2,,,
-12,26/05,"- Argumentos por linea de comando
-- Operaciones con archivos",Presencial,,28/05,"- Archivos
-- TDAs",Presencial,,,,
-13,2/06,,Presencial,Primer recuperatorio,4/06,- Operaciones con archivos,Virtual,,,,
-14,9/06,"TDAs:
+- Vector dinámico",Presencial,
+10,20/10,"Líneas de comando
+TDAs:
 - Pilas
 - Colas
-- Lista enlazada",Virtual,,11/06,"TDAs:
+- Lista enlazada",Presencial,,22/10,"TDAs:
 - Pilas
 - Colas
-- Lista enlazada",Virtual,Entrega TP2,,,
-15,16/06,,Virtual,Ejercicios de final,18/06,,Presencial,"Laboratorio, Ejercicios de final",,,
-16,23/06,Tema nuevo,Presencial,,25/06,Fin de cursada,Presencial,"Reentrega TP2, Retrospectiva",,,
-17,30/06,,Presencial,Segundo recuperatorio,2/07,,,,,,
+- Lista enlazada",Presencial,Entrega TP1
+11,27/10,,Virtual,Repaso para recuperatorio,29/10,,Virtual,Recuperatorio primer parcial
+12,03/11,"Manejo de archivos de texto en C
+CSV",Virtual,,05/11,"- Archivos CSV
+- TDAs",Virtual,Reentrega TP1
+13,10/11,"Operaciones con archivos:
+- Mezcla
+- Unión
+- Diferencias
+- Intersección",Presencial/Virtual,,12/11,"Operaciones con archivos:
+- Mezcla
+- Unión
+- Diferencias
+- Intersección",Presencial/Virtual,
+14,17/11,,Presencial,Repaso de parcial,19/11,,Presencial,Segundo parcial
+15,24/11,Clase extra,Virtual,,26/11,,Virtual,
+16,01/12,Retrospectiva,Presencial,,03/12,,Presencial,Recuperatorio segundo parcial
+17,,,,,10/12,,,Recuperatorio extra
