@@ -84,7 +84,7 @@ En este caso el alumno estará en condiciones de rendir el final integrador.
 
 Para el cálculo de la nota final se realiza un promedio entre la nota de la cursada y la nota del final integrador.
 
-La nota de cursada se calcula como el promedio entre la nota del parcial y las notas de los 3 (tres) trabajos prácticos.
+La nota de cursada se calcula como el promedio entre las notas de los 2 (dos) trabajos prácticos y los 2 (dos) exámenes parciales.
 
 export const Fraction = ({ numerator, denominator }) => (
   <span className="fraction-wrapper">
@@ -100,8 +100,7 @@ export const Fraction = ({ numerator, denominator }) => (
     <Fraction
       numerator={
         <span>
-          TP₀ + TP₁ + TP₂ +{" "}
-          <span className="formula-variable">Nota Parcial</span>
+          TP₀ + TP₁ + Parcial 1 + Parcial 2
         </span>
       }
       denominator="4"
