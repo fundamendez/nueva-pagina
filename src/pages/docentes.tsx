@@ -44,7 +44,9 @@ const docentesList: DocenteProps[] = [
     slackCode: "U06LPLJ19S5",
   },
   { name: "Martu", id: "martu", slackCode: "U07EJQSN65R" },
-  { name: "May", id: "may", ext1: "jpeg", slackCode: "U06P1Q1EE4D" },
+  { name: "Maxi", id: "maxi", slackCode: "U0AKU0UJABC" },
+  { name: "Mechi", id: "mechi", slackCode: "U0BQ5QKUWC9" },
+  { name: "Santi", id: "santi", slackCode: "U0ALNFSPWM6" },
   { name: "Solci", id: "sol", slackCode: "U07F7BEKCHW" },
   { name: "Tomi", id: "tomi", slackCode: "U06LZLXV132" },
   {
@@ -92,7 +94,7 @@ function DocenteCard({
             rel="noopener noreferrer"
             className={styles.slackLink}
             title={`Mensaje a ${name} en Slack`}
->
+          >
             <FontAwesomeIcon icon={faSlack} />
           </a>
         )}
