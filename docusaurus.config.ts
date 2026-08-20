@@ -130,15 +130,15 @@ const config: Config = {
         },
       };
     },
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "enunciados", 
-        path: "enunciados", 
-        routeBasePath: "enunciados", 
-        sidebarPath: "./sidebars.ts", 
-      },
-    ],
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "enunciados", 
+    //     path: "enunciados", 
+    //     routeBasePath: "enunciados", 
+    //     sidebarPath: "./sidebars.ts", 
+    //   },
+    // ],
   ],
 
   presets: [
@@ -188,12 +188,12 @@ const config: Config = {
               sidebarId: "tutorialSidebar",
               label: "Apuntes",
             },
-            {
-              type: "docSidebar",
-              sidebarId: "tutorialSidebar",
-              docsPluginId: "enunciados", 
-              label: "Enunciados",
-            },
+            // {
+            //   type: "docSidebar",
+            //   sidebarId: "tutorialSidebar",
+            //   docsPluginId: "enunciados", 
+            //   label: "Enunciados",
+            // },
             {
               href: 'https://fundamendez.github.io/simuladores-publicos/index.html',
               label: 'Simuladores',

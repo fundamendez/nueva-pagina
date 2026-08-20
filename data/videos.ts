@@ -70,46 +70,46 @@ export type ExternalLinkItem = {
 // This section is where the recorded classes are uploaded.
 export const CLASES: VideoItem[] = [
   // { title: "Clase del 19-08-2025", source: "drive", fileId: "1M7jPCvLj-j7ynN2vYHU5LmthMdw6c2ic" },
-  {
-    title: "Clase del 07-04-2026",
-    source: "drive",
-    fileId: "1LpcBkyiyiwYi0m4C0n2XSTnMb_U8b77n",
-  },
-  {
-    title: "Clase del 14-04-2026",
-    source: "drive",
-    fileId: "1sxcuyQTjKu3_h32PmBuHKb2gdUMoTSN_",
-  },
-  {
-    title: "Clase teórica semana 10",
-    source: "drive",
-    fileId: "1p4UhHTl3_2LW1GnxjuWXwfZcl0DthWIi",
-  },
-  {
-    title: "Clase del 19-05-2026",
-    source: "drive",
-    fileId: "1viHhMePytEJRfuG0Kgtwcgxmj41EmzES",
-  },
-  {
-    title: "Clase del 04-06-2026",
-    source: "drive",
-    fileId: "1P-7v8ynY_iyKFqxd07STx6C3ifZr48HF",
-  },
-  {
-    title: "Clase del 09-06-2026",
-    source: "drive",
-    fileId: "1J5vGgliPC6SGgslv4jq76Sgvdy1fs98I",
-  },
-  {
-    title: "Clase del 11-06-2026",
-    source: "drive",
-    fileId: "1GY1Xik2ybdcUcptVl5ljEk7NKnXtqTYe",
-  },
-  {
-    title: "Clase del 16-06-2026",
-    source: "drive",
-    fileId: "16X6oOd9CJPt326R2QrDofMqskyPmx1mk",
-  }
+  // {
+  //   title: "Clase del 07-04-2026",
+  //   source: "drive",
+  //   fileId: "1LpcBkyiyiwYi0m4C0n2XSTnMb_U8b77n",
+  // },
+  // {
+  //   title: "Clase del 14-04-2026",
+  //   source: "drive",
+  //   fileId: "1sxcuyQTjKu3_h32PmBuHKb2gdUMoTSN_",
+  // },
+  // {
+  //   title: "Clase teórica semana 10",
+  //   source: "drive",
+  //   fileId: "1p4UhHTl3_2LW1GnxjuWXwfZcl0DthWIi",
+  // },
+  // {
+  //   title: "Clase del 19-05-2026",
+  //   source: "drive",
+  //   fileId: "1viHhMePytEJRfuG0Kgtwcgxmj41EmzES",
+  // },
+  // {
+  //   title: "Clase del 04-06-2026",
+  //   source: "drive",
+  //   fileId: "1P-7v8ynY_iyKFqxd07STx6C3ifZr48HF",
+  // },
+  // {
+  //   title: "Clase del 09-06-2026",
+  //   source: "drive",
+  //   fileId: "1J5vGgliPC6SGgslv4jq76Sgvdy1fs98I",
+  // },
+  // {
+  //   title: "Clase del 11-06-2026",
+  //   source: "drive",
+  //   fileId: "1GY1Xik2ybdcUcptVl5ljEk7NKnXtqTYe",
+  // },
+  // {
+  //   title: "Clase del 16-06-2026",
+  //   source: "drive",
+  //   fileId: "16X6oOd9CJPt326R2QrDofMqskyPmx1mk",
+  // }
 ];
 
 // This section is where the tutorials are uploaded.
