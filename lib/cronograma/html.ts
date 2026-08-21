@@ -54,8 +54,7 @@ export function getBadgeVariant(label: string): BadgeVariant {
     normalized.includes(kw)
   );
   if (isPracticaEnClase) return BADGE_VARIANT_INFO;
-  if (normalized.includes(KEYWORD_PARCIAL) || normalized.includes(KEYWORD_RECUPERATORIO)) return BADGE_VARIANT_WARNING;
-  if (normalized.includes(KEYWORD_FINAL)) return BADGE_VARIANT_DANGER;
+  if (normalized.includes(KEYWORD_FINAL) || (normalized.includes(KEYWORD_PARCIAL) || normalized.includes(KEYWORD_RECUPERATORIO))) return BADGE_VARIANT_DANGER;
   if (normalized.includes(KEYWORD_ENTREGA) || normalized.includes(KEYWORD_REENTREGA)) return BADGE_VARIANT_PRIMARY;
   if (REGEX_PRESENTACION_TP.test(normalized)) return BADGE_VARIANT_PRIMARY_OUTLINE;
   return BADGE_VARIANT_INFO;

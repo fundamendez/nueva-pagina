@@ -1,0 +1,310 @@
+---
+id: tp2
+title: ""
+sidebar_label: TP2 - Venciendo a los Magios
+sidebar_position: 2
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import BuscadorCorrector from '@site/src/components/BuscadorCorrectores'
+
+<div style={{ maxWidth: "900px", margin: "0 auto", paddingTop: "10px" }}>
+
+<div style={{ textAlign: "center" }}>
+
+<h1
+  style={{
+    fontSize: "2.5rem",
+    marginBottom: "10px",
+    fontWeight: "700",
+  }}
+>
+  Trabajo Práctico Nº 2
+</h1>
+
+<h2
+  style={{
+    fontSize: "2rem",
+    fontWeight: "700",
+  }}
+>
+  Venciendo a los Magios
+</h2>
+
+</div>
+
+</div>
+
+<p align="center">
+  <img src="/img/enunciados/1c2026tp2/homero_magio.png" width="450"></img>
+</p>
+
+<div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
+
+| Fecha de presentación | Fecha de entrega |
+| :-------------------: | :--------------: |
+|      21/05/2026       |    11/06/2026    |
+
+</div>
+
+<BuscadorCorrector numeroTp={2}/>
+
+<div style={{ display: "flex", justifyContent: "center", gap: "20px", margin: "40px 0", flexWrap: "wrap" }}>
+      
+      <a
+        href={useBaseUrl('/tps/1c2026/bibliotecas_tp2.zip')}
+        download="bibliotecas_tp2.zip"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "10px",
+          backgroundColor: "#FDD835",
+          color: "#1a1a1a",
+          fontWeight: "700",
+          fontSize: "1.15rem",
+          padding: "16px 32px",
+          borderRadius: "10px",
+          textDecoration: "none",
+          lineHeight: "1",
+          boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
+        }}
+      >
+        <span>📦</span>
+        <span>Archivos TP2</span>
+      </a>
+
+    </div>
+
+---
+
+## 1. Introducción
+
+Tras superar el **Rito de Ascensión de los Magios**, los mismos se dieron cuenta que Homero era el elegido, por lo que se volvió el Magio más importante. Debido a esto sus compañeros lo dejaban ganar en todos los juegos.
+
+Homero harto de esto, programo un juego en el que no lo dejan ganar, un batalla naval contra la computadora.
+
+---
+
+## 2. Objetivo
+
+El presente trabajo práctico tiene como objetivo que el alumno:
+
+- Se familiarice con el manejo de archivos en C.
+- Realice apropiadamente las operaciones con archivos.
+- Ponga en práctica el uso de argumentos por línea de comando.
+- Se familiarice con y utilice correctamente memoria dinámica.
+- Logre utilizar correctamente un TDA externo.
+
+Por supuesto, se requiere que el trabajo cumpla con las **buenas prácticas de programación** profesadas por la cátedra. Se considerarán críticos la modularización, reutilización y claridad del código.
+
+## 3. Enunciado
+
+Se solicita implementar un programa que simule el juego **batalla naval**. El objetivo del juego es hundir la flota rival antes de que hundan la propia.
+
+El juego se desarrolla sobre un tablero de **10x10** posiciones. Cada jugador cuenta con una flota compuesta por:
+
+- 1 barco de largo 5.
+- 1 barco de largo 4.
+- 2 barcos de largo 3.
+- 1 barco de largo 2.
+
+Los barcos ocupan posiciones consecutivas en línea recta, ya sea horizontal o verticalmente.
+
+Durante cada turno, el jugador debe indicar una posición a la que desea disparar. El disparo puede tener alguno de los siguientes resultados:
+
+- **Agua**: la posición atacada no contiene ningún barco.
+- **Tocado**: la posición atacada contiene parte de un barco enemigo, pero el barco aún no fue destruido completamente.
+- **Hundido**: el disparo impacta la última posición restante de un barco enemigo.
+
+El juego finaliza cuando alguna de las dos flotas es vencida (es decir, cuando todos los barcos de una flota han sido hundidos).
+
+:::warning[IMPORTANTE]
+
+- Tanto los barcos como los disparos deben estar dentro de los límites del tablero.
+- No puede haber barcos que se superpongan.
+  :::
+
+En la partida habrán dos entidades:
+
+- **El jugador**: Es el usuario del programa y manejará uno de los bandos.
+- **El oponente**: Una biblioteca externa tomará las decisiones del otro bando de manera programática.
+
+### 3.1 Argumentos
+
+El programa debe ser llamado con un argumento:
+
+`./batalla_naval <archivo_barcos> <archivo_reporte>`
+
+Si el programa se llamó con la cantidad incorrecta de argumentos debe devolver un error.
+
+#### 3.1.1 Archivo de barcos
+
+Este archivo será el que contiene las posiciones iniciales de los barcos del jugador. Será un archivo de CSV con el siguiente formato:
+`<fila_inicial>;<columna_inicial>;<direccion>;<largo>`
+
+Cada fila representa un barco e indica su posición inicial (compuesta por fila y columna), su dirección (**N**,**S**,**E** u **O**) y su largo. El archivo deberá ser completado por el usuario antes de iniciar la partida para posicionar sus barcos.
+
+En caso de que el archivo esté vacío o no exista, se debe devolver un error.
+
+El archivo se debe validar antes de empezar con el juego y debe cumplir las siguientes condiciones:
+
+- La posición debe ser válida y dentro del terreno.
+- La dirección es **N**, **S**, **E** u **O**.
+- El largo de cada barco debe ser uno de los permitidos: 2, 3, 4 o 5.
+- La flota debe respetar la composición esperada: un barco de largo 5, un barco de largo 4, dos barcos de largo 3 y un barco de largo 2.
+- Todas las posiciones ocupadas por cada barco deben estar dentro del mapa.
+- No puede haber barcos superpuestos.
+
+En caso de que cualquiera de estas validaciones falle, se debe devolver un error.
+
+:::warning[IMPORTANTE]
+
+El archivo se debe leer línea por línea y validando cada barco a medida que se va leyendo.
+:::
+
+Se provee un tipo `barco_t` (se puede ver en la sección 3.4) para representar cada barco leido del archivo.
+
+#### 3.1.2 Archivo de reporte
+
+Este archivo contendrá un reporte final de la partida. Si el archivo no existe se creará y si ya existía de antemano, se sobreescribirá.
+
+El formato que debe tener es el siguiente:
+
+```
+Balas aliadas acertadas: 5
+Balas aliadas erradas: 12
+Balas enemigas acertadas: 17
+Balas enemigas erradas: 0
+Barcos enemigos hundidos: 1
+Barcos aliados sobrevivientes: 0
+```
+
+Los valores numéricos son solo de ejemplo y pueden variar de partida a partida.
+
+### 3.2 Desarrollo del Juego
+
+Los turnos serán alternados. El jugador comienza disparando primero, luego dispara el oponente, y se continúa alternando un disparo por turno hasta finalizar la partida.
+
+En el turno del jugador, este deberá elegir su disparo ingresando por terminal una coordenado con el formato `FILA;COLUMNA`, **indexados en 1**. Es obligatorio mantener ese formato para que Algotrón pueda realizar las pruebas. Por ejemplo, si quiere disparar en la tercera fila y segunda columna, deberá ingresar `3;2`.
+
+Luego, se deberá informar el resultado del disparo al jugador: _Agua_, _Tocado_ o _Hundido_. Para obtener el resultado del disparo del jugador se utilizará el TDA Oponente, explicado en una sección más adelante.
+
+A continuación, será el turno del oponente. Se le debe notificar al jugador el disparo de su oponente. La elección disparo del oponente también es controlado por el TDA.
+
+La partida continua con turnos alternados hasta que el jugador o el oponente logre hundir toda la flota (cinco barcos) del contrincante. Al finalizar, se deberá mostrar el resultado de la partida y crear el archivo de reporte correspondiente.
+
+### 3.3 Interfaz
+
+El diseño de la interfaz del juego queda a elección del alumno. Es obligatorio que el usuario tenga toda la información necesaria para poder realizar sus elecciones. La única condición es que el usuario ingrese sus disparos usando el formato explicado en la sección anterior, sin ninguna otra interacción por su parte.
+
+Cuando el jugador tenga que disparar se le debe mostrar el mapa enemigo. Al principio este estará en blanco porque el jugador no sabe donde se encuentran los barcos del oponente, pero a medida que dispara se irá llenando con marcas de _Agua_ (**A**), _Tocado_ (**T**) o _Hundido_ (**H**).
+
+También se debe mostrar el propio mapa, actualizado con los barcos tocados o hundidos por el oponente.
+
+### 3.4 TDA Oponente
+
+Para la ejecución del juego se contará con un TDA oponente que **ya estará implementado por la cátedra** y deberá ser utilizado (el código interno no va a estar disponible).
+
+Las primitivas del TDA son las siguientes:
+
+```c
+#ifndef __OPONENTE_H__
+#define __OPONENTE_H__
+
+#define CANT_BARCOS 5
+
+typedef struct coordenada {
+    int fila;
+    int columna;
+} coordenada_t;
+
+typedef struct barco {
+    coordenada_t *posiciones; //Vector en memoria dinámica
+    int largo;
+} barco_t;
+
+typedef struct oponente oponente_t;
+
+/*
+* Pre condiciones: Recibe las posiciones de los barcos del jugador (que fueron leidos anteriormente del archivo), todas las posiciones de barcos_jugador deben ser validas.
+* Post condiciones: Crea al oponente inicializando todos los campos del mismo.
+*/
+oponente_t *oponente_crear(barco_t barcos_jugador[CANT_BARCOS]);
+
+/*
+* Pre condiciones: Oponente debe estar previamente creado con ´oponente_crear´. La coordenada recibida debe ser válida.
+* Post condiciones: Devuelve:
+* --> A si la coordenada elegida es "Agua"
+* --> T si la coordenada elegida es un barco pero no todas sus posiciones fueron tocadas.
+* --> H si la coordenada elegida es un barco y todas sus posiciones fueron tocadas.
+*/
+char oponente_recibe_disparo(oponente_t *oponente, coordenada_t disparo);
+
+/*
+* Pre condiciones: Oponente debe estar previamente creado con ´oponente_crear´.
+* Post condiciones: Devuelve la coordenada del disparo del oponente.
+*/
+coordenada_t oponente_realiza_disparo(oponente_t *oponente);
+
+/*
+* Pre condiciones: Oponente debe estar previamente creado con ´oponente_crear´.
+* Post condiciones: Elimina al oponente de la memoria junto con todos sus campos.
+*/
+void oponente_destruir(oponente_t *oponente);
+
+#endif /* __OPONENTE_H__ */
+```
+
+El TDA oponente se utilizará para simular la inteligencia artificial enemiga. Al inicializarse, deberá recibir los barcos del jugador (leídos previamente del archivo). Esto no implica una ventaja, ni que el TDA "haga trampa": esa información se usa internamente para gestionar los disparos y reportar resultados coherentes. Esos barcos están representados por el tipo `barco_t`, que internamente contiene un vector en memoria dinámica.
+
+El alumno no conoce dónde se posicionan los barcos del oponente: debe usar la función `oponente_recibe_disparo` para saber si un disparo fue _Agua_, _Tocado_ o _Hundido_. Además, los disparos del oponente no los genera el alumno de forma aleatoria, sino que debe obtenerlos mediante `oponente_realiza_disparo`. La cátedra garantiza que el TDA oponente no hace trampa al disparar ni al reportar el estado de su flota.
+
+El alumno deberá usar esta información para informarle al jugador del estado del juego, además de darse cuenta cuando el juego terminó. **El TDA no avisará cuando toda su flota fue hundida**, esto es responsabilidad del alumno.
+
+---
+
+## 4. Resultado esperado
+
+Esperamos que el trabajo cumpla la funcionalidad explicada anteriormente. Se deberá:
+
+- Implementar el desarrollo del juego tal cual se describe.
+- Utilizar correctamente el TDA provisto por la cátedra.
+- Utilizar correctamente memoria dinámica, es decir, no tener pérdidas de memoria al ejecutarse el programa.
+- La interfaz implementada por el alumno debe ser clara y contener toda la información necesaria para jugar al juego.
+- Respetar las buenas prácticas de programación que profesamos en la cátedra.
+
+## 5. Compilación y entrega
+
+El trabajo práctico debe ser realizado en un archivo llamado **batalla_naval.c** y deberá ser compilado sin errores al correr el siguiente comando:
+
+`gcc *.c oponente.o -o batalla_naval -std=c99 -Wall -Wconversion -Werror -lm`
+
+Por último debe ser entregado en la plataforma de corrección de trabajos prácticos **AlgoTrón** (patente pendiente), en la cual deberá tener la etiqueta **¡Exito!** significando que ha pasado las pruebas a las que la cátedra someterá al trabajo.
+
+:::danger[IMPORTANTE]
+La etiqueta **¡Éxito!** es un requisito necesario pero no suficiente para la aprobación del trabajo práctico.  
+El trabajo deberá cumplir tanto con las **pruebas automatizadas** como con los **criterios de calidad evaluados por la cátedra**.
+
+Además, para que el trabajo sea corregido por un colaborador, el mismo debe pasar todas las **pruebas mínimas**, las cuales verifican el funcionamiento mínimo del trabajo.
+:::
+
+:::info[ACLARACIÓN]
+Para la entrega en **AlgoTrón** (patente pendiente), recuerde que deberá subir un archivo **zip** conteniendo únicamente los archivos antes mencionados, sin carpetas internas ni otros archivos. De lo contrario, la entrega no será validada por la plataforma.
+:::
+
+---
+
+## 6. FAQs
+
+En esta sección se irán cargando las dudas más comunes realizadas, junto con sus respuestas.
+
+#### ¿Qué pasa si el disparo del jugador cae afuera del tablero?
+
+El programa debe volver a pedirle al jugador que ingrese un disparo válido, es decir, dentro del tablero.
+
+#### ¿Las coordenadas del archivo de barcos están indexadas en 1 o en 0?
+
+Las coordenadas del archivo de barcos están indexadas en 1, al igual que las coordenadas que el jugador ingresa para disparar. Esto significa que la posición (1,1) corresponde a la esquina superior izquierda del tablero, y la posición (10,10) corresponde a la esquina inferior derecha.
