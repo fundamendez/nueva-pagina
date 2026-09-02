@@ -46,7 +46,7 @@ Inspección del Monorriel
 
 ---
 
-# 1. Introducción
+## 1. Introducción
 
 Luego de que el Sr. Burns pagara una cuantiosa multa de $3.000.000 de dólares a la ciudad de Springfield por arrojar desechos tóxicos en el parque infantil, los ciudadanos decidieron destinar esos fondos a la construcción de un flamante monorriel, siguiendo las convincentes propuestas del vendedor, el Sr. Mandino.
 Sin embargo, Marge Simpson sospecha que el proyecto no es tan seguro como aparenta y teme que las obras del Sr. Mandino oculten serias fallas de infraestructura. Con Homero al mando como conductor en su viaje inaugural, ella está preocupada así que se infiltra en la oficina del Sr. Mandino y roba el informe sobre el estado del monorriel. Antes de analizarlo, establece un sistema de evaluación en el que cada respuesta con un resultado desfavorable resta puntos al puntaje total. Para evitar errores al realizar el cálculo manualmente, necesita un programa que procese las respuestas del informe, calcule el puntaje obtenido y determine si el monorriel se encuentra apto para funcionar.
@@ -55,7 +55,7 @@ Marge contra el Monorriel [T4 E12]
 
 ---
 
-# 2. Objetivo
+## 2. Objetivo
 
 El presente trabajo práctico tiene como objetivo evaluar a los alumnos en aspectos fundamentales de la programación.
 
@@ -71,7 +71,7 @@ Entre ellos:
 
 ---
 
-# 3. Enunciado
+## 3. Enunciado
 
 Se solicita implementar un programa que **ayude a Marge a calcular el puntaje obtenido y decida si el monorriel está apto para hacer el viaje inaugural**.
 
@@ -86,9 +86,9 @@ Importante:
 
 ---
 
-# 3.1 Preguntas
+## 3.1 Preguntas
 
-## Pregunta 1  
+### Pregunta 1  
 **¿Cuántos pasajeros realizarán el viaje inaugural?**
 
 
@@ -107,7 +107,7 @@ Si la cantidad de pasajeros es mayor a 180, el viaje no se debe realizar. Se deb
 
 ---
 
-## Pregunta 2  
+### Pregunta 2  
 **¿Qué distancia recorrió el monorriel durante la prueba de los frenos marca Patito?**
 
 Durante la inspección, se realiza una prueba sobre los modernos frenos marca Patito instalados en el monorriel.
@@ -129,7 +129,7 @@ Una distancia mayor a 100.0 (y dentro del rango) implica que el control fue desa
 
 ---
 
-## Pregunta 3  
+### Pregunta 3  
 **¿A qué hora está programado el viaje inaugural? (formato: hh:mm)**
 
 La respuesta debe ingresarse como números enteros de la siguiente manera:
@@ -162,7 +162,7 @@ Si el viaje está programado entre las 20:00 y las 05:59, el control será desap
 
 ---
 
-## Pregunta 4  
+### Pregunta 4  
 **¿Qué encontró Marge en el compartimiento del matafuegos?**
 
 Opciones posibles:
@@ -189,22 +189,15 @@ Esta es la única pregunta que puede sumar puntos.
 
 ---
 
-# 3.2 Cálculo del Puntaje
+## 3.2 Cálculo del Puntaje
 
 Cada respuesta puede restar (o no) puntos del puntaje inicial del control.
 
 ---
 
-## Pregunta 1 — Pasajeros del viaje
 
-Si la cantidad de pasajeros es menor o igual a 180, el viaje puede realizarse.
-Si la cantidad de pasajeros es mayor a 180, el viaje no se debe realizar. 
 
-Se deberá imprimir -NO APTO- y cortar la ejecución del programa.
-
----
-
-## Pregunta 2 — Distancia de frenado
+### Pregunta 2 — Distancia de frenado
 
 | Respuesta | Puntos |
 |---|---|
@@ -214,7 +207,7 @@ Se deberá imprimir -NO APTO- y cortar la ejecución del programa.
 
 ---
 
-## Pregunta 3 — Hora programada del viaje
+### Pregunta 3 — Hora programada del viaje
 
 | Respuesta | Puntos |
 |---|---|
@@ -223,7 +216,7 @@ Se deberá imprimir -NO APTO- y cortar la ejecución del programa.
 
 ---
 
-## Pregunta 4 — Compartimento de matafuegos
+### Pregunta 4 — Compartimento de matafuegos
 
 | Respuesta | Puntos |
 |---|---|
@@ -288,7 +281,7 @@ Si bien el texto completo del mensaje puede quedar a elección del alumno, se de
 
 ---
 
-# 6. Entrega
+## 6. Entrega
 
 El trabajo práctico deberá ser entregado en la plataforma de corrección de trabajos prácticos **AlgoTrón** (patente pendiente).
 
@@ -316,9 +309,9 @@ El trabajo deberá cumplir tanto con las **pruebas automatizadas** como con los 
 
 ---
 
-# 7. Ejemplos de ejecución
+## 7. Ejemplos de ejecución
 
-## Ejemplo 1
+### Ejemplo 1
 
 Pregunta 1  
 ¿Cuántos pasajeros realizarán el viaje inaugural?
@@ -370,7 +363,7 @@ Resultado:
 
 ---
 
-## Ejemplo 2
+### Ejemplo 2
 
 Pregunta 1  
 ¿Cuántos pasajeros realizarán el viaje inaugural?  
@@ -384,7 +377,7 @@ Resultado:
 
 ---
 
-## Ejemplo 3
+### Ejemplo 3
 
 Pregunta 1  
 ¿Cuántos pasajeros realizarán el viaje inaugural?  
@@ -421,7 +414,7 @@ Resultado:
 
 ---
 
-## Ejemplo 4 
+### Ejemplo 4 
 
 Pregunta 1  
 ¿Cuántos pasajeros realizarán el viaje inaugural?  
@@ -457,7 +450,7 @@ Resultado:
 
 ---
 
-## Ejemplo 5 
+### Ejemplo 5 
 
 Pregunta 1  
 ¿Cuántos pasajeros realizarán el viaje inaugural?  
@@ -502,7 +495,7 @@ Resultado:
 
 ---
 
-## Ejemplo 6 
+### Ejemplo 6 
 
 Pregunta 1  
 ¿Cuántos pasajeros realizarán el viaje inaugural?  
