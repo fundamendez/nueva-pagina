@@ -151,7 +151,9 @@ Validaciones requeridas:
 - Ambos numeros deben ser positivos  
 - La hora no puede ser mayor a 23 ni menor a 0
 - Los minutos no pueden ser mayores a 59 ni menores a 0
-- El formato debe ser estrictamente **hh:mm**
+:::info[ACLARACIÓN]
+No es necesario tener en cuenta el caso en el que el usuario introduzca un formato distinto a **hh:mm**.
+:::
 
 Durante la inspección, Marge descubrió que el sistema de iluminación exterior del monorriel no funciona.
 Por este motivo:
