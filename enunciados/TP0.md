@@ -5,7 +5,7 @@ sidebar_label: TP0 - Inspección del Monorriel
 sidebar_position: 1
 ---
 
-<!-- import BuscadorCorrector from '@site/src/components/BuscadorCorrectores' -->
+import BuscadorCorrector from '@site/src/components/BuscadorCorrectores'
 
 <div style={{ maxWidth: "900px", margin: "0 auto", paddingTop: "10px" }}>
 
@@ -42,7 +42,7 @@ Inspección del Monorriel
 | 03/09/2026            | 10/09/2026     |
 
 </div>
-<!-- <BuscadorCorrector numeroTp={0}/> -->
+<BuscadorCorrector numeroTp={0}/>
 
 ---
 
@@ -360,7 +360,7 @@ Puntaje final:
 Resultado:
 
 
--APTO- 
+`-APTO-`
 
 
 ---
