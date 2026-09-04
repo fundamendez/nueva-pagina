@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
-import asignacionesTp1 from '@site/static/tps/1c2026/correctores_tp1.json';
-import asignacionesTp2 from '@site/static/tps/1c2026/correctores_tp2.json';
+import asignacionesTp0 from '@site/static/tps/2c2026/correctores_tp0.json';
+//import asignacionesTp1 from '@site/static/tps/1c2026/correctores_tp1.json';
+//import asignacionesTp2 from '@site/static/tps/1c2026/correctores_tp2.json';
 
 export default function BuscadorCorrector({ numeroTp }: { numeroTp: number }) {
   const [padron, setPadron] = useState('');
-  const [resultado, setResultado] = useState(null);
+  const [resultado, setResultado] = useState<{ encontrado: boolean; mensaje: string } | null>(null);
 
-  const asignaciones = numeroTp === 1 ? asignacionesTp1 : numeroTp === 2 ? asignacionesTp2 : {};
+  const asignaciones: Record<string, string> = 
+    numeroTp === 0 ? asignacionesTp0 : 
+    // numeroTp === 1 ? asignacionesTp1 : 
+    // numeroTp === 2 ? asignacionesTp2 : 
+    {};
 
   const buscar = () => {
     const padronLimpio = padron.trim();
