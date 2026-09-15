@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import asignacionesTp0 from '@site/static/tps/2c2026/correctores_tp0.json';
-//import asignacionesTp1 from '@site/static/tps/1c2026/correctores_tp1.json';
-//import asignacionesTp2 from '@site/static/tps/1c2026/correctores_tp2.json';
+//import asignacionesTp1 from '@site/static/tps/2c2026/correctores_tp1.json';
+//import asignacionesTp2 from '@site/static/tps/2c2026/correctores_tp2.json';
 
 export default function BuscadorCorrector({ numeroTp }: { numeroTp: number }) {
   const [padron, setPadron] = useState('');
