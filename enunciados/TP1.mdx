@@ -128,7 +128,9 @@ Las calles son las posiciones en las que Homero puede moverse en el terreno. Ser
 Además de Homero, habrá otros autos transitando por las calles. Al iniciar el juego, debe haber 6 autos circulando por la ciudad, con 100 de nafta. 
 Cada 5 movimientos, aparecerá un auto nuevo. La velocidad a la que circularán (cuantos casilleros por vez se mueven) será entre 1 y 4 y se definirá de forma aleatoria. La nafta que gastarán los autos en cada movimiento será igual a la velocidad a la que se mueven.
 
-Cada auto tendrá un recorrido fijo en las calles. Este será dado por la cátedra para garantizar el correcto funcionamiento. Los autos sólo se mueven en la dirección del camino. Una vez que su recorrido termine (se salgan del mapa) deben ser eliminados.
+Cada auto tendrá un recorrido fijo en las calles. Este será dado por la cátedra para garantizar el correcto funcionamiento. Los autos sólo se mueven en la dirección del camino. Una vez que su recorrido termine deben ser eliminados.
+
+Si un auto se queda sin nafta, se quedará detenido en la posición donde está.
 
 Si Homero choca con un auto, se pierde el juego. Si dos o más autos coinciden en una misma posición, no tiene ningún efecto sobre ellos.
 
@@ -163,9 +165,11 @@ Al pasar por una estación de servicio, al vehículo se le sumará 50 de nafta.
 ### 3.8 Monorriel
 El recorrido del monorriel será un cuadrado dentro del terreno, de forma tal que se moverá por la columna 1, la fila 1, la anteúltima columna y la anteúltima fila.
 
-En cada esquina habrá una estación que lo hará parar por 5 movimientos. Es un monorriel que ocupa 4 posiciones (4 vagones) y se considera que llega a la estación cuando el primer vagón llega a la estación.
+En cada esquina de ese recorrido habrá una estación que lo hará parar por 5 movimientos. Es un monorriel que ocupa 4 posiciones (4 vagones) y se considera que llega a la estación cuando el primer vagón llega a la estación.
 
-El monorriel comienza su recorrido en la estación que está en la esquina superior derecha (1;1), se mueve contra las agujas del reloj y su recorrido se da por terminado cuando llega a la misma estación de la que salió.
+El monorriel comienza su recorrido en la estación que está en la esquina superior izquierda del recorrido (1;1), se mueve contra las agujas del reloj y su recorrido se da por terminado cuando llega a la misma estación de la que salió.
+
+Si Homero choca con cualquiera de los vagones del monorriel, pierde el juego.
 
 <p align="center">
   <img src="/img/enunciados/2c2026tp1/grafico_monorriel.png" width="450"></img>
@@ -221,10 +225,11 @@ Además, podrá realizar estas acciones:
 Éstas tres acciones no consumen nafta, ni hace avanzar a los demás vehículos.
 
 Luego de realizar una acción en caso de chocar o estar a la distancia de reacción con un elemento se activará la reacción relacionada al mismo que afectará a Homero, a los autos y el estado del juego, según corresponda. En caso de estar con el turbo activado, se deberá chequear reacción en cada posición por la que se pase, no solo en la final.
+En cambio, para los autos que tengan velocidad mayor a 1, solo deben chequear la reacción con la posición donde llegan, no con las intermedias.
  
 El juego se dará por perdido cuando se cumpla alguna de las siguientes condiciones:
 * Homero se queda sin nafta.
-* Homero choca con otro vehiculo.
+* Homero choca con otro vehiculo (auto o monorriel).
 * El monorriel llega a la última estación antes que Homero.
 
 El juego se dará por ganado cuando:
