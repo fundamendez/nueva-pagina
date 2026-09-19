@@ -228,6 +228,8 @@ Además, podrá realizar estas acciones:
 
 Luego de realizar una acción en caso de chocar o estar a la distancia de reacción con un elemento se activará la reacción relacionada al mismo que afectará a Homero, a los autos y el estado del juego, según corresponda. En caso de estar con el turbo activado, se deberá chequear reacción en cada posición por la que se pase, no solo en la final.
 En cambio, para los autos que tengan velocidad mayor a 1, solo deben chequear la reacción con la posición donde llegan, no con las intermedias.
+
+El orden del juego es: luego de que el usuario ingresa una letra válida, se mueven todos los autos, realizando las acciones que correspondan dependiendo de los elementos que tengan cerca, luego se mueve Homero y se realizan las acciones que correspondan dependiendo de los elementos que tenga cerca.
  
 El juego se dará por perdido cuando se cumpla alguna de las siguientes condiciones:
 * Homero se queda sin nafta.
@@ -501,3 +503,6 @@ Se ve claramente en los siguientes ejemplos:
 
 ## 8. FAQs
 A continuación dejamos preguntas frecuentes que surgieron de la consigna y sus respuestas.
+
+1. ¿Se puede generar el ancla, lomas de burro y demas objetos por donde pasa el monorriel?
+No, se debe que evitar que se generen en esas posiciones.
