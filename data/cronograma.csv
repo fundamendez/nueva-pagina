@@ -50,7 +50,7 @@ TDAs:
 - Pilas
 - Colas
 - Lista enlazada",Presencial,Entrega TP1
-11,27/10,,Virtual,Repaso para recuperatorio,29/10,,Virtual,Recuperatorio primer parcial
+11,27/10,,Virtual,Repaso para recuperatorio,29/10,,Presencial,Recuperatorio primer parcial
 12,03/11,"Manejo de archivos de texto en C
 CSV",Virtual,,05/11,"- Archivos CSV
 - TDAs",Virtual,Reentrega TP1
@@ -58,11 +58,11 @@ CSV",Virtual,,05/11,"- Archivos CSV
 - Mezcla
 - Unión
 - Diferencias
-- Intersección",Presencial/Virtual,,12/11,"Operaciones con archivos:
+- Intersección",Presencial,,12/11,"Operaciones con archivos:
 - Mezcla
 - Unión
 - Diferencias
-- Intersección",Presencial/Virtual,
+- Intersección",Presencial,
 14,17/11,,Presencial,Repaso de parcial,19/11,,Presencial,Segundo parcial
 15,24/11,Clase extra,Virtual,,26/11,,Virtual,
 16,01/12,Retrospectiva,Presencial,,03/12,,Presencial,Recuperatorio segundo parcial
