@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import asignacionesTp0 from '@site/static/tps/2c2026/correctores_tp0.json';
-//import asignacionesTp1 from '@site/static/tps/2c2026/correctores_tp1.json';
+import asignacionesTp1 from '@site/static/tps/2c2026/correctores_tp1.json';
 //import asignacionesTp2 from '@site/static/tps/2c2026/correctores_tp2.json';
 
 export default function BuscadorCorrector({ numeroTp }: { numeroTp: number }) {
@@ -9,7 +9,7 @@ export default function BuscadorCorrector({ numeroTp }: { numeroTp: number }) {
 
   const asignaciones: Record<string, string> = 
     numeroTp === 0 ? asignacionesTp0 : 
-    // numeroTp === 1 ? asignacionesTp1 : 
+    numeroTp === 1 ? asignacionesTp1 : 
     // numeroTp === 2 ? asignacionesTp2 : 
     {};
 
