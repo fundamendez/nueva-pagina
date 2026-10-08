@@ -111,6 +111,7 @@ export const CLASES: VideoItem[] = [
   //   fileId: "16X6oOd9CJPt326R2QrDofMqskyPmx1mk",
   // }
   { title: "Clase del 08-09-2026", source: "drive", fileId: "1yWxpL78GGgbQi41Kx6FAZwhvYR9RuIW6" },
+  { title: "Clase del 06-10-2026", source: "drive", fileId: "1obwW4_VeSI2A4qsuCBKpxoVNrjxhqt6k" },
 ];
 
 // This section is where the tutorials are uploaded.
