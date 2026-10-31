@@ -5,24 +5,24 @@
  */
 
 :root {
-    --ifm-color-primary: #56A0D3;
-    --ifm-color-primary-dark: #3d90cb;
-    --ifm-color-primary-darker: #3488c5;
-    --ifm-color-primary-darkest: #2b70a3;
-    --ifm-color-primary-light: #6fb0db;
-    --ifm-color-primary-lighter: #78b6de;
-    --ifm-color-primary-lightest: #9dcaea;
-    --ifm-code-font-size: 95%;
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #56A0D3;
+  --ifm-color-primary-dark: #3d90cb;
+  --ifm-color-primary-darker: #3488c5;
+  --ifm-color-primary-darkest: #2b70a3;
+  --ifm-color-primary-light: #6fb0db;
+  --ifm-color-primary-lighter: #78b6de;
+  --ifm-color-primary-lightest: #9dcaea;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-    --simpsons-yellow: #FDD835;
-    --simpsons-yellow-dark: #F9C400;
-    --simpsons-blue: #56A0D3;
-    --simpsons-sky: #7BC8F6;
+  --simpsons-yellow: #FDD835;
+  --simpsons-yellow-dark: #F9C400;
+  --simpsons-blue: #56A0D3;
+  --simpsons-sky: #7BC8F6;
 }
 
 .yellow-text {
-    color: var(--simpsons-yellow);
+  color: var(--simpsons-yellow);
 }
 
 
@@ -39,7 +39,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .dropdown__link {
   font-size: 1.05rem;
-  padding-top: 0.5rem; 
+  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
@@ -60,5 +60,24 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--simpsons-yellow);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--simpsons-yellow-dark);
+}
+
 @import "./cronograma.css";
-@import "./enunciados.css"
+@import "./enunciados.css";
